@@ -36,7 +36,17 @@ Este projeto foi desenvolvido como parte do desafio técnico para a vaga de Fron
 npm install
 ```
 
-### 3. Executar o projeto
+### 3. Variáveis de ambiente
+
+Crie um arquivo `.env.local` na raiz do projeto com as seguintes variáveis:
+
+```env
+SPOTIFY_CLIENT_ID=your_client_id
+SPOTIFY_CLIENT_SECRET=your_client_secret
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
+```
+
+### 4. Executar o projeto
 
 ```bash
 npm install
