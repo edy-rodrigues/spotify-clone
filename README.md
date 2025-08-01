@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎧 Spotify UI Clone - Frontend Hiring Challenge
 
-## Getting Started
+Este projeto foi desenvolvido como parte do desafio técnico para a vaga de Frontend na Kanastra. A proposta consiste em consumir a API pública do Spotify, oferecendo uma interface chamativa e responsiva inspirada na interface oficial do Spotify.
 
-First, run the development server:
+## 🧰 Tecnologias Utilizadas
+
+- [Next.js 15 (App Router)](https://nextjs.org/)
+- [React 18](https://reactjs.org/)
+- [TypeScript 5](https://www.typescriptlang.org/)
+- [Tailwind CSS 4](https://tailwindcss.com/)
+- [React Query 5](https://tanstack.com/query/latest)
+- [Cypress 14](https://www.cypress.io/) *(em breve)*
+
+## ✅ Funcionalidades
+
+- 🎤 Listagem de artistas
+- 💿 Detalhes de um artista (popularidade, principais músicas e álbuns)
+- 📚 Paginação manual de álbuns (20 por página)
+- 🔎 Filtros:
+  - Por nome do artista
+  - Por nome do álbum
+- 🌍 Interface responsiva
+- 🎨 UI inspirada no Spotify com foco visual (animações e estilizações)
+
+## 🚀 Como rodar localmente
+
+### 1. Pré-requisitos
+
+- Node.js (versão recomendada: **2.x**)
+- Npm
+
+### 2. Instalação
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Instale as dependências
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Executar o projeto
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Acesse em: [http://localhost:3000](http://localhost:3000)
 
-## Learn More
+## Outros comandos
+```bash
+# Execute o seguinte comando para subir gerar o build da aplicação
+npm run build
 
-To learn more about Next.js, take a look at the following resources:
+# Execute o seguinte comando para subir o ambiente de produção pós build
+npm run start
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Execute o seguinte comando para subir verificar o lint
+npm run lint
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Desenvolvido por [Edinei Rodrigues](https://github.com/edy-rodrigues) 🧑‍💻
