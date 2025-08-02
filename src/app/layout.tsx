@@ -27,7 +27,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <header className="bg-red-400">Header</header>
+        <div className="left-sidebar bg-amber-300 rounded-lg">Your library</div>
+        {children}
+        <div className="right-sidebar bg-purple-700 rounded-lg">Right sidebar</div>
+        <footer className="bg-green-800">Footer</footer>
+      </body>
     </html>
   );
 }

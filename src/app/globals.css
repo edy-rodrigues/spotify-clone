@@ -1,26 +1,84 @@
 @import "tailwindcss";
 
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  line-height: 140%;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-primary-main: #1ed760;
+  --background-default: var(--color-black);
+  --background-elevation-1: #000000;
+  --background-elevation-2: #121212;
+  --background-elevation-3: #1f1f1f;
+  --background-elevation-4: #2a2a2a;
+  --background-highlight: hsla(0, 0%, 100%, .2);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --color-primary-main: var(--color-primary-main);
+  --color-background-default: var(--background-default);
+  --color-background-elevation-1: var(--background-elevation-1);
+  --color-background-elevation-2: var(--background-elevation-2);
+  --color-background-elevation-3: var(--background-elevation-3);
+  --color-background-elevation-4: var(--background-elevation-4);
+  --color-background-highlight: var(--background-highlight);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background-default: #0a0a0a;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--background-default);
   font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "global-nav global-nav global-nav"
+    "left-sidebar main-view right-sidebar"
+    "now-playing-bar now-playing-bar now-playing-bar";
+  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
+}
+
+header {
+  grid-area: global-nav;
+  height: 64px;
+}
+
+body > div.left-sidebar {
+  grid-area: left-sidebar;
+  width: 300px;
+}
+
+body > div.main-view {
+  grid-area: main-view;
+  flex: 1;
+}
+
+body > div.right-sidebar {
+  grid-area: right-sidebar;
+  width: 300px;
+}
+
+footer {
+  grid-area: now-playing-bar;
+  height: 64px;
 }
