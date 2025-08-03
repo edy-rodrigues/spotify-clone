@@ -1,3 +1,5 @@
+import { NewReleases } from '@spotify/web-api-ts-sdk';
+
 export interface AbstractSpotifyBrowseApiProps {
   getNewReleases: {
     country?: string;
@@ -9,5 +11,5 @@ export interface AbstractSpotifyBrowseApiProps {
 export abstract class AbstractSpotifyBrowseApi {
   public abstract getNewReleases(
     props?: AbstractSpotifyBrowseApiProps['getNewReleases'],
-  ): Promise<object>;
+  ): Promise<NewReleases>;
 }
