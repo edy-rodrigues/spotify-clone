@@ -1,5 +1,7 @@
 // The code below imports any other important files to configure the app
 import '@/setup';
+import { Footer } from '@/app/_components/footer';
+import { Header } from '@/app/_components/header';
 
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
@@ -28,11 +30,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <header className="bg-red-400">Header</header>
-        <div className="left-sidebar bg-amber-300 rounded-lg">Your library</div>
+        <Header />
+        <div className="left-sidebar bg-amber-300 rounded-lg hidden lg:flex">Your library</div>
         {children}
-        <div className="right-sidebar bg-purple-700 rounded-lg">Right sidebar</div>
-        <footer className="bg-green-800">Footer</footer>
+        <div className="right-sidebar bg-purple-700 rounded-lg hidden">Right sidebar</div>
+        <Footer />
       </body>
     </html>
   );

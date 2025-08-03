@@ -16,10 +16,9 @@
   --color-black: #000000;
   --color-primary-main: #1ed760;
   --background-default: var(--color-black);
-  --background-elevation-1: #000000;
-  --background-elevation-2: #121212;
-  --background-elevation-3: #1f1f1f;
-  --background-elevation-4: #2a2a2a;
+  --background-elevation-1: #121212;
+  --background-elevation-2: #1f1f1f;
+  --background-elevation-3: #2a2a2a;
   --background-highlight: hsla(0, 0%, 100%, .2);
 }
 
@@ -32,7 +31,6 @@
   --color-background-elevation-1: var(--background-elevation-1);
   --color-background-elevation-2: var(--background-elevation-2);
   --color-background-elevation-3: var(--background-elevation-3);
-  --color-background-elevation-4: var(--background-elevation-4);
   --color-background-highlight: var(--background-highlight);
 }
 
@@ -45,6 +43,7 @@
 body {
   background: var(--background-default);
   font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-white);
   display: grid;
   gap: 8px;
   grid-template-columns: auto 1fr;
@@ -61,24 +60,29 @@ body {
 header {
   grid-area: global-nav;
   height: 64px;
+  background: var(--background-default);
 }
 
 body > div.left-sidebar {
   grid-area: left-sidebar;
   width: 300px;
+  background: var(--background-elevation-1);
 }
 
 body > div.main-view {
   grid-area: main-view;
   flex: 1;
+  background: var(--background-elevation-1);
 }
 
 body > div.right-sidebar {
   grid-area: right-sidebar;
   width: 300px;
+  background: var(--background-elevation-1);
 }
 
 footer {
   grid-area: now-playing-bar;
   height: 64px;
+  background: var(--background-default);
 }
