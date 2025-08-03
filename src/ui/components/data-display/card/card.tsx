@@ -1,17 +1,61 @@
-import Image from 'next/image';
+import { cn } from '@/utils/cn';
+import NextImage, { ImageProps } from 'next/image';
 import React from 'react';
 
-export function Card() {
+export type CardRootProps = React.HTMLAttributes<HTMLAnchorElement>;
+
+function Root(props: CardRootProps) {
+  const { className, children, ...rest } = props;
+
   return (
-    <a href="#" className="flex flex-col gap-4 p-3 hover:bg-background-highlight rounded-[6px]">
-      <div className="aspect-square relative">
-        <Image
-          alt="Taylor Swift"
-          src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/daily/1/ab6761610000e5ebe672b5f553298dcdccb0e676/pt"
-          fill
-        />
-      </div>
-      <span className="text-text-gray text-sm">Taylor Swift, Jessie J, Maroon 5 e mais</span>
+    <a
+      href="#"
+      className={cn(
+        'flex flex-col gap-4 p-3 hover:bg-background-highlight rounded-[6px]',
+        className,
+      )}
+      {...rest}
+    >
+      {children}
     </a>
   );
 }
+
+export type CardImageContainerProps = React.HTMLAttributes<HTMLDivElement>;
+
+function ImageContainer(props: CardImageContainerProps) {
+  const { className, children, ...rest } = props;
+
+  return (
+    <div className={cn('aspect-square relative', className)} {...rest}>
+      {children}
+    </div>
+  );
+}
+
+export type CardImageProps = ImageProps;
+
+export function Image(props: CardImageProps) {
+  const { className, alt, ...rest } = props;
+
+  return <NextImage alt={alt} fill className={cn('rounded-[6px]', className)} {...rest} />;
+}
+
+type CardTitleProps = React.HTMLAttributes<HTMLSpanElement>;
+
+export function Title(props: CardTitleProps) {
+  const { className, children, ...rest } = props;
+
+  return (
+    <span className={cn('text-text-gray text-sm', className)} {...rest}>
+      {children}
+    </span>
+  );
+}
+
+export const Card = {
+  Root,
+  ImageContainer,
+  Image,
+  Title,
+};
