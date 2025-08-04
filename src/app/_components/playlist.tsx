@@ -6,6 +6,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
+import { Artist } from '@/domain/artist';
+import { SpotifyApiFactory } from '@/infra/spotify-api/spotify-api-factory';
 import { CategoryForHomeGenre } from '@/server/seed/categories-for-home';
 import Link from 'next/link';
 import React from 'react';
@@ -14,8 +16,13 @@ type PlaylistProps = Readonly<{
   genre: CategoryForHomeGenre;
 }>;
 
-export function Playlist(props: PlaylistProps) {
+export async function Playlist(props: PlaylistProps) {
   const { genre } = props;
+
+  const spotifyApi = SpotifyApiFactory.create();
+
+  const artistsIds = genre.artists.map((artist) => artist.id);
+  const artists = await spotifyApi.artists.getByIds(artistsIds);
 
   return (
     <div className="flex flex-col" key={genre.label}>
@@ -25,13 +32,14 @@ export function Playlist(props: PlaylistProps) {
         </Link>
       </Typography>
       <Carousel
+        className="[&>.carousel-content]:-mx-10 [&>.carousel-content]:pr-10"
         opts={{
           slidesToScroll: 6,
         }}
       >
-        <CarouselContent className="m-0">
-          {genre.artists.map((artist) => (
-            <ArtistCard key={artist.id} artistId={artist.id} />
+        <CarouselContent className="m-0 ml-10">
+          {artists.map((artist) => (
+            <ArtistCard key={artist.id} artist={new Artist(artist)} />
           ))}
         </CarouselContent>
         <CarouselPrevious />

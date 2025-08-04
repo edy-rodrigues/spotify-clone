@@ -1,21 +1,14 @@
 import { CarouselItem } from '@/components/ui/carousel';
 import { Artist } from '@/domain/artist';
-import { SpotifyApiFactory } from '@/infra/spotify-api/spotify-api-factory';
 import { Card } from '@/components/data-display/card';
 import React from 'react';
 
 type ArtistCardProps = Readonly<{
-  artistId: string;
+  artist: Artist;
 }>;
 
 export async function ArtistCard(props: ArtistCardProps) {
-  const { artistId } = props;
-
-  const spotifyApi = SpotifyApiFactory.create();
-
-  const spotifyArtist = await spotifyApi.artists.get(artistId);
-
-  const artist = new Artist(spotifyArtist);
+  const { artist } = props;
 
   return (
     <CarouselItem className="basis-1/8 min-w-[177px] p-0">
