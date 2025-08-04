@@ -10,10 +10,7 @@ function Root(props: CardRootProps) {
   return (
     <a
       href="#"
-      className={cn(
-        'flex flex-col gap-4 p-3 hover:bg-background-highlight rounded-[6px]',
-        className,
-      )}
+      className={cn('flex flex-col p-3 hover:bg-background-highlight rounded-[6px]', className)}
       {...rest}
     >
       {children}
@@ -47,7 +44,17 @@ export function Title(props: CardTitleProps) {
   const { className, children, ...rest } = props;
 
   return (
-    <span className={cn('text-text-gray text-sm', className)} {...rest}>
+    <span className={cn('mt-3 text-sm', className)} {...rest}>
+      {children}
+    </span>
+  );
+}
+
+export function Subtitle(props: CardTitleProps) {
+  const { className, children, ...rest } = props;
+
+  return (
+    <span className={cn('mt-1 text-text-gray text-sm', className)} {...rest}>
       {children}
     </span>
   );
@@ -58,4 +65,5 @@ export const Card = {
   ImageContainer,
   Image,
   Title,
+  Subtitle,
 };

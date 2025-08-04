@@ -1,4 +1,4 @@
-import { SpotifySvgIcon } from '@/ui/components/icons/spotify-svg-icon';
+import { SpotifySvgIcon } from '@/components/icons/spotify-svg-icon';
 import React from 'react';
 
 export function Header() {
