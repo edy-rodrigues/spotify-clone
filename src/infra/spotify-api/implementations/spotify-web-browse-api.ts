@@ -2,7 +2,7 @@ import {
   AbstractSpotifyBrowseApi,
   AbstractSpotifyBrowseApiProps,
 } from '@/infra/spotify-api/abstract-spotify-browse-api';
-import { MaxInt, SpotifyApi } from '@spotify/web-api-ts-sdk';
+import { MaxInt, NewReleases, SpotifyApi } from '@spotify/web-api-ts-sdk';
 
 interface SpotifyWebRecommendationsApiConstructorProps {
   client: SpotifyApi;
@@ -17,7 +17,7 @@ export class SpotifyWebBrowseApi implements AbstractSpotifyBrowseApi {
 
   public async getNewReleases(
     props: AbstractSpotifyBrowseApiProps['getNewReleases'] = {},
-  ): Promise<object> {
+  ): Promise<NewReleases> {
     const { country, limit, offset } = props;
 
     return this.client.browse.getNewReleases(country, limit as MaxInt<50>, offset);
