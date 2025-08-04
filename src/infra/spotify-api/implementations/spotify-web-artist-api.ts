@@ -1,5 +1,5 @@
 import { AbstractSpotifyArtistApi } from '@/infra/spotify-api/abstract-spotify-artist-api';
-import { Artist, SpotifyApi } from '@spotify/web-api-ts-sdk';
+import { Artist, Artists, SpotifyApi } from '@spotify/web-api-ts-sdk';
 
 interface SpotifyWebArtistApiConstructorProps {
   client: SpotifyApi;
@@ -10,6 +10,18 @@ export class SpotifyWebArtistApi implements AbstractSpotifyArtistApi {
 
   public constructor(props: SpotifyWebArtistApiConstructorProps) {
     this.client = props.client;
+  }
+
+  public async getByIds(ids: string[]): Promise<Artist[]> {
+    const searchParams = new URLSearchParams();
+    searchParams.append('ids', ids.join(','));
+
+    const response = await this.client.makeRequest<Artists>(
+      'GET',
+      `artists?${searchParams.toString()}`,
+    );
+
+    return response.artists;
   }
 
   public async get(id: string): Promise<Artist> {
