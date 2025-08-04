@@ -1,20 +1,20 @@
 import { cn } from '@/utils/cn';
 import NextImage, { ImageProps } from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
-export type CardRootProps = React.HTMLAttributes<HTMLAnchorElement>;
+export type CardRootProps = Readonly<React.ComponentProps<typeof Link>>;
 
 function Root(props: CardRootProps) {
   const { className, children, ...rest } = props;
 
   return (
-    <a
-      href="#"
+    <Link
       className={cn('flex flex-col p-3 hover:bg-background-highlight rounded-[6px]', className)}
       {...rest}
     >
       {children}
-    </a>
+    </Link>
   );
 }
 
