@@ -1,9 +1,6 @@
 // The code below imports any other important files to configure the app
 import '@/setup';
 
-import { Footer } from '@/app/_components/footer';
-import { Header } from '@/app/_components/header';
-
 import type { Metadata } from 'next';
 import React from 'react';
 
@@ -103,13 +100,7 @@ export default function RootLayout(props: RootLayoutProps) {
           crossOrigin="anonymous"
         />
       </head>
-      <body className="antialiased">
-        <Header />
-        <div className="left-sidebar bg-amber-300 rounded-lg hidden lg:flex">Your library</div>
-        {children}
-        <div className="right-sidebar bg-purple-700 rounded-lg hidden">Right sidebar</div>
-        <Footer />
-      </body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

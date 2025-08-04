@@ -38,7 +38,7 @@ export default async function Home() {
             <CarouselContent>
               {newReleases.albums.items.map((album) => (
                 <CarouselItem className="basis-1/8" key={album.id}>
-                  <Card.Root>
+                  <Card.Root href={`/albums/${album.id}`}>
                     <Card.ImageContainer>
                       <Card.Image src={album.images[0].url} alt={album.name} sizes="300x300" />
                     </Card.ImageContainer>
