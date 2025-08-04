@@ -35,6 +35,7 @@ export async function Playlist(props: PlaylistProps) {
         className="[&>.carousel-content]:-mx-10 [&>.carousel-content]:pr-10"
         opts={{
           slidesToScroll: 6,
+          watchDrag: false,
         }}
       >
         <CarouselContent className="m-0 ml-10">
