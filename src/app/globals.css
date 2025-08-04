@@ -371,7 +371,6 @@
   h1 {
     font-family: CircularSpVietnameseTitle, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, sans-serif;
     font-weight: 700;
-    font-size: 48px;
   }
 
   h2 {
@@ -383,7 +382,6 @@
   p {
     font-family: CircularSpVietnamese, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, sans-serif;
     font-weight: 400;
-    font-size: 14px;
   }
 
   body {

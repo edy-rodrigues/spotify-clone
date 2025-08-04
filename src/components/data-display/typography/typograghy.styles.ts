@@ -3,8 +3,8 @@ import { cva } from 'class-variance-authority';
 export const typographyStyles = cva('font-bold', {
   variants: {
     variant: {
-      h1: 'text-sm min-md:text-2xl',
-      h2: 'text-sm min-md:text-xl',
+      h1: 'text-sm min-md:text-4xl',
+      h2: 'text-sm min-md:text-2xl',
       h3: 'text-sm min-md:text-lg',
       h4: 'text-sm min-md:text-base',
       h5: 'text-xs min-md:text-sm font-semibold',
