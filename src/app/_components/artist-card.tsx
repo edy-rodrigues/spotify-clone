@@ -12,7 +12,7 @@ export async function ArtistCard(props: ArtistCardProps) {
 
   return (
     <CarouselItem className="basis-1/8 min-w-[177px] p-0">
-      <Card.Root key={artist.id}>
+      <Card.Root href={`/artists/${artist.id}`} key={artist.id}>
         <Card.ImageContainer>
           <Card.Image
             className="rounded-full"
