@@ -1,6 +1,8 @@
 import { Typography } from '@/components/data-display/typography/typography';
 import { SpotifySvgIcon } from '@/components/icons/spotify-svg-icon';
+import { Button } from '@/components/ui/button';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Página não encontrada',
@@ -17,6 +19,12 @@ export default function NotFound() {
       <Typography variant="body1" className="text-text-gray text-md">
         Não encontramos a página que você queria.
       </Typography>
+      <Button className="mt-10" size="lg" asChild>
+        <Link href="/">Início</Link>
+      </Button>
+      <Button className="mt-6" size="lg" variant="link" asChild>
+        <Link href="/">Ajuda</Link>
+      </Button>
     </div>
   );
 }
