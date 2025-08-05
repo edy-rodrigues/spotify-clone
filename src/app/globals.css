@@ -239,6 +239,7 @@
 }
 
 :root {
+  --font-title: CircularSpVietnameseTitle, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, sans-serif;
   --color-white: #ffffff;
   --color-black: #000000;
   --color-primary-main: #1ed760;
@@ -283,6 +284,7 @@
 }
 
 @theme inline {
+  --font-title: var(--font-title);
   --color-primary-main: var(--color-primary-main);
   --color-background-default: var(--background-default);
   --color-background-elevation-1: var(--background-elevation-1);
