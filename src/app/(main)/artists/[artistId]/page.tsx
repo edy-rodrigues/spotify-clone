@@ -1,5 +1,8 @@
 import { VerifiedAccountIcon } from '@/app/(main)/artists/[artistId]/_components/verified-account-icon';
 import { Typography } from '@/components/data-display/typography/typography';
+import { MoreIcon } from '@/components/icons/more-icon';
+import { PlayIcon } from '@/components/icons/play-icon';
+import { Button } from '@/components/ui/button';
 import { SpotifyApiFactory } from '@/infra/spotify-api/spotify-api-factory';
 import Image from 'next/image';
 
@@ -34,7 +37,7 @@ export default async function ArtistPage(props: ArtistPageProps) {
         <div className="absolute left-6 bottom-6 z-20">
           <span className="flex items-center gap-2">
             <span>
-              <VerifiedAccountIcon className="fill-icon-fill h-6 w-6" />
+              <VerifiedAccountIcon className="fill-icon-fill size-6" />
             </span>
             <Typography className="text-sm font-text-2">Artista verificado</Typography>
           </span>
@@ -46,6 +49,22 @@ export default async function ArtistPage(props: ArtistPageProps) {
             Grau de popularidade {artist.popularity}
           </Typography>
         </div>
+      </div>
+      <div className="flex flex-col">
+        <div className="flex items-center gap-6 p-6">
+          <Button size="icon" color="primary" className="size-14">
+            <PlayIcon className="size-6" />
+          </Button>
+          <Button variant="outline">Seguir</Button>
+          <Button size="icon" color="transparent">
+            <MoreIcon className="size-8" />
+          </Button>
+        </div>
+      </div>
+      <div className="px-6 mt-4">
+        <Typography variant="h2" className="mb-2">
+          Álbuns
+        </Typography>
       </div>
     </div>
   );
