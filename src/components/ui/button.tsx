@@ -12,10 +12,15 @@ export const buttonVariants = cva(
         destructive:
           'bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60',
         outline:
-          'border bg-background shadow-xs hover:bg-accent dark:bg-input/30 dark:border-input dark:hover:bg-input/50',
+          'border border-divider bg-transparent rounded-[48px] shadow-xs hover:scale-104 hover:border-white dark:bg-input/30 dark:border-input dark:hover:bg-input/50',
         secondary: 'bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80',
         ghost: 'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50',
         link: 'text-white underline-offset-4 hover:underline',
+      },
+      color: {
+        default: 'bg-white',
+        primary: 'bg-primary-main',
+        transparent: 'bg-transparent',
       },
       size: {
         default: 'h-9 px-4 py-2 has-[>svg]:px-3',
@@ -25,9 +30,22 @@ export const buttonVariants = cva(
       },
     },
     defaultVariants: {
+      color: 'default',
       variant: 'default',
       size: 'default',
     },
+    compoundVariants: [
+      {
+        color: 'default',
+        variant: 'outline',
+        class: 'bg-transparent',
+      },
+      {
+        size: 'icon',
+        color: 'transparent',
+        class: 'fill-divider hover:fill-white',
+      },
+    ],
   },
 );
 
@@ -37,14 +55,14 @@ type ButtonProps = React.ComponentProps<'button'> &
   };
 
 export function Button(props: ButtonProps) {
-  const { className, variant, size, asChild = false, ...rest } = props;
+  const { className, variant, size, color, asChild = false, ...rest } = props;
 
   const Comp = asChild ? Slot : 'button';
 
   return (
     <Comp
       data-slot="button"
-      className={cn(buttonVariants({ variant, size, className }))}
+      className={cn(buttonVariants({ variant, color, size, className }))}
       {...rest}
     />
   );
