@@ -293,6 +293,7 @@
   --background-elevation-2: #1f1f1f;
   --background-elevation-3: #2a2a2a;
   --background-highlight: #1f1f1f;
+  --divider: #7c7c7c;
   --background-noise: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=");
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -334,6 +335,7 @@
   --font-text-2: var(--font-text-2);
   --color-primary-main: var(--color-primary-main);
   --color-icon-fill: var(--color-icon-fill);
+  --color-divider: var(--divider);
   --color-background-default: var(--background-default);
   --color-background-elevation-1: var(--background-elevation-1);
   --color-background-elevation-2: var(--background-elevation-2);
