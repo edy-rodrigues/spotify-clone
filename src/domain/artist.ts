@@ -9,11 +9,11 @@ export class Artist {
     this.spotifyArtist = spotifyArtist;
   }
 
-  public get id(): string {
+  public get id(): SpotifyArtist['id'] {
     return this.spotifyArtist.id;
   }
 
-  public get name(): string {
+  public get name(): SpotifyArtist['name'] {
     return this.spotifyArtist.name;
   }
 
@@ -21,5 +21,19 @@ export class Artist {
     const imageUrl = this.spotifyArtist.images.find((image) => image.width === 320)?.url;
 
     return imageUrl || IMAGE_FALLBACK;
+  }
+
+  public get image640x640(): string {
+    const imageUrl = this.spotifyArtist.images.find((image) => image.width === 640)?.url;
+
+    return imageUrl || IMAGE_FALLBACK;
+  }
+
+  public get followers(): SpotifyArtist['followers'] {
+    return this.spotifyArtist.followers;
+  }
+
+  public get popularity(): SpotifyArtist['popularity'] {
+    return this.spotifyArtist.popularity;
   }
 }
