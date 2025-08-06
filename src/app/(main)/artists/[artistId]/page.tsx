@@ -18,6 +18,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
+import { Artist } from '@/domain/artist';
 import { SpotifyApiFactory } from '@/infra/spotify-api/spotify-api-factory';
 import Image from 'next/image';
 import React from 'react';
@@ -35,7 +36,9 @@ export default async function ArtistPage(props: ArtistPageProps) {
 
   const spotifyApi = SpotifyApiFactory.create();
 
-  const artist = await spotifyApi.artists.get(artistId);
+  const spotifyArtist = await spotifyApi.artists.get(artistId);
+  const artist = new Artist(spotifyArtist);
+
   const albums = await spotifyApi.artists.albums({
     artistId,
   });
@@ -51,7 +54,7 @@ export default async function ArtistPage(props: ArtistPageProps) {
     <div className="main-view rounded-lg overflow-x-hidden min-h-full flex-1 before:content[none] pb-6">
       <section className="relative h-[40vh] before:absolute before:inset-0 before:content-[''] before:bg-[linear-gradient(transparent_0,rgba(0,0,0,0.5)_100%),var(--background-noise)] before:z-10">
         <Image
-          src="https://i.scdn.co/image/ab6761610000e5eb30f0dc81183daaee971c2601"
+          src={artist.image640x640}
           alt="Henrique & Juliano"
           sizes="640x640"
           fill
