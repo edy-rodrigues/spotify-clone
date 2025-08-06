@@ -102,7 +102,7 @@ export function AlbumsTable() {
           ))}
         </TableBody>
       </Table>
-      <div className="flex items-center mt-3">
+      <div className="flex items-center mt-5">
         <Pagination className="mx-0 justify-start w-fit">
           <PaginationContent className="gap-3">
             <PaginationItem>
