@@ -9,7 +9,7 @@ export function MoreIcon(props: MoreIconProps) {
   return (
     <svg
       aria-hidden="true"
-      className={cn(className)}
+      className={cn('fill-white', className)}
       data-encore-id="icon"
       viewBox="0 0 24 24"
       {...rest}
