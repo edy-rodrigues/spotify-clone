@@ -16,7 +16,7 @@ export default function NotFound() {
       <Typography variant="h1" className="mb-4 min-md:text-5xl">
         Página não encontrada
       </Typography>
-      <Typography variant="body1" className="text-text-gray text-md">
+      <Typography variant="body1" className="text-text-gray text-base">
         Não encontramos a página que você queria.
       </Typography>
       <Button className="mt-10" size="lg" asChild>
