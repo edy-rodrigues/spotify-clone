@@ -9,7 +9,7 @@ export function ChevronLeftIcon(props: ChevronLeftIconProps) {
   return (
     <svg
       aria-hidden="true"
-      className={cn(className)}
+      className={cn('fill-white', className)}
       data-encore-id="icon"
       viewBox="0 0 16 16"
       {...rest}
