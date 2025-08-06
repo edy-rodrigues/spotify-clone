@@ -36,6 +36,9 @@ export default async function ArtistPage(props: ArtistPageProps) {
   const spotifyApi = SpotifyApiFactory.create();
 
   const artist = await spotifyApi.artists.get(artistId);
+  const albums = await spotifyApi.artists.albums({
+    artistId,
+  });
   const newReleases = await spotifyApi.browse.getNewReleases({
     country: 'BR',
     limit: 6,
@@ -85,7 +88,7 @@ export default async function ArtistPage(props: ArtistPageProps) {
         <Typography variant="h2" className="mb-2">
           Álbuns
         </Typography>
-        <AlbumsTable />
+        <AlbumsTable albums={albums} />
       </section>
       <section className="px-6 pb-6 mt-10">
         <Typography variant="h2" className="mb-2">
