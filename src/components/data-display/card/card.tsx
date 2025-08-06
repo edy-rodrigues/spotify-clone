@@ -1,3 +1,5 @@
+import { PlayIcon } from '@/components/icons/play-icon';
+import { Button } from '@/components/ui/button';
 import { cn } from '@/utils/cn';
 import NextImage, { ImageProps } from 'next/image';
 import Link from 'next/link';
@@ -5,12 +7,15 @@ import React from 'react';
 
 export type CardRootProps = Readonly<React.ComponentProps<typeof Link>>;
 
-function Root(props: CardRootProps) {
+export function CardRoot(props: CardRootProps) {
   const { className, children, ...rest } = props;
 
   return (
     <Link
-      className={cn('flex flex-col p-3 hover:bg-background-highlight rounded-[6px]', className)}
+      className={cn(
+        'group flex flex-col p-3 hover:bg-background-highlight rounded-[6px]',
+        className,
+      )}
       {...rest}
     >
       {children}
@@ -20,7 +25,7 @@ function Root(props: CardRootProps) {
 
 export type CardImageContainerProps = React.HTMLAttributes<HTMLDivElement>;
 
-function ImageContainer(props: CardImageContainerProps) {
+export function CardImageContainer(props: CardImageContainerProps) {
   const { className, children, ...rest } = props;
 
   return (
@@ -32,7 +37,7 @@ function ImageContainer(props: CardImageContainerProps) {
 
 export type CardImageProps = ImageProps;
 
-export function Image(props: CardImageProps) {
+export function CardImage(props: CardImageProps) {
   const { className, alt, ...rest } = props;
 
   return <NextImage alt={alt} fill className={cn('rounded-[6px]', className)} {...rest} />;
@@ -40,7 +45,7 @@ export function Image(props: CardImageProps) {
 
 type CardTitleProps = React.HTMLAttributes<HTMLSpanElement>;
 
-export function Title(props: CardTitleProps) {
+export function CardTitle(props: CardTitleProps) {
   const { className, children, ...rest } = props;
 
   return (
@@ -50,7 +55,7 @@ export function Title(props: CardTitleProps) {
   );
 }
 
-export function Subtitle(props: CardTitleProps) {
+export function CardSubtitle(props: CardTitleProps) {
   const { className, children, ...rest } = props;
 
   return (
@@ -60,10 +65,30 @@ export function Subtitle(props: CardTitleProps) {
   );
 }
 
+type CardButtonProps = React.ComponentProps<typeof Button>;
+
+export function CardPlayButton(props: CardButtonProps) {
+  const { className, ...rest } = props;
+
+  return (
+    <Button
+      className={cn(
+        'absolute bottom-2 right-2 flex size-12 translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100',
+        className,
+      )}
+      {...rest}
+      size="icon"
+      color="primary"
+    >
+      <PlayIcon className="size-6" />
+    </Button>
+  );
+}
+
 export const Card = {
-  Root,
-  ImageContainer,
-  Image,
-  Title,
-  Subtitle,
+  Root: CardRoot,
+  ImageContainer: CardImageContainer,
+  Image: CardImage,
+  Title: CardTitle,
+  Subtitle: CardSubtitle,
 };
