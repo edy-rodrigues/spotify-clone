@@ -62,7 +62,7 @@ export default async function ArtistPage(props: ArtistPageProps) {
           </Button>
         </div>
       </div>
-      <div className="px-6 mt-4">
+      <div className="px-6 pb-6 mt-4">
         <Typography variant="h2" className="mb-2">
           Álbuns
         </Typography>
