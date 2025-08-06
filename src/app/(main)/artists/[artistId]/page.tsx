@@ -1,11 +1,26 @@
 import { AlbumsTable } from '@/app/(main)/artists/[artistId]/_components/albums-table';
 import { VerifiedAccountIcon } from '@/app/(main)/artists/[artistId]/_components/verified-account-icon';
+import {
+  CardImage,
+  CardImageContainer,
+  CardPlayButton,
+  CardRoot,
+  CardTitle,
+} from '@/components/data-display/card';
 import { Typography } from '@/components/data-display/typography/typography';
 import { MoreIcon } from '@/components/icons/more-icon';
 import { PlayIcon } from '@/components/icons/play-icon';
 import { Button } from '@/components/ui/button';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
 import { SpotifyApiFactory } from '@/infra/spotify-api/spotify-api-factory';
 import Image from 'next/image';
+import React from 'react';
 
 type ArtistPageProps = {
   params: Promise<{
@@ -21,13 +36,17 @@ export default async function ArtistPage(props: ArtistPageProps) {
   const spotifyApi = SpotifyApiFactory.create();
 
   const artist = await spotifyApi.artists.get(artistId);
+  const newReleases = await spotifyApi.browse.getNewReleases({
+    country: 'BR',
+    limit: 6,
+  });
 
   const formatter = new Intl.NumberFormat('pt-BR');
   const followersCount = formatter.format(artist.followers.total);
 
   return (
-    <div className="main-view rounded-lg overflow-x-hidden min-h-full flex-1 before:content[none]">
-      <div className="relative h-[40vh] before:absolute before:inset-0 before:content-[''] before:bg-[linear-gradient(transparent_0,rgba(0,0,0,0.5)_100%),var(--background-noise)] before:z-10">
+    <div className="main-view rounded-lg overflow-x-hidden min-h-full flex-1 before:content[none] pb-6">
+      <section className="relative h-[40vh] before:absolute before:inset-0 before:content-[''] before:bg-[linear-gradient(transparent_0,rgba(0,0,0,0.5)_100%),var(--background-noise)] before:z-10">
         <Image
           src="https://i.scdn.co/image/ab6761610000e5eb30f0dc81183daaee971c2601"
           alt="Henrique & Juliano"
@@ -50,8 +69,8 @@ export default async function ArtistPage(props: ArtistPageProps) {
             Grau de popularidade {artist.popularity}
           </Typography>
         </div>
-      </div>
-      <div className="flex flex-col">
+      </section>
+      <section className="flex flex-col">
         <div className="flex items-center gap-6 p-6">
           <Button size="icon" color="primary" className="size-14">
             <PlayIcon className="size-6" />
@@ -61,13 +80,117 @@ export default async function ArtistPage(props: ArtistPageProps) {
             <MoreIcon className="size-8" />
           </Button>
         </div>
-      </div>
-      <div className="px-6 pb-6 mt-4">
+      </section>
+      <section className="px-6 mt-4">
         <Typography variant="h2" className="mb-2">
           Álbuns
         </Typography>
         <AlbumsTable />
-      </div>
+      </section>
+      <section className="px-6 pb-6 mt-10">
+        <Typography variant="h2" className="mb-2">
+          Em alta
+        </Typography>
+        <Carousel
+          opts={{
+            slidesToScroll: 6,
+          }}
+        >
+          <CarouselContent>
+            {newReleases.albums.items.map((album) => (
+              <CarouselItem className="basis-1/8" key={album.id}>
+                <CardRoot href={`/albums/${album.id}`}>
+                  <CardImageContainer>
+                    <CardImage src={album.images[0].url} alt={album.name} sizes="300x300" />
+                    <CardPlayButton />
+                  </CardImageContainer>
+                  <CardTitle>{album.artists.map((artist) => artist.name).join(', ')}</CardTitle>
+                </CardRoot>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      </section>
+      <section className="px-6 pb-6 mt-10">
+        <Typography variant="h2" className="mb-2">
+          Em alta
+        </Typography>
+        <Carousel
+          opts={{
+            slidesToScroll: 6,
+          }}
+        >
+          <CarouselContent>
+            {newReleases.albums.items.map((album) => (
+              <CarouselItem className="basis-1/8" key={album.id}>
+                <CardRoot href={`/albums/${album.id}`}>
+                  <CardImageContainer>
+                    <CardImage src={album.images[0].url} alt={album.name} sizes="300x300" />
+                    <CardPlayButton />
+                  </CardImageContainer>
+                  <CardTitle>{album.artists.map((artist) => artist.name).join(', ')}</CardTitle>
+                </CardRoot>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      </section>
+      <section className="px-6 pb-6 mt-10">
+        <Typography variant="h2" className="mb-2">
+          Em alta
+        </Typography>
+        <Carousel
+          opts={{
+            slidesToScroll: 6,
+          }}
+        >
+          <CarouselContent>
+            {newReleases.albums.items.map((album) => (
+              <CarouselItem className="basis-1/8" key={album.id}>
+                <CardRoot href={`/albums/${album.id}`}>
+                  <CardImageContainer>
+                    <CardImage src={album.images[0].url} alt={album.name} sizes="300x300" />
+                    <CardPlayButton />
+                  </CardImageContainer>
+                  <CardTitle>{album.artists.map((artist) => artist.name).join(', ')}</CardTitle>
+                </CardRoot>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      </section>
+      <section className="px-6 pb-6 mt-10">
+        <Typography variant="h2" className="mb-2">
+          Em alta
+        </Typography>
+        <Carousel
+          opts={{
+            slidesToScroll: 6,
+          }}
+        >
+          <CarouselContent>
+            {newReleases.albums.items.map((album) => (
+              <CarouselItem className="basis-1/8" key={album.id}>
+                <CardRoot href={`/albums/${album.id}`}>
+                  <CardImageContainer>
+                    <CardImage src={album.images[0].url} alt={album.name} sizes="300x300" />
+                    <CardPlayButton />
+                  </CardImageContainer>
+                  <CardTitle>{album.artists.map((artist) => artist.name).join(', ')}</CardTitle>
+                </CardRoot>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      </section>
     </div>
   );
 }
