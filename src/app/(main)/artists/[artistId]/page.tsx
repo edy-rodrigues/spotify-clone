@@ -1,3 +1,4 @@
+import { AlbumsTable } from '@/app/(main)/artists/[artistId]/_components/albums-table';
 import { VerifiedAccountIcon } from '@/app/(main)/artists/[artistId]/_components/verified-account-icon';
 import { Typography } from '@/components/data-display/typography/typography';
 import { MoreIcon } from '@/components/icons/more-icon';
@@ -44,7 +45,7 @@ export default async function ArtistPage(props: ArtistPageProps) {
           <Typography variant="h1" className="min-md:text-[96px] font-extrabold">
             {artist.name}
           </Typography>
-          <Typography className="text-md font-text-2">{followersCount} seguidores</Typography>
+          <Typography className="text-base font-text-2">{followersCount} seguidores</Typography>
           <Typography className="text-xs font-text-2">
             Grau de popularidade {artist.popularity}
           </Typography>
@@ -65,6 +66,7 @@ export default async function ArtistPage(props: ArtistPageProps) {
         <Typography variant="h2" className="mb-2">
           Álbuns
         </Typography>
+        <AlbumsTable />
       </div>
     </div>
   );
