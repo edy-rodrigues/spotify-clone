@@ -2,7 +2,15 @@ import {
   AbstractSpotifyArtistApi,
   AbstractSpotifyArtistApiProps,
 } from '@/infra/spotify-api/abstract-spotify-artist-api';
-import { Artist, Artists, Page, SimplifiedAlbum, SpotifyApi } from '@spotify/web-api-ts-sdk';
+import {
+  Artist,
+  Artists,
+  Market,
+  Page,
+  SimplifiedAlbum,
+  SpotifyApi,
+  TopTracksResult,
+} from '@spotify/web-api-ts-sdk';
 
 interface SpotifyWebArtistApiConstructorProps {
   client: SpotifyApi;
@@ -37,5 +45,9 @@ export class SpotifyWebArtistApi implements AbstractSpotifyArtistApi {
     const { artistId, includeGroups, limit, offset } = props;
 
     return this.client.artists.albums(artistId, includeGroups, undefined, limit, offset);
+  }
+
+  public async topTracks(id: string, market: Market): Promise<TopTracksResult> {
+    return this.client.artists.topTracks(id, market);
   }
 }
