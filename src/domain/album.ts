@@ -5,8 +5,8 @@ const IMAGE_FALLBACK = 'https://t.scdn.co/images/728ed47fc1674feb95f7ac20236eb6d
 export class Album {
   private readonly spotifyArtist: SpotifyAlbum;
 
-  public constructor(spotifyArtist: SpotifyAlbum) {
-    this.spotifyArtist = spotifyArtist;
+  public constructor(spotifyAlbum: SpotifyAlbum) {
+    this.spotifyArtist = spotifyAlbum;
   }
 
   public get id(): string {
