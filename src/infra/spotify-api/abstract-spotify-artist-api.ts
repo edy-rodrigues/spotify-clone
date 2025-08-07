@@ -1,4 +1,4 @@
-import { Artist, MaxInt, Page, SimplifiedAlbum } from '@spotify/web-api-ts-sdk';
+import { Artist, MaxInt, Page, SimplifiedAlbum, TopTracksResult } from '@spotify/web-api-ts-sdk';
 
 export interface AbstractSpotifyArtistApiProps {
   albums: {
@@ -15,4 +15,5 @@ export abstract class AbstractSpotifyArtistApi {
   public abstract albums(
     props: AbstractSpotifyArtistApiProps['albums'],
   ): Promise<Page<SimplifiedAlbum>>;
+  public abstract topTracks(id: string, market?: string): Promise<TopTracksResult>;
 }
