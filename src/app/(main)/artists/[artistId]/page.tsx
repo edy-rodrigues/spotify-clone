@@ -65,7 +65,9 @@ export default async function ArtistPage(props: ArtistPageProps) {
           <TopTracks artistId={artistId} />
         </React.Suspense>
       </section>
-      <AlbumsSections artistId={artistId} />
+      <React.Suspense fallback={<div>Carregando...</div>}>
+        <AlbumsSections artistId={artistId} />
+      </React.Suspense>
     </div>
   );
 }

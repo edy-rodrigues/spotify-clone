@@ -24,6 +24,7 @@ export async function TracksOfAlbum(props: TracksOfAlbumProps) {
     limit: Pagination.DEFAULT_LIMIT as MaxInt<50>,
     offset: Pagination.DEFAULT_PAGE,
   });
+  await new Promise((resolve) => setTimeout(resolve, 3000));
 
   return (
     <Carousel

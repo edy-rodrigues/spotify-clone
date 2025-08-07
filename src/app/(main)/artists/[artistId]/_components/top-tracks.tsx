@@ -18,6 +18,7 @@ export async function TopTracks(props: TopTracksProps) {
   const spotifyApi = SpotifyApiFactory.create();
 
   const result = await spotifyApi.artists.topTracks(artistId, 'BR');
+  await new Promise((resolve) => setTimeout(resolve, 3000));
 
   return (
     <Carousel
