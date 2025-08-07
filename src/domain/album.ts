@@ -23,8 +23,18 @@ export class Album {
     return imageUrl || IMAGE_FALLBACK;
   }
 
+  public get image300x300(): string {
+    const imageUrl = this.spotifyArtist.images.find((image) => image.width === 300)?.url;
+
+    return imageUrl || IMAGE_FALLBACK;
+  }
+
   public get albumType(): string {
     return this.spotifyArtist.album_type;
+  }
+
+  public get totalTracks(): number {
+    return this.spotifyArtist.total_tracks;
   }
 
   public get artists(): SimplifiedArtist[] {
