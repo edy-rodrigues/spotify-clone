@@ -92,7 +92,7 @@ export async function AlbumsTable(props: AlbumsTableProps) {
                     <Button size="icon" color="transparent" className="table-add-icon opacity-0">
                       <AddIcon className="size-4" />
                     </Button>
-                    <Typography className="text-sm text-text-gray">2:30</Typography>
+                    <Typography className="text-sm text-text-gray">{album.albumType}</Typography>
                     <Button
                       size="icon"
                       color="transparent"
