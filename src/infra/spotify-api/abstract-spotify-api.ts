@@ -1,3 +1,4 @@
+import { AbstractSpotifyAlbumApi } from '@/infra/spotify-api/abstract-spotify-album-api';
 import { AbstractSpotifyArtistApi } from '@/infra/spotify-api/abstract-spotify-artist-api';
 import { AbstractSpotifyBrowseApi } from '@/infra/spotify-api/abstract-spotify-browse-api';
 import { ItemTypes, Market, MaxInt, SearchResults } from '@spotify/web-api-ts-sdk';
@@ -19,4 +20,5 @@ export abstract class AbstractSpotifyApi {
   ): Promise<SearchResults<readonly ItemTypes[]>>;
   public abstract browse: AbstractSpotifyBrowseApi;
   public abstract artists: AbstractSpotifyArtistApi;
+  public abstract albums: AbstractSpotifyAlbumApi;
 }
