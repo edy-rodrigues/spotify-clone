@@ -1,3 +1,4 @@
+import { AlbumsSections } from '@/app/(main)/artists/[artistId]/_components/albums-sections';
 import { AlbumsTable } from '@/app/(main)/artists/[artistId]/_components/albums-table';
 import { Banner } from '@/app/(main)/artists/[artistId]/_components/banner';
 import { TopTracks } from '@/app/(main)/artists/[artistId]/_components/top-tracks';
@@ -56,38 +57,15 @@ export default async function ArtistPage(props: ArtistPageProps) {
           <AlbumsTable page={validPage} limit={validLimit} artistId={artistId} />
         </React.Suspense>
       </section>
-      <section className="px-6 pb-6 mt-10">
+      <section className="px-6 mt-10">
         <Typography variant="h2" className="mb-2">
-          Em alta
+          Lançamentos populares
         </Typography>
         <React.Suspense fallback={<div>Carregando...</div>}>
           <TopTracks artistId={artistId} />
         </React.Suspense>
       </section>
-      <section className="px-6 pb-6 mt-10">
-        <Typography variant="h2" className="mb-2">
-          Em alta
-        </Typography>
-        <React.Suspense fallback={<div>Carregando...</div>}>
-          <TopTracks artistId={artistId} />
-        </React.Suspense>
-      </section>
-      <section className="px-6 pb-6 mt-10">
-        <Typography variant="h2" className="mb-2">
-          Em alta
-        </Typography>
-        <React.Suspense fallback={<div>Carregando...</div>}>
-          <TopTracks artistId={artistId} />
-        </React.Suspense>
-      </section>
-      <section className="px-6 pb-6 mt-10">
-        <Typography variant="h2" className="mb-2">
-          Em alta
-        </Typography>
-        <React.Suspense fallback={<div>Carregando...</div>}>
-          <TopTracks artistId={artistId} />
-        </React.Suspense>
-      </section>
+      <AlbumsSections artistId={artistId} />
     </div>
   );
 }
