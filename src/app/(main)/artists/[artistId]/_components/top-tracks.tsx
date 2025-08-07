@@ -1,4 +1,4 @@
-import { TopTracksCard } from '@/app/(main)/artists/[artistId]/_components/top-tracks-card';
+import { TrackCard } from '@/app/(main)/artists/[artistId]/_components/track-card';
 import {
   Carousel,
   CarouselContent,
@@ -29,7 +29,7 @@ export async function TopTracks(props: TopTracksProps) {
     >
       <CarouselContent className="m-0 ml-4">
         {result.tracks.map((track) => (
-          <TopTracksCard key={track.id} track={track} />
+          <TrackCard key={track.id} track={track} album={track.album} />
         ))}
       </CarouselContent>
       <CarouselPrevious />

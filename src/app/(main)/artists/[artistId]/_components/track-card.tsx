@@ -8,23 +8,24 @@ import {
 } from '@/components/data-display/card';
 import { CarouselItem } from '@/components/ui/carousel';
 import { Album } from '@/domain/album';
-import { Track } from '@spotify/web-api-ts-sdk';
+import { SimplifiedAlbum, SimplifiedTrack } from '@spotify/web-api-ts-sdk';
 import React from 'react';
 
-type TopTracksCardProps = {
-  track: Track;
+type TracksCardProps = {
+  track: SimplifiedTrack;
+  album: SimplifiedAlbum;
 };
 
-export function TopTracksCard(props: TopTracksCardProps) {
-  const { track } = props;
+export function TrackCard(props: TracksCardProps) {
+  const { track, album: spotifyAlbum } = props;
 
-  const album = new Album(track.album);
+  const album = new Album(spotifyAlbum);
 
   return (
     <CarouselItem className="basis-1/8 min-w-[177px] p-0">
       <CardRoot href={`/tracks/${track.id}`}>
         <CardImageContainer>
-          <CardImage src={album.image300x300} alt={track.album.name} sizes="300x300" />
+          <CardImage src={album.image300x300} alt={album.name} sizes="300x300" />
           <CardPlayButton />
         </CardImageContainer>
         <CardTitle>{track.name}</CardTitle>
