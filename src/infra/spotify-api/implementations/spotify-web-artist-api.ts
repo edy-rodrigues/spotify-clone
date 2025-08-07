@@ -12,9 +12,9 @@ import {
   TopTracksResult,
 } from '@spotify/web-api-ts-sdk';
 
-interface SpotifyWebArtistApiConstructorProps {
+type SpotifyWebArtistApiConstructorProps = {
   client: SpotifyApi;
-}
+};
 
 export class SpotifyWebArtistApi implements AbstractSpotifyArtistApi {
   private readonly client: SpotifyApi;

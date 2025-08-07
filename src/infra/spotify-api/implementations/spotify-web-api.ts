@@ -1,9 +1,11 @@
+import { AbstractSpotifyAlbumApi } from '@/infra/spotify-api/abstract-spotify-album-api';
 import {
   AbstractSpotifyApi,
   AbstractSpotifyApiProps,
 } from '@/infra/spotify-api/abstract-spotify-api';
 import { AbstractSpotifyArtistApi } from '@/infra/spotify-api/abstract-spotify-artist-api';
 import { AbstractSpotifyBrowseApi } from '@/infra/spotify-api/abstract-spotify-browse-api';
+import { SpotifyWebAlbumApi } from '@/infra/spotify-api/implementations/spotify-web-album-api';
 import { SpotifyWebArtistApi } from '@/infra/spotify-api/implementations/spotify-web-artist-api';
 import { SpotifyWebBrowseApi } from '@/infra/spotify-api/implementations/spotify-web-browse-api';
 import { EnvConfiguration } from '@/server/env/env-configuration';
@@ -13,6 +15,7 @@ export class SpotifyWebApi implements AbstractSpotifyApi {
   private readonly client: SpotifyApi;
   public readonly browse: AbstractSpotifyBrowseApi;
   public readonly artists: AbstractSpotifyArtistApi;
+  public readonly albums: AbstractSpotifyAlbumApi;
 
   public constructor() {
     const envConfig = EnvConfiguration.getInstance();
@@ -21,11 +24,16 @@ export class SpotifyWebApi implements AbstractSpotifyApi {
 
     this.client = SpotifyApi.withClientCredentials(clientId, clientSecret);
 
+    const { client } = this;
+
     this.browse = new SpotifyWebBrowseApi({
-      client: this.client,
+      client,
     });
     this.artists = new SpotifyWebArtistApi({
-      client: this.client,
+      client,
+    });
+    this.albums = new SpotifyWebAlbumApi({
+      client,
     });
   }
 
