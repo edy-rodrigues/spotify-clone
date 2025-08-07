@@ -34,7 +34,6 @@ export function AlbumsPagination(props: AlbumsPaginationProps) {
   }
 
   if (totalItems === 0) {
-    // TODO: Add empty state UI
     return null;
   }
 
