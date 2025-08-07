@@ -1,6 +1,10 @@
 import { AlbumsSections } from '@/app/(main)/artists/[artistId]/_components/albums-sections';
 import { AlbumsTable } from '@/app/(main)/artists/[artistId]/_components/albums-table';
 import { Banner } from '@/app/(main)/artists/[artistId]/_components/banner';
+import { AlbumTableSkeleton } from '@/app/(main)/artists/[artistId]/_components/loading-components/album-table-skeleton';
+import { AlbumsSectionsSkeleton } from '@/app/(main)/artists/[artistId]/_components/loading-components/albums-sections-skeleton';
+import { BannerSkeleton } from '@/app/(main)/artists/[artistId]/_components/loading-components/banner-skeleton';
+import { CarouselSkeleton } from '@/app/(main)/artists/[artistId]/_components/loading-components/carousel-skeleton';
 import { TopTracks } from '@/app/(main)/artists/[artistId]/_components/top-tracks';
 import { Typography } from '@/components/data-display/typography/typography';
 import { MoreIcon } from '@/components/icons/more-icon';
@@ -34,7 +38,7 @@ export default async function ArtistPage(props: ArtistPageProps) {
   return (
     <div className="main-view rounded-lg min-h-full flex-1 before:content[none] pb-6">
       <section className="relative h-[40vh] before:absolute before:inset-0 before:content-[''] before:bg-[linear-gradient(transparent_0,rgba(0,0,0,0.5)_100%),var(--background-noise)] before:z-10">
-        <React.Suspense fallback={<div>Carregando...</div>}>
+        <React.Suspense fallback={<BannerSkeleton />}>
           <Banner artistId={artistId} />
         </React.Suspense>
       </section>
@@ -53,7 +57,7 @@ export default async function ArtistPage(props: ArtistPageProps) {
         <Typography variant="h2" className="mb-2">
           Álbuns
         </Typography>
-        <React.Suspense fallback={<div>Carregando...</div>}>
+        <React.Suspense fallback={<AlbumTableSkeleton />}>
           <AlbumsTable page={validPage} limit={validLimit} artistId={artistId} />
         </React.Suspense>
       </section>
@@ -61,11 +65,11 @@ export default async function ArtistPage(props: ArtistPageProps) {
         <Typography variant="h2" className="mb-2">
           Lançamentos populares
         </Typography>
-        <React.Suspense fallback={<div>Carregando...</div>}>
+        <React.Suspense fallback={<CarouselSkeleton />}>
           <TopTracks artistId={artistId} />
         </React.Suspense>
       </section>
-      <React.Suspense fallback={<div>Carregando...</div>}>
+      <React.Suspense fallback={<AlbumsSectionsSkeleton />}>
         <AlbumsSections artistId={artistId} />
       </React.Suspense>
     </div>
