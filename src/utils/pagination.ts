@@ -16,8 +16,8 @@ type PaginationProps = {
 };
 
 export class Pagination {
-  public static DEFAULT_PAGE = 20;
-  public static DEFAULT_LIMIT = 1;
+  public static DEFAULT_PAGE = 1;
+  public static DEFAULT_LIMIT = 20;
   private readonly props: PaginationProps['props'];
 
   public constructor(props: PaginationProps['constructor']) {
