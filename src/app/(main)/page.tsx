@@ -1,4 +1,4 @@
-import { Playlist } from '@/app/_components/playlist';
+import { Playlist } from '@/app/(main)/_components/playlist';
 import { Typography } from '@/components/data-display/typography/typography';
 import {
   Carousel,

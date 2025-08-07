@@ -1,4 +1,4 @@
-import { ArtistCard } from '@/app/_components/artist-card';
+import { ArtistCard } from '@/app/(main)/_components/artist-card';
 import { Typography } from '@/components/data-display/typography/typography';
 import {
   Carousel,
