@@ -1,28 +1,41 @@
+import { AlbumsPagination } from '@/app/(main)/artists/[artistId]/_components/albums-pagination';
 import { Typography } from '@/components/data-display/typography/typography';
 import { AddIcon } from '@/components/icons/add-icon';
 import { MoreIcon } from '@/components/icons/more-icon';
 import { PlayIcon } from '@/components/icons/play-icon';
 import { Button } from '@/components/ui/button';
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationNext,
-  PaginationPrevious,
-} from '@/components/ui/pagination';
 import { Table, TableBody, TableCell, TableRow } from '@/components/ui/table';
 import { Album } from '@/domain/album';
-import { Page, SimplifiedAlbum } from '@spotify/web-api-ts-sdk';
+import { SpotifyApiFactory } from '@/infra/spotify-api/spotify-api-factory';
+import { Pagination } from '@/utils/pagination';
+import { MaxInt } from '@spotify/web-api-ts-sdk';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
 type AlbumsTableProps = {
-  albums: Page<SimplifiedAlbum>;
+  page: number;
+  limit: number;
+  artistId: string;
 };
 
-export function AlbumsTable(props: AlbumsTableProps) {
-  const { albums } = props;
+export async function AlbumsTable(props: AlbumsTableProps) {
+  const { artistId, page, limit } = props;
+
+  const spotifyApi = SpotifyApiFactory.create();
+
+  const albums = await spotifyApi.artists.albums({
+    artistId,
+    limit: limit as MaxInt<50>,
+    offset: (page - 1) * limit,
+  });
+  await new Promise((resolve) => setTimeout(resolve, 3000));
+
+  const pagination = new Pagination({
+    page: albums,
+    currentPage: page,
+    itemsPerPage: limit,
+  });
 
   return (
     <div>
@@ -94,19 +107,7 @@ export function AlbumsTable(props: AlbumsTableProps) {
           })}
         </TableBody>
       </Table>
-      <div className="flex items-center mt-5">
-        <Pagination className="mx-0 justify-start w-fit">
-          <PaginationContent className="gap-3">
-            <PaginationItem>
-              <PaginationPrevious href="#" />
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationNext href="#" />
-            </PaginationItem>
-          </PaginationContent>
-        </Pagination>
-        <Typography className="whitespace-nowrap ml-3 text-text-gray">Página 1 de 10</Typography>
-      </div>
+      <AlbumsPagination pagination={pagination} artistId={artistId} />
     </div>
   );
 }
