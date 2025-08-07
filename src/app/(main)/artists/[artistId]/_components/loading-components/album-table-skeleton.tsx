@@ -51,7 +51,7 @@ export function AlbumTableSkeleton() {
       <div className="flex items-center gap-4 mt-4">
         <span className="size-6 bg-gray-400 rounded-full" />
         <span className="size-6 bg-gray-400 rounded-full" />
-        <span className="h-4 w-10 bg-gray-400 rounded-lg" />
+        <span className="h-4 w-20 bg-gray-400 rounded-lg" />
       </div>
     </div>
   );
