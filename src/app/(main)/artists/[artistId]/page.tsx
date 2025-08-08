@@ -36,7 +36,7 @@ export default async function ArtistPage(props: ArtistPageProps) {
   const validLimit = isNaN(limit) ? Pagination.DEFAULT_LIMIT : limit;
 
   return (
-    <div className="main-view rounded-lg min-h-full flex-1 before:content[none] pb-6">
+    <div className="main-view rounded-lg min-h-full flex-1 before:content-[none] pb-6">
       <section className="relative h-[40vh] before:absolute before:inset-0 before:content-[''] before:bg-[linear-gradient(transparent_0,rgba(0,0,0,0.5)_100%),var(--background-noise)] before:z-10">
         <React.Suspense fallback={<BannerSkeleton />}>
           <Banner artistId={artistId} />
