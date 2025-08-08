@@ -330,6 +330,8 @@
 }
 
 @theme inline {
+  --breakpoint-3xl: 113.75rem;
+  --breakpoint-4xl: 153.75rem;
   --font-title: var(--font-title);
   --font-text: var(--font-text);
   --font-text-2: var(--font-text-2);
