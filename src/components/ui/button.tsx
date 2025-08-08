@@ -4,18 +4,15 @@ import { Slot } from '@radix-ui/react-slot';
 import { cva, type VariantProps } from 'class-variance-authority';
 
 export const buttonVariants = cva(
-  "font-title inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+  "font-title inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer rounded-md text-sm font-medium transition-all duration-50 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
   {
     variants: {
       variant: {
         default: 'bg-white text-black rounded-[48px] hover:scale-104 transform-gpu',
-        destructive:
-          'bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60',
         outline:
           'border border-divider bg-transparent rounded-[48px] shadow-xs hover:scale-104 hover:border-white dark:bg-input/30 dark:border-input dark:hover:bg-input/50',
-        secondary: 'bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80',
-        ghost: 'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50',
-        link: 'text-white underline-offset-4 hover:underline',
+        ghost: 'text-text-gray hover:scale-104 hover:text-white dark:hover:bg-accent/50',
+        link: 'bg-transparent text-white underline-offset-4 hover:underline',
       },
       color: {
         default: 'bg-white',
@@ -25,7 +22,7 @@ export const buttonVariants = cva(
       size: {
         default: 'h-9 px-4 py-2 has-[>svg]:px-3',
         sm: 'h-8 gap-1.5 px-3 has-[>svg]:px-2.5',
-        lg: 'h-12.5 px-8 has-[>svg]:px-4 text-base',
+        lg: 'h-12 px-8 has-[>svg]:px-4 text-base',
         icon: 'size-9',
       },
     },
@@ -44,6 +41,16 @@ export const buttonVariants = cva(
         size: 'icon',
         color: 'transparent',
         class: 'fill-divider hover:fill-white',
+      },
+      {
+        variant: 'link',
+        color: 'default',
+        class: 'bg-transparent',
+      },
+      {
+        variant: 'ghost',
+        color: 'default',
+        class: 'bg-transparent',
       },
     ],
   },
