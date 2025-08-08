@@ -44,7 +44,7 @@ export function AlbumTableRow(props: AlbumTableRowProps) {
         <Link href="#" className="hover:underline">
           <Typography className="text-base truncate">{album.name}</Typography>
         </Link>
-        <div className="flex">
+        <div className="flex items-center">
           {album.artists.map((artist, index) => (
             <React.Fragment key={artist.id}>
               <Link
