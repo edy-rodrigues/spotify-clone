@@ -9,6 +9,8 @@ export const buttonVariants = cva(
     variants: {
       variant: {
         default: 'bg-white text-black rounded-[48px] hover:scale-104 transform-gpu',
+        secondary:
+          'bg-background-elevation-2 text-white rounded-[48px] hover:scale-104 transform-gpu',
         outline:
           'border border-divider bg-transparent rounded-[48px] shadow-xs hover:scale-104 hover:border-white dark:bg-input/30 dark:border-input dark:hover:bg-input/50',
         ghost: 'text-text-gray hover:scale-104 hover:text-white dark:hover:bg-accent/50',
@@ -21,7 +23,7 @@ export const buttonVariants = cva(
       },
       size: {
         default: 'h-9 px-4 py-2 has-[>svg]:px-3',
-        sm: 'h-8 gap-1.5 px-3 has-[>svg]:px-2.5',
+        sm: 'h-8 gap-1.5 px-3 py-1 has-[>svg]:px-2.5 font-base',
         lg: 'h-12 px-8 has-[>svg]:px-4 text-base',
         icon: 'size-9',
       },
@@ -51,6 +53,11 @@ export const buttonVariants = cva(
         variant: 'ghost',
         color: 'default',
         class: 'bg-transparent',
+      },
+      {
+        variant: 'secondary',
+        color: 'default',
+        class: 'bg-background-elevation-4',
       },
     ],
   },
