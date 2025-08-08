@@ -5,24 +5,35 @@ import { SearchIcon } from '@/components/icons/search-icon';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { usePathname, useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDebouncedCallback } from 'use-debounce';
 
 export function SearchInput() {
   const router = useRouter();
   const pathname = usePathname();
 
-  const getQueryFromPath = (path: string): string => {
+  function getQueryFromPath(path: string): string {
     const match = path.match(/^\/search\/(.*)$/);
+
     return match ? decodeURIComponent(match[1]) : '';
-  };
+  }
 
   const [query, setQuery] = useState(getQueryFromPath(pathname));
 
   const handleSearch = useDebouncedCallback((term: string) => {
-    const newPath = term ? `/search/${encodeURIComponent(term)}` : '/';
-    router.push(newPath);
+    if (!term) {
+      return;
+    }
+
+    router.push(`/search/${encodeURIComponent(term)}`);
   }, 500);
+
+  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const { value } = event.target;
+
+    setQuery(value);
+    handleSearch(value);
+  }
 
   useEffect(() => {
     setQuery(getQueryFromPath(pathname));
@@ -35,10 +46,7 @@ export function SearchInput() {
         placeholder="O que você quer ouvir?"
         className="pl-12 py-4 pr-24"
         value={query}
-        onChange={(e) => {
-          setQuery(e.target.value);
-          handleSearch(e.target.value);
-        }}
+        onChange={handleChange}
       />
       <div className="absolute flex items-center right-3 top-3 border-l border-l-text-gray pl-3 transition-colors group-focus-within:border-l-white">
         <Button size="icon" color="transparent" className="size-6 hover:[&>svg]:fill-white">
