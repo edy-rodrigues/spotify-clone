@@ -292,7 +292,8 @@
   --background-elevation-1: #121212;
   --background-elevation-2: #1f1f1f;
   --background-elevation-3: #2a2a2a;
-  --background-highlight: #1f1f1f;
+  --background-elevation-4: #ffffff1a;
+  --background-highlight: var(--background-elevation-2);
   --divider: #7c7c7c;
   --background-noise: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=");
   --radius: 0.625rem;
@@ -342,6 +343,7 @@
   --color-background-elevation-1: var(--background-elevation-1);
   --color-background-elevation-2: var(--background-elevation-2);
   --color-background-elevation-3: var(--background-elevation-3);
+  --color-background-elevation-4: var(--background-elevation-4);
   --color-background-highlight: var(--background-highlight);
   --color-text-gray: var(--color-text-gray);
   --color-sidebar-ring: var(--sidebar-ring);
