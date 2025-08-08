@@ -52,7 +52,7 @@ export const categoriesForHome: CategoriesForHome = {
       pop: {
         label: 'Pop Brasileiro',
         artists: [
-          { id: '4PzYKhC14sTJNEr0dzoo0d', name: 'Anitta' },
+          { id: '7FNnA9vBm6EKceENgCGRMb', name: 'Anitta' },
           { id: '4JNo6Q5KdcRf1vtSX9mB0S', name: 'João Gomes' },
           { id: '6xF3XdxG7VHRmQmTJxRqX8', name: 'Manu Gavassi' },
           { id: '4PzYKhC14sTJNEr0dzoo0d', name: 'Luísa Sonza' },
