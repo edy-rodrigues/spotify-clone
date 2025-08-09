@@ -1,69 +1,29 @@
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/ui/carousel';
-import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
+import { Filters } from '@/app/(main)/search/[term]/_components/filters';
+import { Results } from '@/app/(main)/search/[term]/_components/results';
+import { FilterHandler } from '@/app/(main)/search/[term]/_utils/filter-handler';
 
-export default function SearchPage() {
+type SearchPageProps = Readonly<{
+  params: Promise<{
+    term: string;
+  }>;
+  searchParams: Promise<{
+    filter?: string;
+  }>;
+}>;
+
+export default async function SearchPage(props: SearchPageProps) {
+  const { params, searchParams } = props;
+
+  const { term } = await params;
+  const { filter: filterParams } = await searchParams;
+
+  const filter = FilterHandler.sanitize(filterParams);
+
   return (
     <div className="main-view rounded-lg min-h-full flex-1 before:content-[none] p-6">
       <div className="flex items-center gap-3 flex-wrap">
-        <Carousel
-          className="w-full"
-          opts={{
-            dragFree: true,
-          }}
-        >
-          <ToggleGroup type="single" defaultValue="all" asChild>
-            <CarouselContent className="m-0 gap-2">
-              <CarouselItem className="basis-auto p-0">
-                <ToggleGroupItem value="all" size="sm">
-                  Tudo
-                </ToggleGroupItem>
-              </CarouselItem>
-              <CarouselItem className="basis-auto p-0">
-                <ToggleGroupItem value="artists" size="sm">
-                  Artistas
-                </ToggleGroupItem>
-              </CarouselItem>
-              <CarouselItem className="basis-auto p-0">
-                <ToggleGroupItem value="albums" size="sm">
-                  Álbuns
-                </ToggleGroupItem>
-              </CarouselItem>
-              <CarouselItem className="basis-auto p-0">
-                <ToggleGroupItem value="musics" size="sm" disabled>
-                  Músicas
-                </ToggleGroupItem>
-              </CarouselItem>
-              <CarouselItem className="basis-auto p-0">
-                <ToggleGroupItem value="playlists" size="sm" disabled>
-                  Playlists
-                </ToggleGroupItem>
-              </CarouselItem>
-              <CarouselItem className="basis-auto p-0">
-                <ToggleGroupItem value="shows" size="sm" disabled>
-                  Podcasts e programas
-                </ToggleGroupItem>
-              </CarouselItem>
-              <CarouselItem className="basis-auto p-0">
-                <ToggleGroupItem value="videos" size="sm" disabled>
-                  Gêneros e momentos
-                </ToggleGroupItem>
-              </CarouselItem>
-              <CarouselItem className="basis-auto p-0">
-                <ToggleGroupItem value="users" size="sm" disabled>
-                  Perfis
-                </ToggleGroupItem>
-              </CarouselItem>
-            </CarouselContent>
-          </ToggleGroup>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
+        <Filters filter={filter} term={term} />
+        <Results filter={filter} term={term} />
       </div>
     </div>
   );
