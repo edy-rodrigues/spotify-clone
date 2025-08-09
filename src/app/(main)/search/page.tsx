@@ -1,26 +1,23 @@
-import { Filters } from '@/app/(main)/search/[term]/_components/filters';
-import { FilterHandler } from '@/app/(main)/search/[term]/_utils/filter-handler';
+import { SearchInput } from '@/app/_components/search-input';
+import { Typography } from '@/components/data-display/typography';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import React from 'react';
 
-type InitialSearchPageProps = Readonly<{
-  searchParams: Promise<{
-    filter?: string;
-  }>;
-}>;
-
-export default async function InitialSearchPage(props: InitialSearchPageProps) {
-  const { searchParams } = props;
-
-  const { filter: filterParam } = await searchParams;
-
-  const filter = FilterHandler.sanitize(filterParam);
-  const term = '';
-
+export default async function InitialSearchPage() {
   return (
-    <ScrollArea className="main-view rounded-lg min-h-full flex-1 before:content-[none] relative">
-      <div className="flex items-center gap-3 flex-wrap sticky bg-background-elevation-1 top-0 z-1 px-6 py-3">
-        <Filters filter={filter} term={term} />
+    <ScrollArea className="main-view rounded-lg flex-1 before:content-[none] relative p-2">
+      <div className="flex flex-col min-h-full mt-4 p-2">
+        <Typography variant="h1" className="mb-4">
+          Buscar
+        </Typography>
+        <SearchInput />
+
+        <Typography
+          variant="h4"
+          className="absolute top-0 bottom-0 left-0 right-0 m-auto text-xl h-fit text-center max-w-[250px] text-text-gray"
+        >
+          Pesquisa e encontre seus artistas favoritos.
+        </Typography>
       </div>
     </ScrollArea>
   );

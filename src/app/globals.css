@@ -456,6 +456,15 @@
     letter-spacing: 0;
   }
 
+  body > div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    min-height: 100dvh;
+    height: 100dvh;
+  }
+
   body > div > header {
     grid-area: global-nav;
     height: 64px;
@@ -499,7 +508,7 @@
 
   body > div > footer {
     grid-area: now-playing-bar;
-    height: 64px;
+    height: 70px;
     background: var(--background-default);
   }
 
@@ -510,6 +519,8 @@
 
     body > div {
       display: grid;
+      min-height: calc(100dvh - 16px);
+      height: calc(100dvh - 16px);
       gap: 8px;
       grid-template-columns: auto 1fr;
       grid-template-rows: auto 1fr auto;
@@ -517,10 +528,10 @@
       "global-nav global-nav global-nav"
       "left-sidebar main-view right-sidebar"
       "now-playing-bar now-playing-bar now-playing-bar";
-      min-height: calc(100dvh - 16px);
-      height: calc(100dvh - 16px);
-      width: 100%;
-      position: relative;
+    }
+
+    body > div > footer {
+      height: 64px;
     }
   }
 }
