@@ -450,6 +450,7 @@
     color: var(--color-white);
     padding: 8px;
     min-height: 100dvh;
+    letter-spacing: 0;
   }
 
   body > div {
@@ -467,7 +468,7 @@
     position: relative;
   }
 
-  header {
+  body > div > header {
     grid-area: global-nav;
     height: 64px;
     background: var(--background-default);
@@ -507,7 +508,7 @@
     background: var(--background-elevation-1);
   }
 
-  footer {
+  body > div > footer {
     grid-area: now-playing-bar;
     height: 64px;
     background: var(--background-default);
