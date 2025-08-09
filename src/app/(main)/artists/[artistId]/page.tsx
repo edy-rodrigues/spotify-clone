@@ -38,7 +38,7 @@ export default async function ArtistPage(props: ArtistPageProps) {
 
   return (
     <ScrollArea
-      className="pb-25 lg:pb-0 main-view rounded-lg min-h-full before:content-[none] overflow-hidden"
+      className="main-view rounded-lg min-h-full before:content-[none] overflow-hidden"
       type="always"
     >
       <section className="relative h-[40vh] before:absolute before:inset-0 before:content-[''] before:bg-[linear-gradient(transparent_0,rgba(0,0,0,0.5)_100%),var(--background-noise)] before:z-10">
@@ -73,9 +73,11 @@ export default async function ArtistPage(props: ArtistPageProps) {
           <TopTracks artistId={artistId} />
         </React.Suspense>
       </section>
-      <React.Suspense fallback={<AlbumsSectionsSkeleton />}>
-        <AlbumsSections artistId={artistId} />
-      </React.Suspense>
+      <div className="pb-40 lg:pb-5">
+        <React.Suspense fallback={<AlbumsSectionsSkeleton />}>
+          <AlbumsSections artistId={artistId} />
+        </React.Suspense>
+      </div>
     </ScrollArea>
   );
 }
