@@ -1,6 +1,6 @@
 import { CarouselSkeleton } from '@/app/(main)/artists/[artistId]/_components/loading-components/carousel-skeleton';
 import { TracksOfAlbum } from '@/app/(main)/artists/[artistId]/_components/tracks-of-album';
-import { Typography } from '@/components/data-display/typography/typography';
+import { Typography } from '@/components/data-display/typography';
 import { SpotifyApiFactory } from '@/infra/spotify-api/spotify-api-factory';
 import Link from 'next/link';
 import React from 'react';

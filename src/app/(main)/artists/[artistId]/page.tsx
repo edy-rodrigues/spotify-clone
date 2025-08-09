@@ -6,7 +6,7 @@ import { AlbumsSectionsSkeleton } from '@/app/(main)/artists/[artistId]/_compone
 import { BannerSkeleton } from '@/app/(main)/artists/[artistId]/_components/loading-components/banner-skeleton';
 import { CarouselSkeleton } from '@/app/(main)/artists/[artistId]/_components/loading-components/carousel-skeleton';
 import { TopTracks } from '@/app/(main)/artists/[artistId]/_components/top-tracks';
-import { Typography } from '@/components/data-display/typography/typography';
+import { Typography } from '@/components/data-display/typography';
 import { MoreIcon } from '@/components/icons/more-icon';
 import { PlayIcon } from '@/components/icons/play-icon';
 import { Button } from '@/components/ui/button';

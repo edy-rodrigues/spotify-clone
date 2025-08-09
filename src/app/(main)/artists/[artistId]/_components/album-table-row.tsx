@@ -1,4 +1,4 @@
-import { Typography } from '@/components/data-display/typography/typography';
+import { Typography } from '@/components/data-display/typography';
 import { AddIcon } from '@/components/icons/add-icon';
 import { MoreIcon } from '@/components/icons/more-icon';
 import { PlayIcon } from '@/components/icons/play-icon';

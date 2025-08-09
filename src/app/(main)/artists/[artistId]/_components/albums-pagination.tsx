@@ -1,4 +1,4 @@
-import { Typography } from '@/components/data-display/typography/typography';
+import { Typography } from '@/components/data-display/typography';
 import {
   Pagination,
   PaginationContent,

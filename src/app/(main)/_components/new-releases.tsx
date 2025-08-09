@@ -7,7 +7,7 @@ import {
   CardSubtitle,
   CardTitle,
 } from '@/components/data-display/card';
-import { Typography } from '@/components/data-display/typography/typography';
+import { Typography } from '@/components/data-display/typography';
 import {
   Carousel,
   CarouselContent,

@@ -1,4 +1,4 @@
-import { Typography } from '@/components/data-display/typography/typography';
+import { Typography } from '@/components/data-display/typography';
 import { SpotifySvgIcon } from '@/components/icons/spotify-svg-icon';
 import { Button } from '@/components/ui/button';
 import type { Metadata } from 'next';

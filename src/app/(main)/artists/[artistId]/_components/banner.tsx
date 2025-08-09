@@ -1,5 +1,5 @@
 import { VerifiedAccountIcon } from '@/app/(main)/artists/[artistId]/_components/verified-account-icon';
-import { Typography } from '@/components/data-display/typography/typography';
+import { Typography } from '@/components/data-display/typography';
 import { Artist } from '@/domain/artist';
 import { SpotifyApiFactory } from '@/infra/spotify-api/spotify-api-factory';
 import Image from 'next/image';
