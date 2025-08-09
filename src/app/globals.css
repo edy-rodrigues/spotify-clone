@@ -293,9 +293,12 @@
   --background-elevation-2: #1f1f1f;
   --background-elevation-3: #2a2a2a;
   --background-elevation-4: #ffffff1a;
+  --background-elevation-5: #ffffff24;
+  --background-elevation-6: #ffffff36;
   --background-highlight: var(--background-elevation-2);
-  --divider: #7c7c7c;
   --background-noise: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=");
+  --carousel-edge-shadow-color: hsla(0,0%,7%,.7);
+  --divider: #7c7c7c;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -344,6 +347,8 @@
   --color-background-elevation-2: var(--background-elevation-2);
   --color-background-elevation-3: var(--background-elevation-3);
   --color-background-elevation-4: var(--background-elevation-4);
+  --color-background-elevation-5: var(--background-elevation-5);
+  --color-background-elevation-6: var(--background-elevation-6);
   --color-background-highlight: var(--background-highlight);
   --color-text-gray: var(--color-text-gray);
   --color-sidebar-ring: var(--sidebar-ring);
