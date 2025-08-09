@@ -10,7 +10,7 @@ export const typographyStyles = cva('font-bold', {
       h5: 'text-xs min-md:text-sm font-semibold',
       h6: 'text-xs',
       body1: 'text-xs font-normal',
-      body2: 'text-xs font-normal',
+      body2: 'text-[0.6875rem] font-normal',
     },
     color: {
       'text-primary': 'text-text-primary',
