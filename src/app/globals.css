@@ -452,24 +452,8 @@
   body {
     background: var(--background-default);
     color: var(--color-white);
-    padding: 8px;
     min-height: 100dvh;
     letter-spacing: 0;
-  }
-
-  body > div {
-    display: grid;
-    gap: 8px;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas:
-      "global-nav global-nav global-nav"
-      "left-sidebar main-view right-sidebar"
-      "now-playing-bar now-playing-bar now-playing-bar";
-    min-height: calc(100dvh - 16px);
-    height: calc(100dvh - 16px);
-    width: 100%;
-    position: relative;
   }
 
   body > div > header {
@@ -517,5 +501,26 @@
     grid-area: now-playing-bar;
     height: 64px;
     background: var(--background-default);
+  }
+
+  @media (min-width: 1024px) {
+    body {
+      padding: calc(var(--spacing) * 2);
+    }
+
+    body > div {
+      display: grid;
+      gap: 8px;
+      grid-template-columns: auto 1fr;
+      grid-template-rows: auto 1fr auto;
+      grid-template-areas:
+      "global-nav global-nav global-nav"
+      "left-sidebar main-view right-sidebar"
+      "now-playing-bar now-playing-bar now-playing-bar";
+      min-height: calc(100dvh - 16px);
+      height: calc(100dvh - 16px);
+      width: 100%;
+      position: relative;
+    }
   }
 }
