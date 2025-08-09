@@ -6,6 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
+import { CAROUSEL_OPTIONS } from '@/config/carousel';
 import { Artist } from '@/domain/artist';
 import { SpotifyApiFactory } from '@/infra/spotify-api/spotify-api-factory';
 import { CategoryForHomeGenre } from '@/server/seed/categories-for-home';
@@ -34,10 +35,7 @@ export async function ArtistCarousel(props: ArtistCarouselProps) {
       </Typography>
       <Carousel
         className="[&>.carousel-content]:-mx-10 [&>.carousel-content]:pr-10 [&>.carousel-content]:before:-left-10 [&>.carousel-content]:after:-right-10"
-        opts={{
-          slidesToScroll: 6,
-          watchDrag: false,
-        }}
+        opts={CAROUSEL_OPTIONS}
       >
         <CarouselContent className="m-0 ml-10">
           {artists.map((artist) => (

@@ -15,6 +15,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
+import { CAROUSEL_OPTIONS } from '@/config/carousel';
 import { SpotifyApiFactory } from '@/infra/spotify-api/spotify-api-factory';
 import Link from 'next/link';
 import React from 'react';
@@ -36,14 +37,14 @@ export async function NewReleases() {
       </Typography>
       <Carousel
         className="[&>.carousel-content]:-mx-10 [&>.carousel-content]:pr-10 [&>.carousel-content]:before:-left-10 [&>.carousel-content]:after:-right-10"
-        opts={{
-          slidesToScroll: 6,
-          watchDrag: false,
-        }}
+        opts={CAROUSEL_OPTIONS}
       >
         <CarouselContent className="m-0 ml-10">
           {newReleases.albums.items.reverse().map((album) => (
-            <CarouselItem className="basis-1/8 min-w-[177px] p-0" key={album.id}>
+            <CarouselItem
+              className="basis-auto lg:basis-1/3 xl:basis-1/4 2xl:basis-1/6 3xl:basis-1/7 4xl:basis-1/10 min-w-[177px] p-0"
+              key={album.id}
+            >
               <CardRoot href={`/albums/${album.id}`} asChild>
                 <CarouselAlbumItemButton albumId={album.id}>
                   <CardImageContainer>

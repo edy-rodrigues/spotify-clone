@@ -5,6 +5,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
+import { CAROUSEL_OPTIONS } from '@/config/carousel';
 import { SpotifyApiFactory } from '@/infra/spotify-api/spotify-api-factory';
 import React from 'react';
 
@@ -23,10 +24,7 @@ export async function TopTracks(props: TopTracksProps) {
   return (
     <Carousel
       className="[&>.carousel-content]:-mx-7 [&>.carousel-content]:pr-7 [&>.carousel-content]:before:-left-7 [&>.carousel-content]:after:-right-7"
-      opts={{
-        slidesToScroll: 6,
-        watchDrag: false,
-      }}
+      opts={CAROUSEL_OPTIONS}
     >
       <CarouselContent className="m-0 ml-4">
         {result.tracks.map((track) => (
