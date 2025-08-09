@@ -129,12 +129,18 @@ function Carousel(props: React.ComponentProps<'div'> & CarouselProps) {
 function CarouselContent(props: React.ComponentProps<'div'>) {
   const { className, ...rest } = props;
 
-  const { carouselRef, orientation } = useCarousel();
+  const { carouselRef, orientation, canScrollPrev, canScrollNext } = useCarousel();
 
   return (
     <div
       ref={carouselRef}
-      className="carousel-content overflow-hidden"
+      className={cn(
+        'carousel-content overflow-hidden isolate',
+        canScrollPrev &&
+          'before:content-[""] before:absolute before:bottom-0 before:top-0 before:left-0 before:w-30 before:bg-[linear-gradient(90deg,var(--carousel-edge-shadow-color),var(--background-elevation-1)_0,transparent_100%)] before:z-1 before:pointer-events-none',
+        canScrollNext &&
+          'after:content-[""] after:absolute after:bottom-0 after:top-0 after:right-0 after:w-30 after:bg-[linear-gradient(-90deg,var(--carousel-edge-shadow-color),var(--background-elevation-1)_0,transparent_100%)] after:z-1 after:pointer-events-none',
+      )}
       data-slot="carousel-content"
     >
       <div

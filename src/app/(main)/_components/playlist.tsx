@@ -32,7 +32,7 @@ export async function Playlist(props: PlaylistProps) {
         </Link>
       </Typography>
       <Carousel
-        className="[&>.carousel-content]:-mx-10 [&>.carousel-content]:pr-10"
+        className="[&>.carousel-content]:-mx-10 [&>.carousel-content]:pr-10 [&>.carousel-content]:before:-left-10 [&>.carousel-content]:after:-right-10"
         opts={{
           slidesToScroll: 6,
           watchDrag: false,
