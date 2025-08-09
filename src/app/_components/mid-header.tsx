@@ -1,5 +1,5 @@
+import { HomeIconClient } from '@/app/_components/home-icon-client';
 import { SearchInput } from '@/app/_components/search-input';
-import { HomeIcon } from '@/components/icons/home-icon';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
@@ -8,7 +8,7 @@ export function MidHeader() {
     <>
       <Button size="icon" className="bg-background-elevation-2 size-12" asChild>
         <Link href="/">
-          <HomeIcon className="fill-text-gray size-6" />
+          <HomeIconClient />
         </Link>
       </Button>
       <SearchInput />
