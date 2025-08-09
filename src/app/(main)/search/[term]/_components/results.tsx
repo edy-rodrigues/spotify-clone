@@ -29,11 +29,12 @@ export async function Results(props: ResultsProps) {
     q: term,
     type: FilterHandler.getValue(filter) as ItemTypes[],
   });
+  await new Promise((resolve) => setTimeout(resolve, 3000));
 
   return (
     <>
       {results.albums?.items.length && (
-        <div className="flex flex-col w-full mt-8">
+        <section className="flex flex-col w-full mt-8">
           <Typography variant="h2" className="mb-2 ml-3">
             <Link href="#" className="hover:underline">
               Álbuns
@@ -54,11 +55,11 @@ export async function Results(props: ResultsProps) {
             <CarouselPrevious />
             <CarouselNext />
           </Carousel>
-        </div>
+        </section>
       )}
 
       {results.artists?.items.length && (
-        <div className="flex flex-col w-full mt-8">
+        <section className="flex flex-col w-full mt-8">
           <Typography variant="h2" className="mb-2 ml-3">
             <Link href="#" className="hover:underline">
               Artistas
@@ -79,7 +80,7 @@ export async function Results(props: ResultsProps) {
             <CarouselPrevious />
             <CarouselNext />
           </Carousel>
-        </div>
+        </section>
       )}
     </>
   );
