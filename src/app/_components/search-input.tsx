@@ -48,7 +48,7 @@ export function SearchInput() {
         value={query}
         onChange={handleChange}
       />
-      <div className="absolute flex items-center right-3 top-3 border-l border-l-text-gray pl-3 transition-colors group-focus-within:border-l-white">
+      <div className="absolute flex items-center right-4 top-3 border-l border-l-text-gray pl-3 transition-colors group-focus-within:border-l-white">
         <Button size="icon" color="transparent" className="size-6 hover:[&>svg]:fill-white">
           <BrowseIcon className="fill-text-gray size-6 transition-colors group-focus-within:fill-white" />
         </Button>
