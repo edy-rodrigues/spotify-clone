@@ -1,6 +1,8 @@
 import { Filters } from '@/app/(main)/search/[term]/_components/filters';
 import { Results } from '@/app/(main)/search/[term]/_components/results';
+import { ResultsSkeleton } from '@/app/(main)/search/[term]/_components/results-skeleton';
 import { FilterHandler } from '@/app/(main)/search/[term]/_utils/filter-handler';
+import React from 'react';
 
 type SearchPageProps = Readonly<{
   params: Promise<{
@@ -25,7 +27,9 @@ export default async function SearchPage(props: SearchPageProps) {
         <Filters filter={filter} term={term} />
       </div>
       <div className="px-6 pt-3 pb-10">
-        <Results filter={filter} term={term} />
+        <React.Suspense fallback={<ResultsSkeleton />}>
+          <Results filter={filter} term={term} />
+        </React.Suspense>
       </div>
     </div>
   );
