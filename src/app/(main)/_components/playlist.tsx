@@ -1,5 +1,5 @@
-import { ArtistCard } from '@/app/(main)/_components/artist-card';
-import { Typography } from '@/components/data-display/typography/typography';
+import { CarouselArtistItem } from '@/components/carousel/implementations/carousel-artist-item';
+import { Typography } from '@/components/data-display/typography';
 import {
   Carousel,
   CarouselContent,
@@ -40,7 +40,7 @@ export async function Playlist(props: PlaylistProps) {
       >
         <CarouselContent className="m-0 ml-10">
           {artists.map((artist) => (
-            <ArtistCard key={artist.id} artist={new Artist(artist)} />
+            <CarouselArtistItem key={artist.id} artist={new Artist(artist)} />
           ))}
         </CarouselContent>
         <CarouselPrevious />

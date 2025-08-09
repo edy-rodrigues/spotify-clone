@@ -3,14 +3,14 @@ import { cn } from '@/utils/cn';
 import { redirect, RedirectType } from 'next/navigation';
 import React from 'react';
 
-type CardButtonProps = Readonly<
+type CarouselAlbumItemButtonProps = Readonly<
   React.HTMLAttributes<HTMLButtonElement> & {
     albumId: string;
     children?: React.ReactNode;
   }
 >;
 
-export function CardButton(props: CardButtonProps) {
+export function CarouselAlbumItemButton(props: CarouselAlbumItemButtonProps) {
   const { albumId, children, className, ...rest } = props;
 
   function handleClick(albumId: string) {

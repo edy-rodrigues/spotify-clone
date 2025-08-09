@@ -1,5 +1,4 @@
-import { CardButton } from '@/app/(main)/_components/card-button';
-import { CardLink } from '@/app/(main)/_components/card-link';
+import { CarouselAlbumItemButton } from '@/components/carousel/implementations/carousel-album-item-button';
 import {
   CardImage,
   CardImageContainer,
@@ -45,7 +44,7 @@ export async function NewReleases() {
           {newReleases.albums.items.reverse().map((album) => (
             <CarouselItem className="basis-1/8 min-w-[177px] p-0" key={album.id}>
               <CardRoot href={`/albums/${album.id}`} asChild>
-                <CardButton albumId={album.id}>
+                <CarouselAlbumItemButton albumId={album.id}>
                   <CardImageContainer>
                     <CardImage src={album.images[0].url} alt={album.name} sizes="300x300" />
                   </CardImageContainer>
