@@ -56,7 +56,7 @@ export function CardImage(props: CardImageProps) {
       data-slot="card-image"
       alt={alt}
       fill
-      className={cn('rounded-[6px]', className)}
+      className={cn('rounded-[6px] object-cover', className)}
       {...rest}
     />
   );
