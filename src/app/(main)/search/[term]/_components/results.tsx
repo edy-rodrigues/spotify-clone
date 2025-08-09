@@ -30,7 +30,7 @@ export async function Results(props: ResultsProps) {
     q: term,
     type: FilterHandler.getValue(filter) as ItemTypes[],
   });
-  await new Promise((resolve) => setTimeout(resolve, 3000));
+  // await new Promise((resolve) => setTimeout(resolve, 3000));
 
   return (
     <>
@@ -51,7 +51,7 @@ export async function Results(props: ResultsProps) {
               ))}
             </CarouselContent>
             <CarouselPrevious />
-            <CarouselNext />
+            <CarouselNext className="-right-2" />
           </Carousel>
         </section>
       )}
@@ -73,7 +73,7 @@ export async function Results(props: ResultsProps) {
               ))}
             </CarouselContent>
             <CarouselPrevious />
-            <CarouselNext />
+            <CarouselNext className="-right-2" />
           </Carousel>
         </section>
       )}

@@ -17,7 +17,7 @@ export async function AlbumsSections(props: AlbumsSectionsProps) {
     artistId,
     limit: 3,
   });
-  await new Promise((resolve) => setTimeout(resolve, 3000));
+  // await new Promise((resolve) => setTimeout(resolve, 3000));
 
   return albums.items.map((album) => (
     <section key={album.id} className="px-6 mt-10">

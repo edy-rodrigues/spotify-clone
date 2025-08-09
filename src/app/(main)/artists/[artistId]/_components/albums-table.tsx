@@ -22,7 +22,7 @@ export async function AlbumsTable(props: AlbumsTableProps) {
     limit: limit as MaxInt<50>,
     offset: (page - 1) * limit,
   });
-  await new Promise((resolve) => setTimeout(resolve, 3000));
+  // await new Promise((resolve) => setTimeout(resolve, 3000));
 
   const pagination = new Pagination({
     page: albums,

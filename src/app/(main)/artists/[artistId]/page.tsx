@@ -67,7 +67,7 @@ export default async function ArtistPage(props: ArtistPageProps) {
       </section>
       <section className="px-6 mt-10">
         <Typography variant="h2" className="mb-2">
-          Lançamentos populares
+          Mais populares
         </Typography>
         <React.Suspense fallback={<CarouselSkeleton />}>
           <TopTracks artistId={artistId} />

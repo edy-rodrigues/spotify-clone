@@ -14,7 +14,7 @@ export async function Banner(props: BannerProps) {
 
   const spotifyApi = SpotifyApiFactory.create();
   const spotifyArtist = await spotifyApi.artists.get(artistId);
-  await new Promise((resolve) => setTimeout(resolve, 3000));
+  // await new Promise((resolve) => setTimeout(resolve, 3000));
   const artist = new Artist(spotifyArtist);
 
   const formatter = new Intl.NumberFormat('pt-BR');
