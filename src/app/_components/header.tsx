@@ -12,7 +12,7 @@ export function Header() {
           <SpotifySvgIcon className="fill-white" />
         </Link>
       </div>
-      <div className="w-full max-w-[546px] flex items-center gap-2 3xl:absolute 3xl:left-0 3xl:right-0 3xl:mx-auto">
+      <div className="w-full max-w-[546px] flex items-center gap-2 3xl:absolute 3xl:left-0 3xl:right-0 3xl:mx-auto px-2">
         <MidHeader />
       </div>
       <div className="flex items-center h-full ml-auto">
