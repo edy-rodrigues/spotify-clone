@@ -10,6 +10,7 @@ import { Typography } from '@/components/data-display/typography';
 import { MoreIcon } from '@/components/icons/more-icon';
 import { PlayIcon } from '@/components/icons/play-icon';
 import { Button } from '@/components/ui/button';
+import { ScrollArea } from '@/components/ui/scroll-area';
 import { Pagination } from '@/utils/pagination';
 import React from 'react';
 
@@ -36,7 +37,10 @@ export default async function ArtistPage(props: ArtistPageProps) {
   const validLimit = isNaN(limit) ? Pagination.DEFAULT_LIMIT : limit;
 
   return (
-    <div className="main-view rounded-lg min-h-full flex-1 before:content-[none] pb-6">
+    <ScrollArea
+      className="main-view rounded-lg min-h-full before:content-[none] overflow-hidden"
+      type="always"
+    >
       <section className="relative h-[40vh] before:absolute before:inset-0 before:content-[''] before:bg-[linear-gradient(transparent_0,rgba(0,0,0,0.5)_100%),var(--background-noise)] before:z-10">
         <React.Suspense fallback={<BannerSkeleton />}>
           <Banner artistId={artistId} />
@@ -72,6 +76,6 @@ export default async function ArtistPage(props: ArtistPageProps) {
       <React.Suspense fallback={<AlbumsSectionsSkeleton />}>
         <AlbumsSections artistId={artistId} />
       </React.Suspense>
-    </div>
+    </ScrollArea>
   );
 }
