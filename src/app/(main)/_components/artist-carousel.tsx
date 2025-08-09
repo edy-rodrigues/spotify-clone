@@ -12,17 +12,18 @@ import { CategoryForHomeGenre } from '@/server/seed/categories-for-home';
 import Link from 'next/link';
 import React from 'react';
 
-type PlaylistProps = Readonly<{
+type ArtistCarouselProps = Readonly<{
   genre: CategoryForHomeGenre;
 }>;
 
-export async function Playlist(props: PlaylistProps) {
+export async function ArtistCarousel(props: ArtistCarouselProps) {
   const { genre } = props;
 
   const spotifyApi = SpotifyApiFactory.create();
 
   const artistsIds = genre.artists.map((artist) => artist.id);
   const artists = await spotifyApi.artists.getByIds(artistsIds);
+  await new Promise((resolve) => setTimeout(resolve, 3000));
 
   return (
     <div className="flex flex-col" key={genre.label}>

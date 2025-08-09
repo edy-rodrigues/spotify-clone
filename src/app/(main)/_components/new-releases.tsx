@@ -25,6 +25,7 @@ export async function NewReleases() {
   const newReleases = await spotifyApi.browse.getNewReleases({
     country: 'BR',
   });
+  await new Promise((resolve) => setTimeout(resolve, 3000));
 
   return (
     <div className="flex flex-col">
