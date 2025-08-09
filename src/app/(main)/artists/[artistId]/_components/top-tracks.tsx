@@ -22,7 +22,7 @@ export async function TopTracks(props: TopTracksProps) {
 
   return (
     <Carousel
-      className="[&>.carousel-content]:-mx-7 [&>.carousel-content]:pr-7"
+      className="[&>.carousel-content]:-mx-7 [&>.carousel-content]:pr-7 [&>.carousel-content]:before:-left-7 [&>.carousel-content]:after:-right-7"
       opts={{
         slidesToScroll: 6,
         watchDrag: false,
