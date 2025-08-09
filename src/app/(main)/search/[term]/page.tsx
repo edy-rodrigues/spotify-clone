@@ -20,9 +20,11 @@ export default async function SearchPage(props: SearchPageProps) {
   const filter = FilterHandler.sanitize(filterParams);
 
   return (
-    <div className="main-view rounded-lg min-h-full flex-1 before:content-[none] p-6">
-      <div className="flex items-center gap-3 flex-wrap">
+    <div className="main-view rounded-lg min-h-full flex-1 before:content-[none] relative">
+      <div className="flex items-center gap-3 flex-wrap sticky bg-background-elevation-1 top-0 z-1 px-6 py-3">
         <Filters filter={filter} term={term} />
+      </div>
+      <div className="px-6 pt-3 pb-10">
         <Results filter={filter} term={term} />
       </div>
     </div>
