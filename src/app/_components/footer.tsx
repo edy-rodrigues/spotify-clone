@@ -1,11 +1,11 @@
-import MobileBottomNav from '@/app/_components/mobile-bottom-nav';
+import { MobileBottomNav } from '@/app/_components/mobile-bottom-nav';
 import { Typography } from '@/components/data-display/typography';
 import { Button } from '@/components/ui/button';
 import React from 'react';
 
 export function Footer() {
   return (
-    <footer className="flex justify-between items-center">
+    <footer className="h-0 lg:h-17.5 flex justify-between items-center">
       {/* Desktop */}
       <div className="hidden lg:flex justify-between items-center pt-[11px] pb-[7px] pl-[14] pr-6 bg-[linear-gradient(90deg,#af2896,#509bf5)] w-full">
         <div>
