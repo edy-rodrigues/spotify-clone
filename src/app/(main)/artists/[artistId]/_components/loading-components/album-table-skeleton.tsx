@@ -31,14 +31,14 @@ export function AlbumTableSkeleton() {
                   <span className="flex size-10 rounded-lg bg-gray-400" />
                 </TableCell>
                 <TableCell>
-                  <span className="flex h-4 w-60 bg-gray-400 rounded-lg" />
+                  <span className="flex h-4 w-40 lg:w-60 bg-gray-400 rounded-lg" />
                   <div className="flex">
                     <span className="h-2 w-30 bg-gray-400 rounded-lg mt-2" />
                   </div>
                 </TableCell>
                 <TableCell className="text-right w-32">
                   <div className="flex justify-end items-center gap-2">
-                    <span className="size-4 bg-gray-400 rounded-full" />
+                    <span className="hidden lg:block size-4 bg-gray-400 rounded-full" />
                     <span className="h-4 w-20 bg-gray-400 rounded-lg" />
                     <span className="size-4 bg-gray-400 rounded-full" />
                   </div>

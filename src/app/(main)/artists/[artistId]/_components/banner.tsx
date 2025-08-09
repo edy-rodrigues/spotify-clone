@@ -36,11 +36,11 @@ export async function Banner(props: BannerProps) {
           </span>
           <Typography className="text-sm font-text-2">Artista verificado</Typography>
         </span>
-        <Typography variant="h1" className="min-md:text-[96px] font-extrabold">
+        <Typography variant="h1" className="my-1 lg:my-0 min-md:text-[96px] font-extrabold">
           {artist.name}
         </Typography>
         <Typography className="text-base font-text-2">{followersCount} seguidores</Typography>
-        <Typography className="text-xs font-text-2">
+        <Typography className="text-xs font-text-2 mt-1 lg:mt-0">
           Grau de popularidade {artist.popularity}
         </Typography>
       </div>
