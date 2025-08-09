@@ -3,6 +3,7 @@ import { CardLink } from '@/app/(main)/_components/card-link';
 import {
   CardImage,
   CardImageContainer,
+  CardLink,
   CardRoot,
   CardSubtitle,
   CardTitle,
@@ -69,7 +70,7 @@ export async function NewReleases() {
                       ))}
                     </div>
                   </CardSubtitle>
-                </CardButton>
+                </CarouselAlbumItemButton>
               </CardRoot>
             </CarouselItem>
           ))}

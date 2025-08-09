@@ -109,10 +109,12 @@ export function CardPlayButton(props: CardButtonProps) {
   );
 }
 
-export const Card = {
-  Root: CardRoot,
-  ImageContainer: CardImageContainer,
-  Image: CardImage,
-  Title: CardTitle,
-  Subtitle: CardSubtitle,
-};
+type CardLinkProps = React.ComponentProps<typeof Link>;
+
+export function CardLink(props: CardLinkProps) {
+  function handleClick(event: React.MouseEvent<HTMLAnchorElement>) {
+    event.stopPropagation();
+  }
+
+  return <Link {...props} onClick={handleClick} />;
+}
