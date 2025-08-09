@@ -9,11 +9,11 @@ import { CarouselItem } from '@/components/ui/carousel';
 import { Artist } from '@/domain/artist';
 import React from 'react';
 
-type ArtistCardProps = Readonly<{
+type CarouselArtistItemProps = Readonly<{
   artist: Artist;
 }>;
 
-export async function ArtistCard(props: ArtistCardProps) {
+export async function CarouselArtistItem(props: CarouselArtistItemProps) {
   const { artist } = props;
 
   return (
