@@ -38,7 +38,7 @@ export function CardImageContainer(props: CardImageContainerProps) {
   return (
     <div
       data-slot="card-image-container"
-      className={cn('aspect-square relative', className)}
+      className={cn('aspect-square relative min-w-[144px] min-h-[144px]', className)}
       {...rest}
     >
       {children}
@@ -68,7 +68,11 @@ export function CardTitle(props: CardTitleProps) {
   const { className, children, ...rest } = props;
 
   return (
-    <span data-slot="card-title" className={cn('mt-3 text-sm', className)} {...rest}>
+    <span
+      data-slot="card-title"
+      className={cn('font-text-2 mt-3 text-base lg:text-sm line-clamp-2', className)}
+      {...rest}
+    >
       {children}
     </span>
   );
@@ -80,7 +84,7 @@ export function CardSubtitle(props: CardTitleProps) {
   return (
     <span
       data-slot="card-subtitle"
-      className={cn('mt-1 text-text-gray text-sm', className)}
+      className={cn('font-text-2 mt-1 text-text-gray text-sm lg:text-sm', className)}
       {...rest}
     >
       {children}

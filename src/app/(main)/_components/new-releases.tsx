@@ -60,7 +60,7 @@ export async function NewReleases() {
                             href={`/artists/${artist.id}`}
                             className="hover:underline hover:[&>*]:text-white"
                           >
-                            <Typography className="text-sm truncate text-text-gray">
+                            <Typography className="text-xs truncate text-text-gray">
                               {artist.name}
                             </Typography>
                           </CardLink>

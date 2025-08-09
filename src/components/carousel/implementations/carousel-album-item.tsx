@@ -34,7 +34,7 @@ export function CarouselAlbumItem(props: CarouselAlbumItemProps) {
           </CardImageContainer>
           <CardTitle>{album.name}</CardTitle>
           <CardSubtitle>
-            <div className="flex items-center flex-wrap">
+            <div className="flex items-center flex-wrap max-h-10 overflow-hidden">
               {album.artists.map((artist, index) => (
                 <React.Fragment key={artist.id}>
                   <CardLink

@@ -38,7 +38,7 @@ export default async function ArtistPage(props: ArtistPageProps) {
 
   return (
     <ScrollArea
-      className="main-view rounded-lg min-h-full before:content-[none] overflow-hidden"
+      className="pb-25 lg:pb-0 main-view rounded-lg min-h-full before:content-[none] overflow-hidden"
       type="always"
     >
       <section className="relative h-[40vh] before:absolute before:inset-0 before:content-[''] before:bg-[linear-gradient(transparent_0,rgba(0,0,0,0.5)_100%),var(--background-noise)] before:z-10">
@@ -57,7 +57,7 @@ export default async function ArtistPage(props: ArtistPageProps) {
           </Button>
         </div>
       </section>
-      <section className="px-6 mt-4">
+      <section className="px-3 lg:px-6 mt-4">
         <Typography variant="h2" className="mb-2">
           Álbuns
         </Typography>

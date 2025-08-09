@@ -9,7 +9,7 @@ import React from 'react';
 export default async function Home() {
   return (
     <ScrollArea className="main-view lg:rounded-lg w-full" type="always">
-      <div className="flex flex-col gap-10 w-full p-10">
+      <div className="flex flex-col gap-10 w-full p-2 pt-4 pb-25 lg:p-10">
         <React.Suspense fallback={<NewReleasesSkeleton />}>
           <NewReleases />
         </React.Suspense>

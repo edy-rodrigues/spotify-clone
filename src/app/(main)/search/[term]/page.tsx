@@ -28,7 +28,7 @@ export default async function SearchPage(props: SearchPageProps) {
         <Filters filter={filter} term={term} />
       </div>
 
-      <div className="px-6 pt-3 pb-10">
+      <div className="px-6 pt-3 pb-50 lg:pb-10">
         <React.Suspense fallback={<ResultsSkeleton />}>
           <Results filter={filter} term={term} />
         </React.Suspense>
