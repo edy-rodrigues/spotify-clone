@@ -297,7 +297,11 @@
   --background-elevation-6: #ffffff36;
   --background-highlight: var(--background-elevation-2);
   --background-noise: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=");
-  --carousel-edge-shadow-color: hsla(0,0%,7%,.7);
+  --carousel-edge-shadow-color: hsla(0, 0%, 7%, .7);
+  --scrollbar-thumb-background: hsla(0, 0%, 100%, .3);
+  --scrollbar-thumb-background-hover: hsla(0, 0%, 100%, .5);
+  --scrollbar-thumb-background-acitve: hsla(0, 0%, 100%, .7);
+  --radix-scroll-area-thumb-width: 12px;
   --divider: #7c7c7c;
   --radius: 0.625rem;
   --background: oklch(1 0 0);

@@ -1,14 +1,15 @@
+import { ArtistCarousel } from '@/app/(main)/_components/artist-carousel';
 import { ArtistCarouselSkeleton } from '@/app/(main)/_components/artist-carousel-skeleton';
 import { NewReleases } from '@/app/(main)/_components/new-releases';
 import { NewReleasesSkeleton } from '@/app/(main)/_components/new-releases-skeleton';
-import { ArtistCarousel } from '@/app/(main)/_components/artist-carousel';
+import { ScrollArea } from '@/components/ui/scroll-area';
 import { categoriesForHome } from '@/server/seed/categories-for-home';
 import React from 'react';
 
 export default async function Home() {
   return (
-    <div className="main-view rounded-lg p-10">
-      <div className="flex flex-col gap-10">
+    <ScrollArea className="main-view rounded-lg w-full" type="always">
+      <div className="flex flex-col gap-10 w-full p-10">
         <React.Suspense fallback={<NewReleasesSkeleton />}>
           <NewReleases />
         </React.Suspense>
@@ -21,6 +22,6 @@ export default async function Home() {
           )),
         )}
       </div>
-    </div>
+    </ScrollArea>
   );
 }
