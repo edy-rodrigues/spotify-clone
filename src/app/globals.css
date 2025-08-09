@@ -482,6 +482,7 @@
     grid-area: left-sidebar;
     width: 420px;
     background: var(--background-elevation-1);
+    overflow: hidden;
   }
 
   body > div > div.main-view {
