@@ -42,7 +42,7 @@ export async function NewReleases() {
         <CarouselContent className="m-0 ml-10">
           {newReleases.albums.items.reverse().map((album) => (
             <CarouselItem
-              className="basis-auto lg:basis-1/3 xl:basis-1/4 2xl:basis-1/6 3xl:basis-1/7 4xl:basis-1/10 min-w-[177px] p-0"
+              className="max-w-[168px] lg:max-w-none basis-auto lg:basis-1/3 xl:basis-1/4 2xl:basis-1/6 3xl:basis-1/7 4xl:basis-1/10 lg:min-w-[177px] p-0"
               key={album.id}
             >
               <CardRoot href={`/albums/${album.id}`} asChild>
