@@ -1,5 +1,6 @@
 import { Footer } from '@/app/_components/footer';
 import { Header } from '@/app/_components/header';
+import { YourLibrary } from '@/app/_components/your-library';
 import React from 'react';
 
 type RootLayoutProps = Readonly<{
@@ -12,7 +13,9 @@ export default function RootLayout(props: RootLayoutProps) {
   return (
     <>
       <Header />
-      <div className="left-sidebar rounded-lg hidden lg:flex">Your library</div>
+      <div className="left-sidebar rounded-lg hidden lg:flex lg:flex-col">
+        <YourLibrary />
+      </div>
       {children}
       <div className="right-sidebar rounded-lg hidden">Right sidebar</div>
       <Footer />
