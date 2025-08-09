@@ -1,5 +1,5 @@
 import { Typography } from '@/components/data-display/typography';
-import { SpotifySvgIcon } from '@/components/icons/spotify-svg-icon';
+import { SpotifyIcon } from '@/components/icons/spotify-icon';
 import { Button } from '@/components/ui/button';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function NotFound() {
   return (
     <div className="fixed h-screen w-screen bg-background-elevation-1 flex flex-col justify-center items-center overflow-hidden">
-      <SpotifySvgIcon className="fill-primary-main w-15 h-15 mb-10" />
+      <SpotifyIcon className="fill-primary-main w-15 h-15 mb-10" />
       <Typography variant="h1" className="mb-4 min-md:text-5xl">
         Página não encontrada
       </Typography>
