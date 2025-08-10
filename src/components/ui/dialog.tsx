@@ -9,8 +9,7 @@ import { cn } from '@/utils/cn';
 type DialogProps = Readonly<React.ComponentProps<typeof DialogPrimitive.Root>>;
 
 export function Dialog(props: DialogProps) {
-  const { ...rest } = props;
-  return <DialogPrimitive.Root data-slot="dialog" {...rest} />;
+  return <DialogPrimitive.Root data-slot="dialog" {...props} />;
 }
 
 type DialogTriggerProps = Readonly<React.ComponentProps<typeof DialogPrimitive.Trigger>>;
