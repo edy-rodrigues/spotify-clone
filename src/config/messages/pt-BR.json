@@ -43,5 +43,9 @@
       "ads": "Sobre anúncios",
       "accessibility": "Acessibilidade"
     }
+  },
+  "initialSearchPage": {
+    "title": "Buscar",
+    "description": "Pesquise e encontre seus artistas favoritos."
   }
 }
