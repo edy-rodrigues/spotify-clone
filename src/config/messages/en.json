@@ -1,46 +1,80 @@
 {
   "header": {
     "search": {
-      "placeholder": "O que você quer ouvir?"
+      "placeholder": "What do you want to listen to?"
     },
     "rightButtons": {
       "premium": "Premium",
-      "support": "Suporte",
-      "download": "Baixar",
-      "installApp": "Instalar aplicativo",
-      "signup": "Inscreva-se",
-      "signIn": "Entre"
+      "support": "Support",
+      "download": "Download",
+      "installApp": "Install app",
+      "signup": "Sign up",
+      "signIn": "Sign in",
+      "openApp": "Open app"
     }
   },
   "footer": {
     "ads": {
-      "title": "Testar o Premium de graça",
-      "description": "Inscreva-se para curtir música ilimitada e podcasts só com alguns anúncios. Não precisa de cartão de crédito",
-      "button": "Inscreva-se grátis"
+      "title": "Try Premium for free",
+      "description": "Sign up to enjoy unlimited music and podcasts with just a few ads. No credit card needed",
+      "button": "Sign up free"
     }
   },
   "home": {
-    "newReleases": "New releases"
+    "newReleases": "New Releases"
   },
   "yourLibrary": {
-    "title": "Sua biblioteca",
+    "title": "Your Library",
     "createFirstPlaylist": {
-      "title": "Crie sua primeira playlist",
-      "description": "É fácil, vamos te ajudar.",
-      "button": "Criar playlist"
+      "title": "Create your first playlist",
+      "description": "It's easy, we'll help you.",
+      "button": "Create playlist"
     },
     "followNewPodcast": {
-      "title": "Que tal seguir um podcast novo?",
-      "description": "Avisaremos você sobre novos episódios",
+      "title": "How about following a new podcast?",
+      "description": "We'll notify you about new episodes",
       "button": "Explore podcasts"
     },
     "links": {
       "legal": "Legal",
-      "privacy": "Segurança e Centro de privacidade",
-      "policy": "Politíca de privacidade",
+      "privacy": "Safety and Privacy Center",
+      "policy": "Privacy Policy",
       "cookies": "Cookies",
-      "ads": "Sobre anúncios",
-      "accessibility": "Acessibilidade"
+      "ads": "About Ads",
+      "accessibility": "Accessibility"
+    }
+  },
+  "initialSearchPage": {
+    "title": "Search",
+    "description": "Search and find your favorite artists."
+  },
+  "searchPage": {
+    "filters": {
+      "all": "All",
+      "artists": "Artists",
+      "albums": "Albums",
+      "musics": "Songs",
+      "playlists": "Playlists",
+      "show": "Podcasts & Shows",
+      "episodes": "Genres & Moods",
+      "profiles": "Profiles"
+    },
+    "sections": {
+      "albums": "Albums",
+      "artists": "Artists"
+    }
+  },
+  "artistPage": {
+    "banner": {
+      "artistVerified": "Verified Artist",
+      "followers": "followers",
+      "popularity": "Popularity level"
+    },
+    "albumsTable": {
+      "title": "Albums"
+    },
+    "sections": {
+      "topTracks": "Popular"
     }
   }
 }
