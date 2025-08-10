@@ -76,5 +76,16 @@
     "sections": {
       "topTracks": "Popular"
     }
+  },
+  "drawerMenu": {
+    "buttons": {
+      "signIn": "Sign in",
+      "signup": "Sign up",
+      "premium": "Premium",
+      "help": "Help",
+      "download": "Download",
+      "privacy": "Privacy",
+      "conditions": "Terms"
+    }
   }
 }

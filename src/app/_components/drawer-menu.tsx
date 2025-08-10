@@ -10,14 +10,17 @@ import {
   DrawerTrigger,
 } from '@/components/ui/drawer';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { getTranslations } from 'next-intl/server';
 import React from 'react';
 
 type DrawerMenuProps = Readonly<{
   children?: React.ReactNode;
 }>;
 
-export function DrawerMenu(props: DrawerMenuProps) {
+export async function DrawerMenu(props: DrawerMenuProps) {
   const { children } = props;
+
+  const t = await getTranslations();
 
   return (
     <Drawer direction="bottom">
@@ -32,28 +35,28 @@ export function DrawerMenu(props: DrawerMenuProps) {
           </DrawerClose>
           <div className="flex flex-col px-6 py-14">
             <Button variant="ghost" size="lg" className="w-fit text-white text-xl">
-              Entre
+              {t('drawerMenu.buttons.signIn')}
             </Button>
             <Button variant="ghost" size="lg" className="w-fit text-white text-xl">
-              Inscreva-se
+              {t('drawerMenu.buttons.signup')}
             </Button>
 
             <div className="flex w-4 h-0.5 m-8 bg-white" />
 
             <Button variant="ghost" size="lg" className="w-fit text-white text-base">
-              Premium
+              {t('drawerMenu.buttons.premium')}
             </Button>
             <Button variant="ghost" size="lg" className="w-fit text-white text-base">
-              Ajuda
+              {t('drawerMenu.buttons.help')}
             </Button>
             <Button variant="ghost" size="lg" className="w-fit text-white text-base">
-              Baixar
+              {t('drawerMenu.buttons.download')}
             </Button>
             <Button variant="ghost" size="lg" className="w-fit text-white text-base">
-              Privacidade
+              {t('drawerMenu.buttons.privacy')}
             </Button>
             <Button variant="ghost" size="lg" className="w-fit text-white text-base">
-              Condições
+              {t('drawerMenu.buttons.conditions')}
             </Button>
 
             <DialogLanguage>

@@ -76,5 +76,16 @@
     "sections": {
       "topTracks": "Mais populares"
     }
+  },
+  "drawerMenu": {
+    "buttons": {
+      "signIn": "Entre",
+      "signup": "Inscreva-se",
+      "premium": "Premium",
+      "help": "Ajuda",
+      "download": "Baixar",
+      "privacy": "Privacidade",
+      "conditions": "Condições"
+    }
   }
 }

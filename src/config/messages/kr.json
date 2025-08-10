@@ -76,5 +76,16 @@
     "sections": {
       "topTracks": "인기곡"
     }
+  },
+  "drawerMenu": {
+    "buttons": {
+      "signIn": "로그인",
+      "signup": "가입하기",
+      "premium": "프리미엄",
+      "help": "고객 지원",
+      "download": "다운로드",
+      "privacy": "개인정보",
+      "conditions": "약관"
+    }
   }
 }
