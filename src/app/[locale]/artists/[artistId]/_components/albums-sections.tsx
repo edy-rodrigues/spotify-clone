@@ -2,7 +2,7 @@ import { CarouselSkeleton } from '@/app/[locale]/artists/[artistId]/_components/
 import { TracksOfAlbum } from '@/app/[locale]/artists/[artistId]/_components/tracks-of-album';
 import { Typography } from '@/components/data-display/typography';
 import { SpotifyApiFactory } from '@/infra/spotify-api/spotify-api-factory';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import React from 'react';
 
 type AlbumsSectionsProps = Readonly<{

@@ -8,8 +8,8 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
+import { useRouter } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
-import { useRouter } from 'next/navigation';
 import { useDebouncedCallback } from 'use-debounce';
 
 type FiltersProps = Readonly<{

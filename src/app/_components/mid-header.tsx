@@ -1,7 +1,7 @@
 import { HomeIconClient } from '@/app/_components/home-icon-client';
 import { SearchInput } from '@/app/_components/search-input';
 import { Button } from '@/components/ui/button';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 
 export function MidHeader() {
   return (

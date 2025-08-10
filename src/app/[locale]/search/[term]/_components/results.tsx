@@ -14,7 +14,7 @@ import { Artist } from '@/domain/artist';
 import { SpotifyApiFactory } from '@/infra/spotify-api/spotify-api-factory';
 import { ItemTypes } from '@spotify/web-api-ts-sdk';
 import { getTranslations } from 'next-intl/server';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import React from 'react';
 
 type ResultsProps = Readonly<{

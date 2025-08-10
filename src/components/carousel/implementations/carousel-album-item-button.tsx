@@ -1,7 +1,9 @@
 'use client';
+import { redirect } from '@/i18n/navigation';
 import { cn } from '@/utils/cn';
-import { redirect, RedirectType } from 'next/navigation';
+import { RedirectType } from 'next/navigation';
 import React from 'react';
+import { useLocale } from 'use-intl';
 
 type CarouselAlbumItemButtonProps = Readonly<
   React.HTMLAttributes<HTMLButtonElement> & {
@@ -13,9 +15,17 @@ type CarouselAlbumItemButtonProps = Readonly<
 export function CarouselAlbumItemButton(props: CarouselAlbumItemButtonProps) {
   const { albumId, children, className, ...rest } = props;
 
+  const locale = useLocale();
+
   function handleClick(albumId: string) {
     return function () {
-      redirect(`/albums/${albumId}`, 'push' as RedirectType);
+      redirect(
+        {
+          href: `/albums/${albumId}`,
+          locale,
+        },
+        'push' as RedirectType,
+      );
     };
   }
 

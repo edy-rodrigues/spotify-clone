@@ -2,7 +2,7 @@ import { Typography } from '@/components/data-display/typography';
 import { SpotifyIcon } from '@/components/icons/spotify-icon';
 import { Button } from '@/components/ui/button';
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 
 export const metadata: Metadata = {
   title: 'Página não encontrada',

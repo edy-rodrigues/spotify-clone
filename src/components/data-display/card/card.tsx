@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/utils/cn';
 import { Slot } from '@radix-ui/react-slot';
 import NextImage, { ImageProps } from 'next/image';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import React from 'react';
 
 export type CardRootProps = Readonly<React.ComponentProps<typeof Link>> & {

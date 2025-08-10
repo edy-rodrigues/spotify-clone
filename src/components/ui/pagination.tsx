@@ -2,7 +2,7 @@ import { ChevronLeftIcon } from '@/components/icons/chevron-left';
 import { ChevronRightIcon } from '@/components/icons/chevron-right';
 import { MoreIcon } from '@/components/icons/more-icon';
 import { cn } from '@/utils/cn';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import React from 'react';
 import { buttonVariants } from '@/components/ui/button';
 

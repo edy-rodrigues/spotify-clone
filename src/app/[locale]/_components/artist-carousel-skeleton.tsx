@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/carousel';
 import { CAROUSEL_OPTIONS } from '@/config/carousel';
 import { CategoryForHomeGenre } from '@/server/seed/categories-for-home';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import React from 'react';
 
 type ArtistCarouselSkeletonProps = Readonly<{

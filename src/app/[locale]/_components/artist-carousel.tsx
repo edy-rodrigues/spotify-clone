@@ -10,7 +10,7 @@ import { CAROUSEL_OPTIONS } from '@/config/carousel';
 import { Artist } from '@/domain/artist';
 import { SpotifyApiFactory } from '@/infra/spotify-api/spotify-api-factory';
 import { CategoryForHomeGenre } from '@/server/seed/categories-for-home';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import React from 'react';
 
 type ArtistCarouselProps = Readonly<{

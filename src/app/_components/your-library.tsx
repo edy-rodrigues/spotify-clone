@@ -5,7 +5,7 @@ import { WorldIcon } from '@/components/icons/world-icon';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { getTranslations } from 'next-intl/server';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 
 export async function YourLibrary() {
   const t = await getTranslations();

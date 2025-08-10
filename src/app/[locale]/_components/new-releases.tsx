@@ -18,7 +18,7 @@ import {
 import { CAROUSEL_OPTIONS } from '@/config/carousel';
 import { SpotifyApiFactory } from '@/infra/spotify-api/spotify-api-factory';
 import { getTranslations } from 'next-intl/server';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import React from 'react';
 
 export async function NewReleases() {

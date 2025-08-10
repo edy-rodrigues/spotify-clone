@@ -2,7 +2,7 @@ import { MidHeader } from '@/app/_components/mid-header';
 import { RightHeader } from '@/app/_components/right-header';
 import { SpotifyIcon } from '@/components/icons/spotify-icon';
 import { SpotifyLabelledIcon } from '@/components/icons/spotify-labelled-icon';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import React from 'react';
 
 export function Header() {

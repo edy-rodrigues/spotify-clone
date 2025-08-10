@@ -8,8 +8,7 @@ import { SearchIcon } from '@/components/icons/search-icon';
 import { SpotifyIcon } from '@/components/icons/spotify-icon';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/utils/cn';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { Link, usePathname } from '@/i18n/navigation';
 import React from 'react';
 
 type Item = {

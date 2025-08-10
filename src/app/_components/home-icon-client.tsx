@@ -1,7 +1,7 @@
 'use client';
 import { HomeFilledIcon } from '@/components/icons/home-filled-icon';
 import { HomeIcon } from '@/components/icons/home-icon';
-import { usePathname } from 'next/navigation';
+import { usePathname } from '@/i18n/navigation';
 
 export function HomeIconClient() {
   const pathname = usePathname();

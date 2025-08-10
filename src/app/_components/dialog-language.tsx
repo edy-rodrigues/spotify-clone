@@ -10,7 +10,6 @@ import {
 } from '@/components/ui/dialog';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { AVAILABLE_LANGUAGES } from '@/config/languagues';
-import { Scrollbar } from '@radix-ui/react-scroll-area';
 import React from 'react';
 
 type DrawerLanguageProps = Readonly<{

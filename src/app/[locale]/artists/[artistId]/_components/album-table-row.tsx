@@ -7,7 +7,7 @@ import { TableCell, TableRow } from '@/components/ui/table';
 import { Album } from '@/domain/album';
 import { SimplifiedAlbum } from '@spotify/web-api-ts-sdk';
 import Image from 'next/image';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import React from 'react';
 
 type AlbumTableRowProps = {
