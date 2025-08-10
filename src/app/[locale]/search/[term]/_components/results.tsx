@@ -13,6 +13,7 @@ import { CAROUSEL_OPTIONS } from '@/config/carousel';
 import { Artist } from '@/domain/artist';
 import { SpotifyApiFactory } from '@/infra/spotify-api/spotify-api-factory';
 import { ItemTypes } from '@spotify/web-api-ts-sdk';
+import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import React from 'react';
 
@@ -23,6 +24,8 @@ type ResultsProps = Readonly<{
 
 export async function Results(props: ResultsProps) {
   const { term, filter } = props;
+
+  const t = await getTranslations();
 
   const spotifyApi = SpotifyApiFactory.create();
 
@@ -38,7 +41,7 @@ export async function Results(props: ResultsProps) {
         <section className="flex flex-col w-full mt-8">
           <Typography variant="h2" className="mb-2 ml-3">
             <Link href="#" className="hover:underline">
-              Álbuns
+              {t('searchPage.sections.albums')}
             </Link>
           </Typography>
           <Carousel
@@ -60,7 +63,7 @@ export async function Results(props: ResultsProps) {
         <section className="flex flex-col w-full mt-8">
           <Typography variant="h2" className="mb-2 ml-3">
             <Link href="#" className="hover:underline">
-              Artistas
+              {t('searchPage.sections.artists')}
             </Link>
           </Typography>
           <Carousel

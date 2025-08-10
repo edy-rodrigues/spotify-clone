@@ -47,5 +47,21 @@
   "initialSearchPage": {
     "title": "Buscar",
     "description": "Pesquise e encontre seus artistas favoritos."
+  },
+  "searchPage": {
+    "filters": {
+      "all": "Tudo",
+      "artists": "Artistas",
+      "albums": "Álbuns",
+      "musics": "Músicas",
+      "playlists": "Playlists",
+      "show": "Podcasts e programas",
+      "episodes": "Gêneros e momentos",
+      "profiles": "Perfis"
+    },
+    "sections": {
+      "albums": "Álbuns",
+      "artists": "Artistas"
+    }
   }
 }
