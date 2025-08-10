@@ -6,12 +6,14 @@ import { SearchIcon } from '@/components/icons/search-icon';
 import { XIcon } from '@/components/icons/x-icon';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { useTranslations } from 'next-intl';
 import { usePathname, useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import { useDebouncedCallback } from 'use-debounce';
 
 export function SearchInput() {
   const router = useRouter();
+  const t = useTranslations();
   const pathname = usePathname();
   const isSearchPage = pathname.startsWith('/search');
 
@@ -39,7 +41,6 @@ export function SearchInput() {
   }
 
   function handleClear() {
-    console.log('to aqui');
     setQuery('');
   }
 
@@ -51,7 +52,7 @@ export function SearchInput() {
     <div className="flex items-center w-full relative group">
       <SearchIcon className="fill-text-gray size-6 absolute left-3 transition-colors group-focus-within:fill-white" />
       <Input
-        placeholder="O que você quer ouvir?"
+        placeholder={t('header.search.placeholder')}
         className="pl-12 py-4 pr-24"
         value={query}
         onChange={handleChange}
