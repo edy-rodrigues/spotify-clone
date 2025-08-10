@@ -1,3 +1,4 @@
+import { DialogLanguage } from '@/app/_components/dialog-language';
 import { Typography } from '@/components/data-display/typography';
 import { PlusIcon } from '@/components/icons/plus-icon';
 import { WorldIcon } from '@/components/icons/world-icon';
@@ -81,10 +82,12 @@ export async function YourLibrary() {
         <Link href="#" className="hover:underline mb-8 w-fit">
           <Typography variant="body1">{t('yourLibrary.links.cookies')}</Typography>
         </Link>
-        <Button variant="outline" size="sm" className="w-fit pr-4!">
-          <WorldIcon className="fill-white" />
-          Português do Brasil
-        </Button>
+        <DialogLanguage>
+          <Button variant="outline" size="sm" className="w-fit pr-4!">
+            <WorldIcon className="fill-white" />
+            Português do Brasil
+          </Button>
+        </DialogLanguage>
       </div>
     </>
   );
