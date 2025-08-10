@@ -10,14 +10,18 @@ import {
 } from '@/components/ui/dialog';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { AVAILABLE_LANGUAGES } from '@/config/languagues';
+import { getTranslations } from 'next-intl/server';
+import Link from 'next/link';
 import React from 'react';
 
 type DrawerLanguageProps = Readonly<{
   children?: React.ReactNode;
 }>;
 
-export function DialogLanguage(props: DrawerLanguageProps) {
+export async function DialogLanguage(props: DrawerLanguageProps) {
   const { children } = props;
+
+  const t = await getTranslations();
 
   return (
     <Dialog>
@@ -26,30 +30,33 @@ export function DialogLanguage(props: DrawerLanguageProps) {
         <DialogHeader className="px-6">
           <DialogTitle asChild className="text-2xl">
             <Typography variant="h2" className="text-left">
-              Escolha um idioma
+              {t('dialogLanguage.title')}
             </Typography>
           </DialogTitle>
           <DialogDescription asChild>
             <Typography variant="body1" className="text-base text-white text-left">
-              Essa configuração atualiza o você lê no open.spotify.com.
+              {t('dialogLanguage.description')}
             </Typography>
           </DialogDescription>
         </DialogHeader>
         <div className="mt-4 bg-background-elevation-6 w-full h-px" />
         <ScrollArea className="overflow-y-auto">
-          <div className="grid grid-cols-1 xl:grid-cols-4 p-6 lg:py-4 lg:px-6 max-h-full">
+          <div className="grid grid-cols-1 xl:grid-cols-4 py-4 px-6 max-h-full">
             {AVAILABLE_LANGUAGES.map((language) => (
               <Button
                 key={language.symbol}
                 variant="ghost"
                 className="flex flex-col justify-start items-start px-3 py-8 h-auto hover:bg-background-elevation-6 rounded-none hover:scale-none lg:p-4"
+                asChild
               >
-                <span className="text-white text-base font-normal font-text-2">
-                  {language.nativeName}
-                </span>
-                <span className="text-text-gray text-base font-normal font-text-2">
-                  {language.name}
-                </span>
+                <Link href={`/${language.symbol}`}>
+                  <span className="text-white text-base font-normal font-text-2">
+                    {language.nativeName}
+                  </span>
+                  <span className="text-text-gray text-base font-normal font-text-2">
+                    {language.name}
+                  </span>
+                </Link>
               </Button>
             ))}
           </div>

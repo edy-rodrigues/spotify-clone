@@ -10,7 +10,8 @@ import {
   DrawerTrigger,
 } from '@/components/ui/drawer';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { getTranslations } from 'next-intl/server';
+import { AVAILABLE_LANGUAGES } from '@/config/languagues';
+import { getLocale, getTranslations } from 'next-intl/server';
 import React from 'react';
 
 type DrawerMenuProps = Readonly<{
@@ -21,6 +22,9 @@ export async function DrawerMenu(props: DrawerMenuProps) {
   const { children } = props;
 
   const t = await getTranslations();
+  const locale = await getLocale();
+
+  const language = AVAILABLE_LANGUAGES.find((language) => language.symbol === locale)?.name;
 
   return (
     <Drawer direction="bottom">
@@ -62,7 +66,7 @@ export async function DrawerMenu(props: DrawerMenuProps) {
             <DialogLanguage>
               <Button variant="outline" size="sm" className="w-fit pr-4! ml-8 mt-4">
                 <WorldIcon className="fill-white" />
-                Português do Brasil
+                {language}
               </Button>
             </DialogLanguage>
           </div>

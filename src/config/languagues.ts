@@ -5,7 +5,7 @@ export const AVAILABLE_LANGUAGES = [
     nativeName: 'English',
   },
   {
-    symbol: 'pt-br',
+    symbol: 'pt-BR',
     name: 'Português do Brasil',
     nativeName: 'Brazilian Portuguese',
   },
