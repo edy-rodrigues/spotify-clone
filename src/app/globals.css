@@ -456,7 +456,7 @@
     letter-spacing: 0;
   }
 
-  body > div {
+  body > div.app-container {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -465,20 +465,20 @@
     height: 100dvh;
   }
 
-  body > div > header {
+  body > div.app-container > header {
     grid-area: global-nav;
     height: 64px;
     background: var(--background-default);
   }
 
-  body > div > div.left-sidebar {
+  body > div.app-container > div.left-sidebar {
     grid-area: left-sidebar;
     width: 420px;
     background: var(--background-elevation-1);
     overflow: hidden;
   }
 
-  body > div > div.main-view {
+  body > div.app-container > div.main-view {
     position: relative;
     isolation: isolate;
     grid-area: main-view / main-view / main-view / right-sidebar;
@@ -487,7 +487,7 @@
     overflow-x: hidden;
   }
 
-  body > div > div.main-view::before {
+  body > div.app-container > div.main-view::before {
     content: "";
     position: absolute;
     top: 0;
@@ -500,13 +500,13 @@
     z-index: -1;
   }
 
-  body > div > div.right-sidebar {
+  body > div.app-container > div.right-sidebar {
     grid-area: right-sidebar;
     width: 300px;
     background: var(--background-elevation-1);
   }
 
-  body > div > footer {
+  body > div.app-container > footer {
     grid-area: now-playing-bar;
     height: 70px;
     background: var(--background-default);
@@ -517,7 +517,7 @@
       padding: calc(var(--spacing) * 2);
     }
 
-    body > div {
+    body > div.app-container {
       display: grid;
       min-height: calc(100dvh - 16px);
       height: calc(100dvh - 16px);
@@ -530,7 +530,7 @@
       "now-playing-bar now-playing-bar now-playing-bar";
     }
 
-    body > div > footer {
+    body > div.app-container > footer {
       height: 64px;
     }
   }

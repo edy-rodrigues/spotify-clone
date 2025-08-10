@@ -130,7 +130,7 @@ export default function RootLayout(props: RootLayoutProps) {
         />
       </head>
       <body className="antialiased">
-        <div>{children}</div>
+        <div className="app-container">{children}</div>
       </body>
     </html>
   );

@@ -1,3 +1,4 @@
+import { DialogLanguage } from '@/app/_components/dialog-language';
 import { WorldIcon } from '@/components/icons/world-icon';
 import { XIcon } from '@/components/icons/x-icon';
 import { Button } from '@/components/ui/button';
@@ -55,12 +56,12 @@ export function DrawerMenu(props: DrawerMenuProps) {
               Condições
             </Button>
 
-            <DrawerClose asChild>
+            <DialogLanguage>
               <Button variant="outline" size="sm" className="w-fit pr-4! ml-8 mt-4">
                 <WorldIcon className="fill-white" />
                 Português do Brasil
               </Button>
-            </DrawerClose>
+            </DialogLanguage>
           </div>
         </ScrollArea>
       </DrawerContent>
