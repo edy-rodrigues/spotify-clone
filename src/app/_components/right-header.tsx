@@ -1,3 +1,4 @@
+import { DrawerMenu } from '@/app/_components/drawer-menu';
 import { DownloadIcon } from '@/components/icons/download-icon';
 import { MenuIcon } from '@/components/icons/menu-icon';
 import { Button } from '@/components/ui/button';
@@ -34,9 +35,11 @@ export function RightHeader() {
       {/* Mobile */}
       <div className="flex lg:hidden items-center gap-2">
         <Button>Abrir o app</Button>
-        <Button size="icon" color="transparent">
-          <MenuIcon className="fill-white size-6" />
-        </Button>
+        <DrawerMenu>
+          <Button size="icon" color="transparent">
+            <MenuIcon className="fill-white size-6" />
+          </Button>
+        </DrawerMenu>
       </div>
     </>
   );
