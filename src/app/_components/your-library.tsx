@@ -4,11 +4,16 @@ import { PlusIcon } from '@/components/icons/plus-icon';
 import { WorldIcon } from '@/components/icons/world-icon';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { getTranslations } from 'next-intl/server';
+import { I18n } from '@/utils/i18n';
+import { getLocale, getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 
 export async function YourLibrary() {
   const t = await getTranslations();
+
+  const locale = await getLocale();
+
+  const language = I18n.getLanguageName(locale);
 
   return (
     <>
@@ -85,7 +90,7 @@ export async function YourLibrary() {
         <DialogLanguage>
           <Button variant="outline" size="sm" className="w-fit pr-4!">
             <WorldIcon className="fill-white" />
-            Português do Brasil
+            {language}
           </Button>
         </DialogLanguage>
       </div>

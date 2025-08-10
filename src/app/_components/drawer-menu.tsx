@@ -10,7 +10,7 @@ import {
   DrawerTrigger,
 } from '@/components/ui/drawer';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { AVAILABLE_LANGUAGES } from '@/config/languagues';
+import { I18n } from '@/utils/i18n';
 import { getLocale, getTranslations } from 'next-intl/server';
 import React from 'react';
 
@@ -24,7 +24,7 @@ export async function DrawerMenu(props: DrawerMenuProps) {
   const t = await getTranslations();
   const locale = await getLocale();
 
-  const language = AVAILABLE_LANGUAGES.find((language) => language.symbol === locale)?.name;
+  const language = I18n.getLanguageName(locale);
 
   return (
     <Drawer direction="bottom">
