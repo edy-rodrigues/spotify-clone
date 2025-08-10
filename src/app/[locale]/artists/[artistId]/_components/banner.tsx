@@ -2,6 +2,7 @@ import { VerifiedAccountIcon } from '@/app/[locale]/artists/[artistId]/_componen
 import { Typography } from '@/components/data-display/typography';
 import { Artist } from '@/domain/artist';
 import { SpotifyApiFactory } from '@/infra/spotify-api/spotify-api-factory';
+import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 import React from 'react';
 
@@ -11,6 +12,8 @@ type BannerProps = {
 
 export async function Banner(props: BannerProps) {
   const { artistId } = props;
+
+  const t = await getTranslations();
 
   const spotifyApi = SpotifyApiFactory.create();
   const spotifyArtist = await spotifyApi.artists.get(artistId);
@@ -34,14 +37,18 @@ export async function Banner(props: BannerProps) {
           <span>
             <VerifiedAccountIcon className="fill-icon-fill size-6" />
           </span>
-          <Typography className="text-sm font-text-2">Artista verificado</Typography>
+          <Typography className="text-sm font-text-2">
+            {t('artistPage.banner.artistVerified')}
+          </Typography>
         </span>
         <Typography variant="h1" className="my-1 lg:my-0 min-md:text-[96px] font-extrabold">
           {artist.name}
         </Typography>
-        <Typography className="text-base font-text-2">{followersCount} seguidores</Typography>
+        <Typography className="text-base font-text-2">
+          {followersCount} {t('artistPage.banner.followers')}
+        </Typography>
         <Typography className="text-xs font-text-2 mt-1 lg:mt-0">
-          Grau de popularidade {artist.popularity}
+          {t('artistPage.banner.popularity')} {artist.popularity}
         </Typography>
       </div>
     </>

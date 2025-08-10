@@ -63,5 +63,18 @@
       "albums": "Álbuns",
       "artists": "Artistas"
     }
+  },
+  "artistPage": {
+    "banner": {
+      "artistVerified": "Artista verificado",
+      "followers": "followers",
+      "popularity": "Grau de popularidade"
+    },
+    "albumsTable": {
+      "title": "Álbuns"
+    },
+    "sections": {
+      "topTracks": "Mais populares"
+    }
   }
 }

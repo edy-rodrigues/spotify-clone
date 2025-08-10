@@ -12,6 +12,7 @@ import { PlayIcon } from '@/components/icons/play-icon';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Pagination } from '@/utils/pagination';
+import { getTranslations } from 'next-intl/server';
 import React from 'react';
 
 type ArtistPageProps = {
@@ -29,6 +30,8 @@ export default async function ArtistPage(props: ArtistPageProps) {
 
   const { artistId } = await params;
   const { page: searchParamPage, limit: searchParamLimit } = await searchParams;
+
+  const t = await getTranslations();
 
   const page = Number(searchParamPage) || Pagination.DEFAULT_PAGE;
   const limit = Number(searchParamLimit) || Pagination.DEFAULT_LIMIT;
@@ -59,7 +62,7 @@ export default async function ArtistPage(props: ArtistPageProps) {
       </section>
       <section className="px-3 lg:px-6 mt-4">
         <Typography variant="h2" className="mb-2">
-          Álbuns
+          {t('artistPage.albumsTable.title')}
         </Typography>
         <React.Suspense fallback={<AlbumTableSkeleton />}>
           <AlbumsTable page={validPage} limit={validLimit} artistId={artistId} />
@@ -67,7 +70,7 @@ export default async function ArtistPage(props: ArtistPageProps) {
       </section>
       <section className="px-6 mt-10">
         <Typography variant="h2" className="mb-2">
-          Mais populares
+          {t('artistPage.sections.topTracks')}
         </Typography>
         <React.Suspense fallback={<CarouselSkeleton />}>
           <TopTracks artistId={artistId} />
