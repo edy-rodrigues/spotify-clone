@@ -3,14 +3,17 @@ import { PlusIcon } from '@/components/icons/plus-icon';
 import { WorldIcon } from '@/components/icons/world-icon';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 
-export function YourLibrary() {
+export async function YourLibrary() {
+  const t = await getTranslations();
+
   return (
     <>
       <header className="flex justify-between items-center px-4 py-3 h-fit w-full mb-4">
         <Typography variant="h1" className="min-md:text-base ml-1">
-          Sua Biblioteca
+          {t('yourLibrary.title')}
         </Typography>
         <Button
           size="icon"
@@ -24,21 +27,21 @@ export function YourLibrary() {
         <div className="flex flex-col flex-1 px-2 gap-2">
           <div className="bg-background-elevation-2 rounded-lg px-5 py-4 my-2">
             <Typography variant="h4" className="text-base mb-2 font-text-2">
-              Crie sua primeira playlist
+              {t('yourLibrary.createFirstPlaylist.title')}
             </Typography>
             <Typography variant="body1" className="mb-5 text-sm">
-              É fácil, vamos te ajudar.
+              {t('yourLibrary.createFirstPlaylist.description')}
             </Typography>
-            <Button variant="default">Criar playlist</Button>
+            <Button variant="default">{t('yourLibrary.createFirstPlaylist.button')}</Button>
           </div>
           <div className="bg-background-elevation-2 rounded-lg px-5 py-4 my-2">
             <Typography variant="h4" className="text-base mb-2 font-text-2">
-              Que tal seguir um podcast novo?
+              {t('yourLibrary.followNewPodcast.title')}
             </Typography>
             <Typography variant="body1" className="mb-5 text-sm">
-              Avisaremos você sobre novos episódios.
+              {t('yourLibrary.followNewPodcast.description')}
             </Typography>
-            <Button variant="default">Explore podcasts</Button>
+            <Button variant="default">{t('yourLibrary.followNewPodcast.button')}</Button>
           </div>
         </div>
       </ScrollArea>
@@ -46,32 +49,32 @@ export function YourLibrary() {
         <div className="flex flex-wrap items-center gap-4 mb-3">
           <Link href="#">
             <Typography variant="body2" className="text-text-gray">
-              Legal
+              {t('yourLibrary.links.legal')}
             </Typography>
           </Link>
           <Link href="#">
             <Typography variant="body2" className="text-text-gray">
-              Segurança e Centro de privacidade
+              {t('yourLibrary.links.privacy')}
             </Typography>
           </Link>
           <Link href="#">
             <Typography variant="body2" className="text-text-gray">
-              Política de privacidade
+              {t('yourLibrary.links.policy')}
             </Typography>
           </Link>
           <Link href="#">
             <Typography variant="body2" className="text-text-gray">
-              Cookies
+              {t('yourLibrary.links.cookies')}
             </Typography>
           </Link>
           <Link href="#">
             <Typography variant="body2" className="text-text-gray">
-              Sobre anúncios
+              {t('yourLibrary.links.ads')}
             </Typography>
           </Link>
           <Link href="#">
             <Typography variant="body2" className="text-text-gray">
-              Acessibilidade
+              {t('yourLibrary.links.accessibility')}
             </Typography>
           </Link>
         </div>
