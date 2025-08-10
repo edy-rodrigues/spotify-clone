@@ -1,0 +1,46 @@
+{
+  "header": {
+    "search": {
+      "placeholder": "O que você quer ouvir?"
+    },
+    "rightButtons": {
+      "premium": "Premium",
+      "support": "Suporte",
+      "download": "Baixar",
+      "installApp": "Instalar aplicativo",
+      "signup": "Inscreva-se",
+      "signIn": "Entre"
+    }
+  },
+  "footer": {
+    "ads": {
+      "title": "Testar o Premium de graça",
+      "description": "Inscreva-se para curtir música ilimitada e podcasts só com alguns anúncios. Não precisa de cartão de crédito",
+      "button": "Inscreva-se grátis"
+    }
+  },
+  "home": {
+    "newReleases": "New releases"
+  },
+  "yourLibrary": {
+    "title": "Sua biblioteca",
+    "createFirstPlaylist": {
+      "title": "Crie sua primeira playlist",
+      "description": "É fácil, vamos te ajudar.",
+      "button": "Criar playlist"
+    },
+    "followNewPodcast": {
+      "title": "Que tal seguir um podcast novo?",
+      "description": "Avisaremos você sobre novos episódios",
+      "button": "Explore podcasts"
+    },
+    "links": {
+      "legal": "Legal",
+      "privacy": "Segurança e Centro de privacidade",
+      "policy": "Politíca de privacidade",
+      "cookies": "Cookies",
+      "ads": "Sobre anúncios",
+      "accessibility": "Acessibilidade"
+    }
+  }
+}

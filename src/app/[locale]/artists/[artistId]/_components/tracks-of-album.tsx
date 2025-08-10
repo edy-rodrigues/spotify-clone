@@ -1,4 +1,4 @@
-import { TrackCard } from '@/app/(main)/artists/[artistId]/_components/track-card';
+import { TrackCard } from '@/app/[locale]/artists/[artistId]/_components/track-card';
 import {
   Carousel,
   CarouselContent,

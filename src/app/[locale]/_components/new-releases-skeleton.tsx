@@ -8,15 +8,18 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { CAROUSEL_OPTIONS } from '@/config/carousel';
+import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import React from 'react';
 
-export function NewReleasesSkeleton() {
+export async function NewReleasesSkeleton() {
+  const t = await getTranslations();
+
   return (
     <section className="animate-pulse">
       <Typography variant="h2" className="mb-2 ml-3">
         <Link href="#" className="hover:underline">
-          Lançamentos
+          {t('home.newReleases')}
         </Link>
       </Typography>
       <Carousel

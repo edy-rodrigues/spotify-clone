@@ -1,4 +1,4 @@
-import { CarouselSkeleton } from '@/app/(main)/artists/[artistId]/_components/loading-components/carousel-skeleton';
+import { CarouselSkeleton } from '@/app/[locale]/artists/[artistId]/_components/loading-components/carousel-skeleton';
 import React from 'react';
 
 export function AlbumsSectionsSkeleton() {

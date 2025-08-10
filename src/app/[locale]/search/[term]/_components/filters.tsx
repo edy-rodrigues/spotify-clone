@@ -1,5 +1,5 @@
 'use client';
-import { Filter } from '@/app/(main)/search/[term]/_types/filters';
+import { Filter } from '@/app/[locale]/search/[term]/_types/filters';
 import {
   Carousel,
   CarouselContent,

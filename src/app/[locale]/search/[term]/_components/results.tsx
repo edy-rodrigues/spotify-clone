@@ -1,7 +1,7 @@
 import { CarouselArtistItem } from '@/components/carousel/implementations/carousel-artist-item';
 import { CarouselAlbumItem } from '@/components/carousel/implementations/carousel-album-item';
-import { Filter } from '@/app/(main)/search/[term]/_types/filters';
-import { FilterHandler } from '@/app/(main)/search/[term]/_utils/filter-handler';
+import { Filter } from '@/app/[locale]/search/[term]/_types/filters';
+import { FilterHandler } from '@/app/[locale]/search/[term]/_utils/filter-handler';
 import { Typography } from '@/components/data-display/typography';
 import {
   Carousel,

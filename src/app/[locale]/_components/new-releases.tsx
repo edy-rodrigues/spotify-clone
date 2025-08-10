@@ -17,11 +17,14 @@ import {
 } from '@/components/ui/carousel';
 import { CAROUSEL_OPTIONS } from '@/config/carousel';
 import { SpotifyApiFactory } from '@/infra/spotify-api/spotify-api-factory';
+import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import React from 'react';
 
 export async function NewReleases() {
   const spotifyApi = SpotifyApiFactory.create();
+
+  const t = await getTranslations();
 
   const newReleases = await spotifyApi.browse.getNewReleases({
     country: 'BR',
@@ -32,7 +35,7 @@ export async function NewReleases() {
     <div className="flex flex-col">
       <Typography variant="h2" className="mb-2 ml-3">
         <Link href="#" className="hover:underline">
-          Lançamentos
+          {t('home.newReleases')}
         </Link>
       </Typography>
       <Carousel

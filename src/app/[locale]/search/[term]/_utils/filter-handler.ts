@@ -1,4 +1,4 @@
-import { Filter, FilterEnum } from '@/app/(main)/search/[term]/_types/filters';
+import { Filter, FilterEnum } from '@/app/[locale]/search/[term]/_types/filters';
 
 export class FilterHandler {
   public static validate(filter: string): boolean {

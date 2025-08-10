@@ -1,5 +1,5 @@
-import { AlbumTableRow } from '@/app/(main)/artists/[artistId]/_components/album-table-row';
-import { AlbumsPagination } from '@/app/(main)/artists/[artistId]/_components/albums-pagination';
+import { AlbumTableRow } from '@/app/[locale]/artists/[artistId]/_components/album-table-row';
+import { AlbumsPagination } from '@/app/[locale]/artists/[artistId]/_components/albums-pagination';
 import { Table, TableBody } from '@/components/ui/table';
 import { SpotifyApiFactory } from '@/infra/spotify-api/spotify-api-factory';
 import { Pagination } from '@/utils/pagination';

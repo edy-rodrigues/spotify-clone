@@ -1,7 +1,7 @@
-import { Filters } from '@/app/(main)/search/[term]/_components/filters';
-import { Results } from '@/app/(main)/search/[term]/_components/results';
-import { ResultsSkeleton } from '@/app/(main)/search/[term]/_components/results-skeleton';
-import { FilterHandler } from '@/app/(main)/search/[term]/_utils/filter-handler';
+import { Filters } from '@/app/[locale]/search/[term]/_components/filters';
+import { Results } from '@/app/[locale]/search/[term]/_components/results';
+import { ResultsSkeleton } from '@/app/[locale]/search/[term]/_components/results-skeleton';
+import { FilterHandler } from '@/app/[locale]/search/[term]/_utils/filter-handler';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import React from 'react';
 

@@ -1,19 +1,30 @@
 // The code below imports any other important files to configure the app
 import '@/setup';
+import { locales } from '@/config/i18n';
 
 import type { Metadata } from 'next';
+import { NextIntlClientProvider } from 'next-intl';
 import React from 'react';
+
+// export async function generateMetadata({ params }: { params: { locale: Locale } }) {
+//   const t = await getTranslations({ locale: params.locale, namespace: 'meta' });
+//   return { title: t('title', { app: 'Spotify Clone' }) };
+// }
 
 export const metadata: Metadata = {
   title: 'Spotify – Web player: música para todas as pessoas',
   description: 'O Spotify é um serviço de música digital que dá acesso a milhões de músicas.',
 };
 
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
 type RootLayoutProps = Readonly<{
   children: React.ReactNode;
 }>;
 
-export default function RootLayout(props: RootLayoutProps) {
+export default async function RootLayout(props: RootLayoutProps) {
   const { children } = props;
 
   return (
@@ -130,7 +141,9 @@ export default function RootLayout(props: RootLayoutProps) {
         />
       </head>
       <body className="antialiased">
-        <div className="app-container">{children}</div>
+        <div className="app-container">
+          <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        </div>
       </body>
     </html>
   );
