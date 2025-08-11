@@ -46,6 +46,7 @@ npm install
 Create a `.env.local` file in the project root with the following variables:
 
 ```env
+BASE_URL=http://localhost:3000
 SPOTIFY_CLIENT_ID=your_client_id
 SPOTIFY_CLIENT_SECRET=your_client_secret
 NEXT_PUBLIC_BASE_URL=http://localhost:3000
