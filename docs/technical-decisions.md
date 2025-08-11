@@ -53,11 +53,7 @@ I implemented comprehensive internationalization support in the project with:
 - I developed locale-based routing
 - I created utility functions for language resolution
 - I organized structured translation files
-
-**Why I made this choice:**
-- **Global Accessibility**: I chose to support multiple languages because I believe it makes my application accessible to a wider audience.
-- **Demonstration of Best Practices**: I wanted to demonstrate my knowledge of proper internationalization techniques using Next.js and next-intl.
-- **Extensibility**: I designed the structure to allow me to easily add new languages in the future.
+- I designed the structure to allow me to easily add new languages in the future.
 
 ## How AI was used in this project
 

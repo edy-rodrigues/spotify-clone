@@ -53,11 +53,7 @@ Implementei no projeto um suporte abrangente à internacionalização com:
 - Desenvolvi roteamento baseado em localidade
 - Criei funções utilitárias para resolução de idioma
 - Organizei arquivos de tradução de forma estruturada
-
-**Por que tomei esta decisão:**
-- **Acessibilidade Global**: Escolhi suportar múltiplos idiomas porque acredito que isso torna minha aplicação acessível a um público mais amplo.
-- **Demonstração de Melhores Práticas**: Quis demonstrar meu conhecimento de técnicas adequadas de internacionalização usando Next.js e next-intl.
-- **Extensibilidade**: Projetei a estrutura para permitir que eu possa adicionar facilmente novos idiomas no futuro.
+- Projetei a estrutura para permitir que eu possa adicionar facilmente novos idiomas no futuro
 
 ## Como a IA foi utilizada neste projeto
 
