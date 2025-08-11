@@ -44,6 +44,12 @@
       "accessibility": "Acessibilidade"
     }
   },
+  "notFoundPage": {
+    "title": "Página não encontrada",
+    "description": "Não encontramos a página que você queria.",
+    "homeLink": "Início",
+    "helpLink": "Ajuda"
+  },
   "initialSearchPage": {
     "title": "Buscar",
     "description": "Pesquise e encontre seus artistas favoritos."

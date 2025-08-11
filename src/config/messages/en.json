@@ -44,6 +44,12 @@
       "accessibility": "Accessibility"
     }
   },
+  "notFoundPage": {
+    "title": "Page not found",
+    "description": "We can't find the page you're looking for.",
+    "homeLink": "Home",
+    "helpLink": "Help"
+  },
   "initialSearchPage": {
     "title": "Search",
     "description": "Search and find your favorite artists."
