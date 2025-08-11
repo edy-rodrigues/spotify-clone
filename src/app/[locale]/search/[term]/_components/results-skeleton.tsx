@@ -9,15 +9,18 @@ import {
 } from '@/components/ui/carousel';
 import { CAROUSEL_OPTIONS } from '@/config/carousel';
 import { Link } from '@/i18n/navigation';
+import { getTranslations } from 'next-intl/server';
 import React from 'react';
 
-export function ResultsSkeleton() {
+export async function ResultsSkeleton() {
+  const t = await getTranslations();
+
   return (
     <>
       <section className="mt-8 animate-pulse">
         <Typography variant="h2" className="mb-2 ml-3">
           <Link href="#" className="hover:underline">
-            Álbuns
+            {t('searchPage.sections.albums')}
           </Link>
         </Typography>
         <Carousel
@@ -50,7 +53,7 @@ export function ResultsSkeleton() {
       <section className="mt-14 animate-pulse">
         <Typography variant="h2" className="mb-2 ml-3">
           <Link href="#" className="hover:underline">
-            Artistas
+            {t('searchPage.sections.artists')}
           </Link>
         </Typography>
         <Carousel
