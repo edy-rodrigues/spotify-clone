@@ -12,7 +12,6 @@ Este projeto foi desenvolvido como parte do desafio técnico para a vaga de Fron
 - [React 18](https://reactjs.org/)
 - [TypeScript 5](https://www.typescriptlang.org/)
 - [Tailwind CSS 4](https://tailwindcss.com/)
-- [React Query 5](https://tanstack.com/query/latest)
 - [Cypress 14](https://www.cypress.io/)
 
 ## ✅ Funcionalidades
