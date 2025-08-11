@@ -4,6 +4,8 @@ This project was developed as part of the technical challenge for the Frontend p
 
 *Leia isto em [Português](README.pt-BR.md)*
 
+*Check out the [Technical Decisions Documentation](docs/technical-decisions.md) to understand about the development process*
+
 ## 🧰 Technologies Used
 
 - [Next.js 15 (App Router)](https://nextjs.org/)
