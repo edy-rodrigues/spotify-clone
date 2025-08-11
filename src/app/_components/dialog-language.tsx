@@ -1,5 +1,5 @@
+import { DialogLanguageLink } from '@/app/_components/dialog-language-link';
 import { Typography } from '@/components/data-display/typography';
-import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogContent,
@@ -11,7 +11,6 @@ import {
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { AVAILABLE_LANGUAGES } from '@/config/languagues';
 import { getTranslations } from 'next-intl/server';
-import Link from 'next/link';
 import React from 'react';
 
 type DrawerLanguageProps = Readonly<{
@@ -43,21 +42,7 @@ export async function DialogLanguage(props: DrawerLanguageProps) {
         <ScrollArea className="overflow-y-auto">
           <div className="grid grid-cols-1 xl:grid-cols-4 py-4 px-6 max-h-full">
             {AVAILABLE_LANGUAGES.map((language) => (
-              <Button
-                key={language.symbol}
-                variant="ghost"
-                className="flex flex-col justify-start items-start px-3 py-8 h-auto hover:bg-background-elevation-6 rounded-none hover:scale-none lg:p-4"
-                asChild
-              >
-                <Link href={`/${language.symbol}`}>
-                  <span className="text-white text-base font-normal font-text-2">
-                    {language.nativeName}
-                  </span>
-                  <span className="text-text-gray text-base font-normal font-text-2">
-                    {language.name}
-                  </span>
-                </Link>
-              </Button>
+              <DialogLanguageLink key={language.symbol} language={language} />
             ))}
           </div>
         </ScrollArea>

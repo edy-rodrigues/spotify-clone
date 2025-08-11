@@ -6,4 +6,15 @@ export class I18n {
 
     return name || 'Unknown';
   }
+
+  public static getPathnameWithoutLocale(currentPath: string): string {
+    const allLocaleSymbols = AVAILABLE_LANGUAGES.map((lang) => lang.symbol);
+    const pathSegments = currentPath.split('/').filter(Boolean);
+
+    if (pathSegments.length > 0 && allLocaleSymbols.includes(pathSegments[0])) {
+      return `/${pathSegments.slice(1).join('/')}`;
+    }
+
+    return currentPath;
+  }
 }

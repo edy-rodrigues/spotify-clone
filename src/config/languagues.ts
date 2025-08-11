@@ -1,4 +1,10 @@
-export const AVAILABLE_LANGUAGES = [
+export type Language = {
+  symbol: string;
+  name: string;
+  nativeName: string;
+};
+
+export const AVAILABLE_LANGUAGES: Language[] = [
   {
     symbol: 'en',
     name: 'English',
