@@ -63,6 +63,11 @@
     "homeLink": "홈",
     "helpLink": "도움말"
   },
+  "errorPage": {
+    "title": "문제가 발생했습니다!",
+    "description": "불편을 끼쳐 죄송합니다. 다시 시도해주세요.",
+    "button": "다시 시도"
+  },
   "initialSearchPage": {
     "title": "검색",
     "description": "좋아하는 아티스트를 검색하고 찾아보세요."

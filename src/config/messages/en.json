@@ -63,6 +63,11 @@
     "homeLink": "Home",
     "helpLink": "Help"
   },
+  "errorPage": {
+    "title": "Something went wrong!",
+    "description": "Sorry for the inconvenience. Please try again.",
+    "button": "Try again"
+  },
   "initialSearchPage": {
     "title": "Search",
     "description": "Search and find your favorite artists."
