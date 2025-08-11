@@ -21,7 +21,20 @@
     }
   },
   "home": {
-    "newReleases": "최신 음악"
+    "newReleases": "최신 음악",
+    "genres": {
+      "country": "컨트리",
+      "popBr": "브라질 팝",
+      "funk": "브라질 펑크",
+      "rockBr": "브라질 록",
+      "kPop": "케이팝",
+      "rockKr": "한국 록",
+      "hipHopKr": "한국 힙합",
+      "popIntl": "해외 팝",
+      "rockIntl": "해외 록",
+      "hipHopIntl": "해외 힙합",
+      "electronic": "일렉트로닉"
+    }
   },
   "yourLibrary": {
     "title": "내 라이브러리",

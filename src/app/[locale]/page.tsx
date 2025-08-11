@@ -4,7 +4,7 @@ import { NewReleases } from '@/app/[locale]/_components/new-releases';
 import { NewReleasesSkeleton } from '@/app/[locale]/_components/new-releases-skeleton';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { categoriesForHome } from '@/server/seed/categories-for-home';
-import { setRequestLocale } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import React from 'react';
 
 type HomeProps = Readonly<{
@@ -20,6 +20,8 @@ export default async function Home(props: HomeProps) {
 
   setRequestLocale(locale);
 
+  const t = await getTranslations();
+
   return (
     <ScrollArea className="main-view lg:rounded-lg w-full" type="always">
       <div className="flex flex-col gap-10 w-full p-2 pt-4 pb-25 lg:p-10">
@@ -28,11 +30,20 @@ export default async function Home(props: HomeProps) {
         </React.Suspense>
 
         {Object.values(categoriesForHome).map((category) =>
-          Object.values(category.genres).map((genre) => (
-            <React.Suspense key={genre.label} fallback={<ArtistCarouselSkeleton genre={genre} />}>
-              <ArtistCarousel genre={genre} />
-            </React.Suspense>
-          )),
+          Object.values(category.genres).map((genre) => {
+            const translatedGenre = {
+              ...genre,
+              label: t(genre.label),
+            };
+            return (
+              <React.Suspense
+                key={genre.label}
+                fallback={<ArtistCarouselSkeleton genre={translatedGenre} />}
+              >
+                <ArtistCarousel genre={translatedGenre} />
+              </React.Suspense>
+            );
+          }),
         )}
       </div>
     </ScrollArea>
