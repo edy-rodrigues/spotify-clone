@@ -2,6 +2,8 @@
 
 This document outlines the testing approach for the Spotify Clone project.
 
+*Leia isto em [Português](test-documentation.pt-BR.md)*
+
 ## 🔍 Overview
 
 The project uses a combination of testing strategies to ensure code quality and functionality:

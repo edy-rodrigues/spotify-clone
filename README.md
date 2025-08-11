@@ -1,8 +1,10 @@
 # 🎧 Spotify UI Clone - Frontend Hiring Challenge
 
-Este projeto foi desenvolvido como parte do desafio técnico para a vaga de Frontend na Kanastra. A proposta consiste em consumir a API pública do Spotify, oferecendo uma interface chamativa e responsiva inspirada na interface oficial do Spotify.
+This project was developed as part of the technical challenge for the Frontend position at Kanastra. The proposal consists of consuming the Spotify public API, offering an attractive and responsive interface inspired by the official Spotify interface.
 
-## 🧰 Tecnologias Utilizadas
+*Leia isto em [Português](README.pt-BR.md)*
+
+## 🧰 Technologies Used
 
 - [Next.js 15 (App Router)](https://nextjs.org/)
 - [React 18](https://reactjs.org/)
@@ -11,34 +13,34 @@ Este projeto foi desenvolvido como parte do desafio técnico para a vaga de Fron
 - [React Query 5](https://tanstack.com/query/latest)
 - [Cypress 14](https://www.cypress.io/)
 
-## ✅ Funcionalidades
+## ✅ Features
 
-- 🎤 Listagem de artistas
-- 💿 Detalhes de um artista (popularidade, principais músicas e álbuns)
-- 📚 Paginação manual de álbuns (20 por página)
-- 🔎 Filtros:
-  - Por nome do artista
-  - Por nome do álbum
-- 🌍 Interface responsiva
-- 🎨 UI inspirada no Spotify com foco visual (animações e estilizações)
+- 🎤 Artist listing
+- 💿 Artist details (popularity, top tracks, and albums)
+- 📚 Manual album pagination (20 per page)
+- 🔎 Filters:
+  - By artist name
+  - By album name
+- 🌍 Responsive interface
+- 🎨 Spotify-inspired UI with visual focus (animations and styling)
 
-## 🚀 Como rodar localmente
+## 🚀 How to run locally
 
-### 1. Pré-requisitos
+### 1. Prerequisites
 
-- Node.js (versão recomendada: **2.x**)
+- Node.js (recommended version: **2.x**)
 - Npm
 
-### 2. Instalação
+### 2. Installation
 
 ```bash
-# Instale as dependências
+# Install dependencies
 npm install
 ```
 
-### 3. Variáveis de ambiente
+### 3. Environment variables
 
-Crie um arquivo `.env.local` na raiz do projeto com as seguintes variáveis:
+Create a `.env.local` file in the project root with the following variables:
 
 ```env
 SPOTIFY_CLIENT_ID=your_client_id
@@ -46,55 +48,61 @@ SPOTIFY_CLIENT_SECRET=your_client_secret
 NEXT_PUBLIC_BASE_URL=http://localhost:3000
 ```
 
-### 4. Executar o projeto
+### 4. Run the project
 
 ```bash
-npm install
+npm run dev
 ```
 
-Acesse em: [http://localhost:3000](http://localhost:3000)
+Access at: [http://localhost:3000](http://localhost:3000)
 
-## Outros comandos
+## Other commands
 ```bash
-# Execute o seguinte comando para subir gerar o build da aplicação
+# Run the following command to generate the application build
 npm run build
 
-# Execute o seguinte comando para subir o ambiente de produção pós build
+# Run the following command to start the production environment after build
 npm run start
 
-# Execute o seguinte comando para subir verificar o lint
+# Run the following command to check lint
 npm run lint
 ```
 
-## 🧪 Testes
+## 🧪 Tests
 
-### Testes Unitários
+### Unit Tests
 ```bash
-# Execute os testes unitários
+# Run unit tests
 npm run test:unit
 
-# Execute os testes unitários em modo watch
+# Run unit tests in watch mode
 npm run test:unit:watch
 
-# Execute os testes unitários com cobertura
+# Run unit tests with coverage
 npm run test:unit:coverage
 ```
 
-### Testes E2E (Cypress)
+### E2E Tests (Cypress)
 ```bash
-# Abra o Cypress em modo interativo
+# Open Cypress in interactive mode
 npm run cypress
 
-# Execute os testes do Cypress em modo headless
+# Run Cypress tests in headless mode
 npm run cypress:headless
 
-# Inicie o servidor de desenvolvimento e abra o Cypress
+# Start the development server and open Cypress
 npm run test:e2e
 
-# Inicie o servidor de desenvolvimento e execute os testes do Cypress em modo headless
+# Start the development server and run Cypress tests in headless mode
 npm run test:e2e:headless
 ```
 
+## 📚 Documentation
+
+For more information about the tests, see:
+- [Test Documentation](docs/test-documentation.md)
+- [E2E Test Documentation](docs/e2e-test-documentation.md)
+
 ---
 
-Desenvolvido por [Edinei Rodrigues](https://github.com/edy-rodrigues) 🧑‍💻
+Developed by [Edinei Rodrigues](https://github.com/edy-rodrigues) 🧑‍💻

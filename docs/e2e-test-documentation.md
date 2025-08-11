@@ -2,6 +2,8 @@
 
 This document provides an overview of the end-to-end (E2E) tests implemented for the Spotify Clone application using Cypress.
 
+*Leia isto em [Português](e2e-test-documentation.pt-BR.md)*
+
 ## Test Files Structure
 
 The E2E tests are organized into the following files:
