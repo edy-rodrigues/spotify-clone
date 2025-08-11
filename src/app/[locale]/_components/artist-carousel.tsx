@@ -24,7 +24,7 @@ export async function ArtistCarousel(props: ArtistCarouselProps) {
 
   const artistsIds = genre.artists.map((artist) => artist.id);
   const artists = await spotifyApi.artists.getByIds(artistsIds);
-  await new Promise((resolve) => setTimeout(resolve, 3000));
+  // await new Promise((resolve) => setTimeout(resolve, 3000));
 
   return (
     <div className="flex flex-col" key={genre.label}>
