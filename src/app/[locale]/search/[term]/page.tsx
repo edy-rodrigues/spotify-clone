@@ -3,10 +3,12 @@ import { Results } from '@/app/[locale]/search/[term]/_components/results';
 import { ResultsSkeleton } from '@/app/[locale]/search/[term]/_components/results-skeleton';
 import { FilterHandler } from '@/app/[locale]/search/[term]/_utils/filter-handler';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { setRequestLocale } from 'next-intl/server';
 import React from 'react';
 
 type SearchPageProps = Readonly<{
   params: Promise<{
+    locale: string;
     term: string;
   }>;
   searchParams: Promise<{
@@ -17,8 +19,10 @@ type SearchPageProps = Readonly<{
 export default async function SearchPage(props: SearchPageProps) {
   const { params, searchParams } = props;
 
-  const { term } = await params;
+  const { locale, term } = await params;
   const { filter: filterParams } = await searchParams;
+
+  setRequestLocale(locale);
 
   const filter = FilterHandler.sanitize(filterParams);
 

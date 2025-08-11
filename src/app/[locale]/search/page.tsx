@@ -1,10 +1,22 @@
 import { SearchInput } from '@/app/_components/search-input';
 import { Typography } from '@/components/data-display/typography';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import React from 'react';
 
-export default async function InitialSearchPage() {
+type InitialSearchPageProps = Readonly<{
+  params: Promise<{
+    locale: string;
+  }>;
+}>;
+
+export default async function InitialSearchPage(props: InitialSearchPageProps) {
+  const { params } = props;
+
+  const { locale } = await params;
+
+  setRequestLocale(locale);
+
   const t = await getTranslations();
 
   return (

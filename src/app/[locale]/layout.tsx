@@ -32,7 +32,7 @@ export default async function LocaleLayout(props: LocaleLayoutProps) {
         <YourLibrary />
       </div>
       {children}
-      <div className="right-sidebar rounded-lg hidden">Right sidebar</div>
+      <div className="right-sidebar rounded-lg hidden" />
       <Footer />
     </>
   );

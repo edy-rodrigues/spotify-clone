@@ -12,11 +12,12 @@ import { PlayIcon } from '@/components/icons/play-icon';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Pagination } from '@/utils/pagination';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import React from 'react';
 
 type ArtistPageProps = {
   params: Promise<{
+    locale: string;
     artistId: string;
   }>;
   searchParams: Promise<{
@@ -28,8 +29,10 @@ type ArtistPageProps = {
 export default async function ArtistPage(props: ArtistPageProps) {
   const { params, searchParams } = props;
 
-  const { artistId } = await params;
+  const { locale, artistId } = await params;
   const { page: searchParamPage, limit: searchParamLimit } = await searchParams;
+
+  setRequestLocale(locale);
 
   const t = await getTranslations();
 
