@@ -1,4 +1,5 @@
 'use client';
+import { cardRootVariants } from '@/components/data-display/card';
 import { redirect } from '@/i18n/navigation';
 import { cn } from '@/utils/cn';
 import { RedirectType } from 'next/navigation';
@@ -6,7 +7,7 @@ import React from 'react';
 import { useLocale } from 'use-intl';
 
 type CarouselAlbumItemButtonProps = Readonly<
-  React.HTMLAttributes<HTMLButtonElement> & {
+  React.HTMLAttributes<HTMLDivElement> & {
     albumId: string;
     children?: React.ReactNode;
   }
@@ -30,13 +31,12 @@ export function CarouselAlbumItemButton(props: CarouselAlbumItemButtonProps) {
   }
 
   return (
-    <button
-      className={cn('w-full text-left cursor-pointer', className)}
-      type="button"
+    <div
+      className={cn('w-full text-left cursor-pointer', cardRootVariants(), className)}
       onClick={handleClick(albumId)}
       {...rest}
     >
       {children}
-    </button>
+    </div>
   );
 }

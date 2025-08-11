@@ -1,36 +1,29 @@
 'use client';
 import { PlayIcon } from '@/components/icons/play-icon';
 import { Button } from '@/components/ui/button';
-import { cn } from '@/utils/cn';
-import { Slot } from '@radix-ui/react-slot';
-import NextImage, { ImageProps } from 'next/image';
 import { Link } from '@/i18n/navigation';
+import { cn } from '@/utils/cn';
+import { cva } from 'class-variance-authority';
+import NextImage, { ImageProps } from 'next/image';
 import React from 'react';
 
-export type CardRootProps = Readonly<React.ComponentProps<typeof Link>> & {
-  asChild?: boolean;
-};
+export const cardRootVariants = cva(
+  'group flex flex-col p-3 hover:bg-background-highlight rounded-[6px]',
+);
+
+type CardRootProps = Readonly<React.ComponentProps<typeof Link>> & {};
 
 export function CardRoot(props: CardRootProps) {
-  const { className, children, asChild, ...rest } = props;
-
-  const Comp = asChild ? Slot : Link;
+  const { className, children, ...rest } = props;
 
   return (
-    <Comp
-      data-slot="card"
-      className={cn(
-        'group flex flex-col p-3 hover:bg-background-highlight rounded-[6px]',
-        className,
-      )}
-      {...rest}
-    >
+    <Link data-slot="card" className={cn(cardRootVariants(), className)} {...rest}>
       {children}
-    </Comp>
+    </Link>
   );
 }
 
-export type CardImageContainerProps = React.HTMLAttributes<HTMLDivElement>;
+type CardImageContainerProps = React.HTMLAttributes<HTMLDivElement>;
 
 export function CardImageContainer(props: CardImageContainerProps) {
   const { className, children, ...rest } = props;
@@ -46,7 +39,7 @@ export function CardImageContainer(props: CardImageContainerProps) {
   );
 }
 
-export type CardImageProps = ImageProps;
+type CardImageProps = ImageProps;
 
 export function CardImage(props: CardImageProps) {
   const { className, alt, ...rest } = props;
