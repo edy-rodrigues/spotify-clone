@@ -28,18 +28,23 @@
   },
   "home": {
     "newReleases": "New Releases",
-    "genres": {
-      "country": "Country",
-      "popBr": "Brazilian Pop",
-      "funk": "Brazilian Funk",
-      "rockBr": "Brazilian Rock",
-      "kPop": "K-Pop",
-      "rockKr": "Korean Rock",
-      "hipHopKr": "Korean Hip-Hop",
-      "popIntl": "International Pop",
-      "rockIntl": "International Rock",
-      "hipHopIntl": "International Hip-Hop",
-      "electronic": "Electronic Music"
+    "playlists": {
+      "artists": {
+        "label": "Artist",
+        "genres": {
+          "country": "Country",
+          "popBr": "Brazilian Pop",
+          "funk": "Brazilian Funk",
+          "rockBr": "Brazilian Rock",
+          "kPop": "K-Pop",
+          "rockKr": "Korean Rock",
+          "hipHopKr": "Korean Hip-Hop",
+          "popIntl": "International Pop",
+          "rockIntl": "International Rock",
+          "hipHopIntl": "International Hip-Hop",
+          "electronic": "Electronic Music"
+        }
+      }
     }
   },
   "yourLibrary": {

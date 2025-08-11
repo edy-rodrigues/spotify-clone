@@ -38,7 +38,7 @@ export const categoriesForHome: CategoriesForHome = {
   BR: {
     genres: {
       country: {
-        label: 'home.genres.country',
+        label: 'home.playlists.artists.genres.country',
         artists: [
           { id: '7MiDcPa6UiV3In7lIM71IN', name: 'Gusttavo Lima' },
           { id: '1yR65psqiazQpeM79CcGh8', name: 'Marília Mendonça' },
@@ -50,7 +50,7 @@ export const categoriesForHome: CategoriesForHome = {
         ],
       },
       pop: {
-        label: 'home.genres.popBr',
+        label: 'home.playlists.artists.genres.popBr',
         artists: [
           { id: '7FNnA9vBm6EKceENgCGRMb', name: 'Anitta' },
           { id: '4JNo6Q5KdcRf1vtSX9mB0S', name: 'João Gomes' },
@@ -62,7 +62,7 @@ export const categoriesForHome: CategoriesForHome = {
         ],
       },
       funk: {
-        label: 'home.genres.funk',
+        label: 'home.playlists.artists.genres.funk',
         artists: [
           { id: '1mXAhKnZEdF6rotyyd4GBi', name: 'MC Kevinho' },
           { id: '7Lmrb6KcIzfkmgbtokjsAL', name: 'MC Don Juan' },
@@ -74,7 +74,7 @@ export const categoriesForHome: CategoriesForHome = {
         ],
       },
       rock: {
-        label: 'home.genres.rockBr',
+        label: 'home.playlists.artists.genres.rockBr',
         artists: [
           { id: '2dmQ0vMD3THLMcz7DsvfaT', name: 'Pitty' },
           { id: '6tw6EpC9RgmSRZiZg0n22t', name: 'Legião Urbana' },
@@ -90,7 +90,7 @@ export const categoriesForHome: CategoriesForHome = {
   KR: {
     genres: {
       pop: {
-        label: 'home.genres.kPop',
+        label: 'home.playlists.artists.genres.kPop',
         artists: [
           { id: '41MozSoPIsD1dJM0CLPjZF', name: 'BLACKPINK' },
           { id: '7n2Ycct7Beij7Dj7meI4X0', name: 'TWICE' },
@@ -109,7 +109,7 @@ export const categoriesForHome: CategoriesForHome = {
         ],
       },
       rock: {
-        label: 'home.genres.rockKr',
+        label: 'home.playlists.artists.genres.rockKr',
         artists: [
           { id: '5TnQc2N1iKlFjYD7CPGvFc', name: 'DAY6' },
           { id: '5na1LmEmK2VzNLje9snJYW', name: 'The Rose' },
@@ -121,7 +121,7 @@ export const categoriesForHome: CategoriesForHome = {
         ],
       },
       hipHop: {
-        label: 'home.genres.hipHopKr',
+        label: 'home.playlists.artists.genres.hipHopKr',
         artists: [
           { id: '4XpUIb8uuNlIWVKmgKZXC0', name: 'Zico' },
           { id: '3eCd0TZrBPm2n9cDG6yWfF', name: 'DEAN' },
@@ -144,7 +144,7 @@ export const categoriesForHome: CategoriesForHome = {
   international: {
     genres: {
       pop: {
-        label: 'home.genres.popIntl',
+        label: 'home.playlists.artists.genres.popIntl',
         artists: [
           { id: '06HL4z0CvFAxyc27GXpf02', name: 'Taylor Swift' },
           { id: '6M2wZ9GZgrQXHCFfjv46we', name: 'Dua Lipa' },
@@ -156,7 +156,7 @@ export const categoriesForHome: CategoriesForHome = {
         ],
       },
       rock: {
-        label: 'home.genres.rockIntl',
+        label: 'home.playlists.artists.genres.rockIntl',
         artists: [
           { id: '0L8ExT028jH3ddEcZwqJJ5', name: 'Red Hot Chili Peppers' },
           { id: '7jy3rLJdDQY21OgRLCZ9sD', name: 'Foo Fighters' },
@@ -168,7 +168,7 @@ export const categoriesForHome: CategoriesForHome = {
         ],
       },
       hipHop: {
-        label: 'home.genres.hipHopIntl',
+        label: 'home.playlists.artists.genres.hipHopIntl',
         artists: [
           { id: '3TVXtAsR1Inumwj472S9r4', name: 'Drake' },
           { id: '2YZyLoL8N0Wb9xBt1NhZWg', name: 'Kendrick Lamar' },
@@ -180,7 +180,7 @@ export const categoriesForHome: CategoriesForHome = {
         ],
       },
       electronic: {
-        label: 'home.genres.electronic',
+        label: 'home.playlists.artists.genres.electronic',
         artists: [
           { id: '1Cs0zKBU1kc0i8ypK3B9ai', name: 'David Guetta' },
           { id: '7CajNmpbOovFoOoasH2HaY', name: 'Calvin Harris' },

@@ -28,18 +28,23 @@
   },
   "home": {
     "newReleases": "Lançamentos",
-    "genres": {
-      "country": "Sertanejo",
-      "popBr": "Pop Brasileiro",
-      "funk": "Funk Brasileiro",
-      "rockBr": "Rock Brasileiro",
-      "kPop": "K-Pop",
-      "rockKr": "Rock Coreano",
-      "hipHopKr": "Hip-Hop Coreano",
-      "popIntl": "Pop Internacional",
-      "rockIntl": "Rock Internacional",
-      "hipHopIntl": "Hip-Hop Internacional",
-      "electronic": "Música Eletrônica"
+    "playlists": {
+      "artists": {
+        "label": "Artista",
+        "genres": {
+          "country": "Sertanejo",
+          "popBr": "Pop Brasileiro",
+          "funk": "Funk Brasileiro",
+          "rockBr": "Rock Brasileiro",
+          "kPop": "K-Pop",
+          "rockKr": "Rock Coreano",
+          "hipHopKr": "Hip-Hop Coreano",
+          "popIntl": "Pop Internacional",
+          "rockIntl": "Rock Internacional",
+          "hipHopIntl": "Hip-Hop Internacional",
+          "electronic": "Música Eletrônica"
+        }
+      }
     }
   },
   "yourLibrary": {

@@ -7,6 +7,7 @@ import {
 } from '@/components/data-display/card';
 import { CarouselItem } from '@/components/ui/carousel';
 import { Artist } from '@/domain/artist';
+import { getTranslations } from 'next-intl/server';
 import React from 'react';
 
 type CarouselArtistItemProps = Readonly<{
@@ -15,6 +16,8 @@ type CarouselArtistItemProps = Readonly<{
 
 export async function CarouselArtistItem(props: CarouselArtistItemProps) {
   const { artist } = props;
+
+  const t = await getTranslations();
 
   return (
     <CarouselItem className="min-w-[168px] lg:min-w-none basis-auto lg:basis-1/3 xl:basis-1/4 2xl:basis-1/6 3xl:basis-1/7 4xl:basis-1/10 lg:min-w-[177px] p-0">
@@ -28,7 +31,7 @@ export async function CarouselArtistItem(props: CarouselArtistItemProps) {
           />
         </CardImageContainer>
         <CardTitle>{artist.name}</CardTitle>
-        <CardSubtitle>Artista</CardSubtitle>
+        <CardSubtitle>{t('home.playlists.artists.label')}</CardSubtitle>
       </CardRoot>
     </CarouselItem>
   );
