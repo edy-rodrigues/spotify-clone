@@ -31,7 +31,7 @@ export function MobileBottomNav() {
   return (
     <nav
       aria-label="Navegação principal"
-      className="fixed inset-x-0 bottom-0 z-50 bg-[linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.9),var(--background-elevation-1))] md:hidden h-[70px]"
+      className="fixed inset-x-0 bottom-0 z-50 bg-[linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.9),var(--background-elevation-1))] lg:hidden h-[70px]"
     >
       <ul className="flex items-stretch justify-around">
         {items.map(({ href, label, icon: Icon, activeIcon: ActiveIcon }) => {

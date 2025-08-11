@@ -16,7 +16,7 @@ export default async function NotFound() {
   return (
     <div className="fixed h-full w-full bg-background-elevation-1 flex flex-col justify-center items-center overflow-hidden">
       <SpotifyIcon className="fill-primary-main w-15 h-15 mb-10" />
-      <Typography variant="h1" className="mb-4 min-md:text-5xl">
+      <Typography variant="h1" className="mb-4 md:text-3xl! 2xl:text-5xl!">
         {t('notFoundPage.title')}
       </Typography>
       <Typography variant="body1" className="text-text-gray text-base">

@@ -20,16 +20,16 @@ export default async function InitialSearchPage(props: InitialSearchPageProps) {
   const t = await getTranslations();
 
   return (
-    <ScrollArea className="main-view rounded-lg flex-1 before:content-[none] relative p-2">
+    <ScrollArea className="main-view rounded-lg flex-1 before:content-[none] relative p-2 lg:p-6">
       <div className="flex flex-col min-h-full mt-4 p-2">
-        <Typography variant="h1" className="mb-4">
+        <Typography variant="h1" className="mb-4 md:text-2xl!">
           {t('initialSearchPage.title')}
         </Typography>
         <SearchInput />
 
         <Typography
           variant="h4"
-          className="absolute top-0 bottom-0 left-0 right-0 m-auto text-xl h-fit text-center max-w-[250px] text-text-gray"
+          className="absolute top-0 bottom-0 left-0 right-0 m-auto text-xl h-fit text-center max-w-[250px] lg:max-w-none text-text-gray"
         >
           {t('initialSearchPage.description')}
         </Typography>

@@ -41,7 +41,10 @@ export async function Banner(props: BannerProps) {
             {t('artistPage.banner.artistVerified')}
           </Typography>
         </span>
-        <Typography variant="h1" className="my-1 lg:my-0 min-md:text-[96px] font-extrabold">
+        <Typography
+          variant="h1"
+          className="my-1 lg:my-0 md:text-[48px] lg:text-[60px] 2xl:text-[96px]! font-extrabold"
+        >
           {artist.name}
         </Typography>
         <Typography className="text-base font-text-2">
