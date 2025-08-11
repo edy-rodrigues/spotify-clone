@@ -6,6 +6,8 @@ Este projeto foi desenvolvido como parte do desafio técnico para a vaga de Fron
 
 *Confira a [Documentação de Decisões Técnicas](docs/technical-decisions.pt-BR.md) para entender sobre o processo de desenvolvimento*
 
+*Confia também a [demonstração ao vivo](https://spotify-clone-lovat-six.vercel.app)*
+
 ## 🧰 Tecnologias Utilizadas
 
 - [Next.js 15 (App Router)](https://nextjs.org/)

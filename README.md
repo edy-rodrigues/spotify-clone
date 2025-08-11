@@ -6,6 +6,8 @@ This project was developed as part of the technical challenge for the Frontend p
 
 *Check out the [Technical Decisions Documentation](docs/technical-decisions.md) to understand about the development process*
 
+*Also, check out the [live demo](https://spotify-clone-lovat-six.vercel.app)*
+
 ## 🧰 Technologies Used
 
 - [Next.js 15 (App Router)](https://nextjs.org/)
