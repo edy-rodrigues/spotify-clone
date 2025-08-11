@@ -6,7 +6,7 @@ import { SearchIcon } from '@/components/icons/search-icon';
 import { XIcon } from '@/components/icons/x-icon';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { usePathname, useRouter } from '@/i18n/navigation';
+import { Link, usePathname, useRouter } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
 import React, { useEffect, useState } from 'react';
 import { useDebouncedCallback } from 'use-debounce';
@@ -69,12 +69,19 @@ export function SearchInput() {
           </Button>
         )}
         <div className="flex items-center border-l border-l-text-gray pl-3">
-          <Button size="icon" color="transparent" className="size-6 hover:[&>svg]:fill-white">
-            {isSearchPage ? (
-              <BrowseFilledIcon className="fill-white size-6 transition-colors group-focus-within:fill-white" />
-            ) : (
-              <BrowseIcon className="fill-text-gray size-6 transition-colors group-focus-within:fill-white" />
-            )}
+          <Button
+            size="icon"
+            color="transparent"
+            className="size-6 hover:[&>svg]:fill-white"
+            asChild
+          >
+            <Link href="/search">
+              {isSearchPage ? (
+                <BrowseFilledIcon className="fill-white size-6 transition-colors group-focus-within:fill-white" />
+              ) : (
+                <BrowseIcon className="fill-text-gray size-6 transition-colors group-focus-within:fill-white" />
+              )}
+            </Link>
           </Button>
         </div>
       </div>
