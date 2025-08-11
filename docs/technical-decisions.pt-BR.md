@@ -6,7 +6,7 @@ Este documento descreve as principais decisões técnicas que tomei durante o de
 
 ## Funcionalidades Planejadas Não Implementadas
 
-Baixo estão funcionalidades que planejei para este projeto que não puderam ser implementadas por falta de tempo:
+Abaixo estão funcionalidades que planejei para este projeto que não puderam ser implementadas por falta de tempo:
 
 - **Player de áudio**: Um player funcional que permitiria aos usuários ouvir prévias de músicas
 - **Autenticação do usuário**: Implementação do OAuth do Spotify para experiências personalizadas
