@@ -4,6 +4,18 @@ This document outlines the key technical decisions I made during the development
 
 *Leia em [português](technical-decisions.pt-BR.md)*
 
+## Planned Features Not Implemented
+
+Below are features I planned for this project that could not be implemented due to time constraints:
+
+- **Audio Player**: A functional player that would allow users to listen to song previews
+- **User Authentication**: Implementation of Spotify OAuth for personalized user experiences
+- **Personalized UI/UX**: Interface changes based on authentication status to offer customized content
+- **Album Page**: Dedicated page to display album details and tracks
+- **Song Page**: Individual pages for songs with additional metadata and playback options
+
+It's worth noting that due to the absence of an album page implementation, some links on the home page may lead to a 404 page. This is a known limitation of the current version.
+
 ## Domain Entities
 
 ### Spotify API Coupling
@@ -85,3 +97,4 @@ For a production environment, I would recommend:
 2. Implementing proper DTOs for the API responses I developed
 3. Adding real functionality to the UI components I mocked
 4. Expanding the test coverage I planned
+5. Implementing the planned features

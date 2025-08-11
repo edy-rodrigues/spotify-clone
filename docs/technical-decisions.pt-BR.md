@@ -4,6 +4,18 @@ Este documento descreve as principais decisões técnicas que tomei durante o de
 
 *Leia em [inglês](technical-decisions.md)*
 
+## Funcionalidades Planejadas Não Implementadas
+
+Baixo estão funcionalidades que planejei para este projeto que não puderam ser implementadas por falta de tempo:
+
+- **Player de áudio**: Um player funcional que permitiria aos usuários ouvir prévias de músicas
+- **Autenticação do usuário**: Implementação do OAuth do Spotify para experiências personalizadas
+- **UI/UX personalizada**: Alterações na interface baseadas no status de autenticação para oferecer conteúdo personalizado
+- **Página do álbum**: Página dedicada para exibir detalhes e faixas do álbum
+- **Página da música**: Páginas individuais para músicas com metadados adicionais e opções de reprodução
+
+Vale ressaltar que, devido à ausência da implementação da página de álbum, alguns links na página inicial podem levar a uma página 404. Esta é uma limitação conhecida da versão atual.
+
 ## Entidades de Domínio
 
 ### Acoplamento com a API do Spotify
@@ -85,3 +97,4 @@ Para um ambiente de produção, eu recomendaria:
 2. Implementar os DTOs adequados para as respostas da API que desenvolvi
 3. Adicionar funcionalidade real aos componentes de UI que simulei
 4. Expandir a cobertura de testes que planejei
+5. Implementar as funcionalidades planejadas
