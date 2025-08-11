@@ -7,13 +7,36 @@ This document outlines the testing approach for the Spotify Clone project.
 The project uses a combination of testing strategies to ensure code quality and functionality:
 
 - **Unit Tests**: For testing individual components, hooks, and utilities
-- **E2E Tests**: For testing complete user flows and integration (planned)
+- **E2E Tests**: For testing complete user flows and integration
 
 ## 🧩 E2E Tests (Cypress)
 
-E2E tests will be implemented using Cypress to test complete user flows and integration between components.
+E2E tests are implemented using Cypress to test complete user flows and integration between components.
 
-*Note: E2E tests implementation is planned for the future.*
+### Running E2E Tests
+
+The following npm scripts are available for running E2E tests:
+
+```bash
+# Open Cypress in interactive mode
+npm run cypress
+
+# Run Cypress tests in headless mode
+npm run cypress:headless
+
+# Start the development server and open Cypress
+npm run test:e2e
+
+# Start the development server and run Cypress tests in headless mode
+npm run test:e2e:headless
+```
+
+### Test Structure
+
+- E2E tests are located in the `e2e` directory
+- Test files follow the naming convention: `*.cy.ts`
+- Fixtures for mock data are stored in `e2e/fixtures`
+- Custom commands and utilities are in `e2e/support`
 
 ## 📦 Testes Unitários (Vitest)
 

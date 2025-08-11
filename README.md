@@ -9,7 +9,7 @@ Este projeto foi desenvolvido como parte do desafio técnico para a vaga de Fron
 - [TypeScript 5](https://www.typescriptlang.org/)
 - [Tailwind CSS 4](https://tailwindcss.com/)
 - [React Query 5](https://tanstack.com/query/latest)
-- [Cypress 14](https://www.cypress.io/) *(em breve)*
+- [Cypress 14](https://www.cypress.io/)
 
 ## ✅ Funcionalidades
 
@@ -64,6 +64,35 @@ npm run start
 
 # Execute o seguinte comando para subir verificar o lint
 npm run lint
+```
+
+## 🧪 Testes
+
+### Testes Unitários
+```bash
+# Execute os testes unitários
+npm run test:unit
+
+# Execute os testes unitários em modo watch
+npm run test:unit:watch
+
+# Execute os testes unitários com cobertura
+npm run test:unit:coverage
+```
+
+### Testes E2E (Cypress)
+```bash
+# Abra o Cypress em modo interativo
+npm run cypress
+
+# Execute os testes do Cypress em modo headless
+npm run cypress:headless
+
+# Inicie o servidor de desenvolvimento e abra o Cypress
+npm run test:e2e
+
+# Inicie o servidor de desenvolvimento e execute os testes do Cypress em modo headless
+npm run test:e2e:headless
 ```
 
 ---

@@ -49,13 +49,14 @@ export function SearchInput() {
   }, [pathname]);
 
   return (
-    <div className="flex items-center w-full relative group">
+    <div className="flex items-center w-full relative group" data-slot="search-container">
       <SearchIcon className="fill-text-gray size-6 absolute left-3 transition-colors group-focus-within:fill-white" />
       <Input
         placeholder={t('header.search.placeholder')}
         className="pl-12 py-4 pr-24"
         value={query}
         onChange={handleChange}
+        data-slot="search-input"
       />
       <div className="absolute flex items-center right-4 top-3 transition-colors group-focus-within:border-l-white">
         {query && (
@@ -64,6 +65,7 @@ export function SearchInput() {
             color="transparent"
             className="size-6 hover:[&>svg]:fill-white mx-3"
             onClick={handleClear}
+            data-slot="search-clear-button"
           >
             <XIcon className="fill-text-gray size-6" />
           </Button>
@@ -74,6 +76,7 @@ export function SearchInput() {
             color="transparent"
             className="size-6 hover:[&>svg]:fill-white"
             asChild
+            data-slot="search-browse-button"
           >
             <Link href="/search">
               {isSearchPage ? (

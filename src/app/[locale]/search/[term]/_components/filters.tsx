@@ -32,64 +32,100 @@ export function Filters(props: FiltersProps) {
   }, 500);
 
   return (
-    <Carousel
-      className="w-full"
-      opts={{
-        dragFree: true,
-      }}
-    >
+    <Carousel className="w-full" opts={{ dragFree: true }} data-slot="filters-carousel">
       <ToggleGroup
         type="single"
         value={filter}
         defaultValue="all"
         onValueChange={handleChange}
         asChild
+        data-slot="filters-toggle-group"
       >
         <CarouselContent className="m-0 gap-2">
           <CarouselItem className="basis-auto p-0">
-            <ToggleGroupItem value="all" size="sm">
+            <ToggleGroupItem value="all" size="sm" data-slot="filter-item" data-filter-value="all">
               {t('searchPage.filters.all')}
             </ToggleGroupItem>
           </CarouselItem>
           <CarouselItem className="basis-auto p-0">
-            <ToggleGroupItem value="artist" size="sm">
+            <ToggleGroupItem
+              value="artist"
+              size="sm"
+              data-slot="filter-item"
+              data-filter-value="artist"
+            >
               {t('searchPage.filters.artists')}
             </ToggleGroupItem>
           </CarouselItem>
           <CarouselItem className="basis-auto p-0">
-            <ToggleGroupItem value="album" size="sm">
+            <ToggleGroupItem
+              value="album"
+              size="sm"
+              data-slot="filter-item"
+              data-filter-value="album"
+            >
               {t('searchPage.filters.albums')}
             </ToggleGroupItem>
           </CarouselItem>
           <CarouselItem className="basis-auto p-0">
-            <ToggleGroupItem value="track" size="sm" disabled>
+            <ToggleGroupItem
+              value="track"
+              size="sm"
+              disabled
+              data-slot="filter-item"
+              data-filter-value="track"
+            >
               {t('searchPage.filters.musics')}
             </ToggleGroupItem>
           </CarouselItem>
           <CarouselItem className="basis-auto p-0">
-            <ToggleGroupItem value="playlist" size="sm" disabled>
+            <ToggleGroupItem
+              value="playlist"
+              size="sm"
+              disabled
+              data-slot="filter-item"
+              data-filter-value="playlist"
+            >
               {t('searchPage.filters.playlists')}
             </ToggleGroupItem>
           </CarouselItem>
           <CarouselItem className="basis-auto p-0">
-            <ToggleGroupItem value="show" size="sm" disabled>
+            <ToggleGroupItem
+              value="show"
+              size="sm"
+              disabled
+              data-slot="filter-item"
+              data-filter-value="show"
+            >
               {t('searchPage.filters.show')}
             </ToggleGroupItem>
           </CarouselItem>
           <CarouselItem className="basis-auto p-0">
-            <ToggleGroupItem value="episodes" size="sm" disabled>
+            <ToggleGroupItem
+              value="episodes"
+              size="sm"
+              disabled
+              data-slot="filter-item"
+              data-filter-value="episodes"
+            >
               {t('searchPage.filters.episodes')}
             </ToggleGroupItem>
           </CarouselItem>
           <CarouselItem className="basis-auto p-0">
-            <ToggleGroupItem value="profiles" size="sm" disabled>
+            <ToggleGroupItem
+              value="profiles"
+              size="sm"
+              disabled
+              data-slot="filter-item"
+              data-filter-value="profiles"
+            >
               {t('searchPage.filters.profiles')}
             </ToggleGroupItem>
           </CarouselItem>
         </CarouselContent>
       </ToggleGroup>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious data-slot="filters-previous" />
+      <CarouselNext data-slot="filters-next" />
     </Carousel>
   );
 }
