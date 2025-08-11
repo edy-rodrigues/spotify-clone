@@ -18,6 +18,12 @@
       "title": "Testar o Premium de graça",
       "description": "Inscreva-se para curtir música ilimitada e podcasts só com alguns anúncios. Não precisa de cartão de crédito",
       "button": "Inscreva-se grátis"
+    },
+    "mobileBottomNav": {
+      "home": "Início",
+      "search": "Buscar",
+      "yourLibrary": "Sua biblioteca",
+      "premium": "Premium"
     }
   },
   "home": {

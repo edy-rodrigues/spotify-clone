@@ -9,6 +9,7 @@ import { SpotifyIcon } from '@/components/icons/spotify-icon';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/utils/cn';
 import { Link, usePathname } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 import React from 'react';
 
 type Item = {
@@ -19,14 +20,31 @@ type Item = {
 };
 
 const items: Item[] = [
-  { href: '/', label: 'Início', icon: HomeIcon, activeIcon: HomeFilledIcon },
-  { href: '/search', label: 'Buscar', icon: SearchIcon, activeIcon: SearchIcon },
-  { href: '/library', label: 'Sua Biblioteca', icon: LibraryIcon, activeIcon: LibraryIcon },
-  { href: '/premium', label: 'Premium', icon: SpotifyIcon, activeIcon: SpotifyIcon },
+  { href: '/', label: 'footer.mobileBottomNav.home', icon: HomeIcon, activeIcon: HomeFilledIcon },
+  {
+    href: '/search',
+    label: 'footer.mobileBottomNav.search',
+    icon: SearchIcon,
+    activeIcon: SearchIcon,
+  },
+  {
+    href: '/library',
+    label: 'footer.mobileBottomNav.yourLibrary',
+    icon: LibraryIcon,
+    activeIcon: LibraryIcon,
+  },
+  {
+    href: '/premium',
+    label: 'footer.mobileBottomNav.premium',
+    icon: SpotifyIcon,
+    activeIcon: SpotifyIcon,
+  },
 ];
 
 export function MobileBottomNav() {
   const pathname = usePathname();
+
+  const t = useTranslations();
 
   return (
     <nav
@@ -53,7 +71,7 @@ export function MobileBottomNav() {
                   ) : (
                     <Icon aria-hidden className="size-6 fill-text-gray" />
                   )}
-                  <Typography className="text-[11px] leading-none">{label}</Typography>
+                  <Typography className="text-[11px] leading-none">{t(label)}</Typography>
                 </Link>
               </Button>
             </li>

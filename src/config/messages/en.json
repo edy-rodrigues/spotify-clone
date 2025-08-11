@@ -18,6 +18,12 @@
       "title": "Try Premium for free",
       "description": "Sign up to enjoy unlimited music and podcasts with just a few ads. No credit card needed",
       "button": "Sign up free"
+    },
+    "mobileBottomNav": {
+      "home": "Home",
+      "search": "Search",
+      "yourLibrary": "Your library",
+      "premium": "Premium"
     }
   },
   "home": {

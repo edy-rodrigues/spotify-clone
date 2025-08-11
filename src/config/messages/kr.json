@@ -18,6 +18,12 @@
       "title": "프리미엄 무료로 체험하기",
       "description": "광고가 포함된 무제한 음악과 팟캐스트를 즐기려면 가입하세요. 신용카드가 필요하지 않습니다",
       "button": "무료로 가입하기"
+    },
+    "mobileBottomNav": {
+      "home": "홈",
+      "search": "검색",
+      "yourLibrary": "내 라이브러리",
+      "premium": "프리미엄"
     }
   },
   "home": {
