@@ -139,6 +139,7 @@ export default async function RootLayout(props: RootLayoutProps) {
           type="font/woff2"
           crossOrigin="anonymous"
         />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body className="antialiased">
         <div className="app-container">

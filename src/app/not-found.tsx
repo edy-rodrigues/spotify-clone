@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <div className="fixed h-screen w-screen bg-background-elevation-1 flex flex-col justify-center items-center overflow-hidden">
+    <div className="fixed h-dvh w-full bg-background-elevation-1 flex flex-col justify-center items-center overflow-hidden">
       <SpotifyIcon className="fill-primary-main w-15 h-15 mb-10" />
       <Typography variant="h1" className="mb-4 min-md:text-5xl">
         Página não encontrada

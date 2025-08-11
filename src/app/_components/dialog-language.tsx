@@ -25,7 +25,7 @@ export async function DialogLanguage(props: DrawerLanguageProps) {
   return (
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="flex flex-col w-screen h-screen px-0 lg:max-w-[978px] lg:max-h-[588px] lg:rounded-lg gap-0">
+      <DialogContent className="flex flex-col w-screen h-dvh px-0 lg:max-w-[978px] lg:max-h-[588px] lg:rounded-lg gap-0">
         <DialogHeader className="px-6">
           <DialogTitle asChild className="text-2xl">
             <Typography variant="h2" className="text-left">
