@@ -6,15 +6,26 @@ import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import React from 'react';
 
-// export async function generateMetadata({ params }: { params: { locale: Locale } }) {
-//   const t = await getTranslations({ locale: params.locale, namespace: 'meta' });
-//   return { title: t('title', { app: 'Spotify Clone' }) };
-// }
-
-export const metadata: Metadata = {
-  title: 'Spotify – Web player: música para todas as pessoas',
-  description: 'O Spotify é um serviço de música digital que dá acesso a milhões de músicas.',
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: {
+      template: '%s | Spotify',
+      default: 'Spotify',
+    },
+    openGraph: {
+      siteName: 'Spotify',
+      images: [
+        {
+          url: 'https://open.spotifycdn.com/cdn/images/favicon32.b64ecc03.png',
+          width: 32,
+          height: 32,
+          alt: 'Spotify Logo',
+        },
+      ],
+      type: 'website',
+    },
+  };
+}
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -139,7 +150,10 @@ export default async function RootLayout(props: RootLayoutProps) {
           type="font/woff2"
           crossOrigin="anonymous"
         />
+
+        {/* Meta */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:site_name" content="Spotify" />
       </head>
       <body className="antialiased">
         <div className="app-container">

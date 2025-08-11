@@ -45,6 +45,10 @@
           "electronic": "Electronic Music"
         }
       }
+    },
+    "metadata": {
+      "title": "Spotify – Web Player: Music for Everyone",
+      "description": "Spotify is a digital music service that gives you access to millions of songs."
     }
   },
   "yourLibrary": {
@@ -81,7 +85,11 @@
   },
   "initialSearchPage": {
     "title": "Search",
-    "description": "Search and find your favorite artists."
+    "description": "Search and find your favorite artists.",
+    "metadata": {
+      "title": "Search",
+      "description": "Looking for something? Find artists, songs, albums, playlists and more."
+    }
   },
   "searchPage": {
     "filters": {
@@ -97,6 +105,10 @@
     "sections": {
       "albums": "Albums",
       "artists": "Artists"
+    },
+    "metadata": {
+      "title": "Search",
+      "description": "Looking for something? Find artists, songs, albums, playlists and more."
     }
   },
   "artistPage": {
@@ -110,6 +122,9 @@
     },
     "sections": {
       "topTracks": "Popular"
+    },
+    "metadata": {
+      "description": "Artist"
     }
   },
   "drawerMenu": {

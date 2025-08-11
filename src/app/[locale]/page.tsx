@@ -4,8 +4,36 @@ import { NewReleases } from '@/app/[locale]/_components/new-releases';
 import { NewReleasesSkeleton } from '@/app/[locale]/_components/new-releases-skeleton';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { categoriesForHome } from '@/server/seed/categories-for-home';
+import { Routes } from '@/server/utils/routes';
+import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import React from 'react';
+
+type MetadataProps = Readonly<{
+  params: Promise<{
+    locale: string;
+  }>;
+}>;
+
+export async function generateMetadata(props: MetadataProps): Promise<Metadata> {
+  const { params } = props;
+
+  const { locale } = await params;
+
+  const url = Routes.getCurrentBaseUrl(locale);
+  const t = await getTranslations();
+
+  return {
+    title: t('home.metadata.title'),
+    description: t('home.metadata.description'),
+    openGraph: {
+      title: t('home.metadata.title'),
+      description: t('home.metadata.description'),
+      locale,
+      url,
+    },
+  };
+}
 
 type HomeProps = Readonly<{
   params: Promise<{

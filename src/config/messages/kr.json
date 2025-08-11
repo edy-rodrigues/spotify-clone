@@ -45,6 +45,10 @@
           "electronic": "일렉트로닉"
         }
       }
+    },
+    "metadata": {
+      "title": "Spotify - 웹 플레이어: 모든 사람을 위한 음악",
+      "description": "Spotify는 수백만 곡의 음악을 이용할 수 있는 디지털 음악 서비스입니다."
     }
   },
   "yourLibrary": {
@@ -81,7 +85,11 @@
   },
   "initialSearchPage": {
     "title": "검색",
-    "description": "좋아하는 아티스트를 검색하고 찾아보세요."
+    "description": "좋아하는 아티스트를 검색하고 찾아보세요.",
+    "metadata": {
+      "title": "검색",
+      "description": "무언가를 찾고 계신가요? 아티스트, 노래, 앨범, 플레이리스트 등을 찾아보세요."
+    }
   },
   "searchPage": {
     "filters": {
@@ -97,6 +105,10 @@
     "sections": {
       "albums": "앨범",
       "artists": "아티스트"
+    },
+    "metadata": {
+      "title": "검색",
+      "description": "무언가를 찾고 계신가요? 아티스트, 노래, 앨범, 플레이리스트 등을 찾아보세요."
     }
   },
   "artistPage": {
@@ -110,6 +122,9 @@
     },
     "sections": {
       "topTracks": "인기곡"
+    },
+    "metadata": {
+      "description": "아티스트"
     }
   },
   "drawerMenu": {

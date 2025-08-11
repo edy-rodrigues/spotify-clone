@@ -11,9 +11,45 @@ import { MoreIcon } from '@/components/icons/more-icon';
 import { PlayIcon } from '@/components/icons/play-icon';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { SpotifyApiFactory } from '@/infra/spotify-api/spotify-api-factory';
+import { Routes } from '@/server/utils/routes';
 import { Pagination } from '@/utils/pagination';
+import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import React from 'react';
+
+type MetadataProps = Readonly<{
+  params: Promise<{
+    locale: string;
+    artistId: string;
+  }>;
+}>;
+
+export async function generateMetadata(props: MetadataProps): Promise<Metadata> {
+  const { params } = props;
+
+  const { locale, artistId } = await params;
+
+  const url = Routes.getArtistUrl({
+    locale,
+    artistId,
+  });
+  const t = await getTranslations();
+
+  const spotifyApi = SpotifyApiFactory.create();
+  const artist = await spotifyApi.artists.get(artistId);
+
+  return {
+    title: artist.name,
+    description: t('artistPage.metadata.description'),
+    openGraph: {
+      title: artist.name,
+      description: t('artistPage.metadata.description'),
+      locale,
+      url,
+    },
+  };
+}
 
 type ArtistPageProps = {
   params: Promise<{

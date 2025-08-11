@@ -45,6 +45,10 @@
           "electronic": "Música Eletrônica"
         }
       }
+    },
+    "metadata": {
+      "title": "Spotify – Web player: música para todas as pessoas",
+      "description": "O Spotify é um serviço de música digital que dá acesso a milhões de músicas."
     }
   },
   "yourLibrary": {
@@ -81,7 +85,11 @@
   },
   "initialSearchPage": {
     "title": "Buscar",
-    "description": "Pesquise e encontre seus artistas favoritos."
+    "description": "Pesquise e encontre seus artistas favoritos.",
+    "metadata": {
+      "title": "Buscar",
+      "description": "Procurando algo? Encontre artistas, músicas, álbuns, playlists e muito mais."
+    }
   },
   "searchPage": {
     "filters": {
@@ -97,6 +105,10 @@
     "sections": {
       "albums": "Álbuns",
       "artists": "Artistas"
+    },
+    "metadata": {
+      "title": "Buscar",
+      "description": "Procurando algo? Encontre artistas, músicas, álbuns, playlists e muito mais."
     }
   },
   "artistPage": {
@@ -110,6 +122,9 @@
     },
     "sections": {
       "topTracks": "Mais populares"
+    },
+    "metadata": {
+      "description": "Artista"
     }
   },
   "drawerMenu": {

@@ -3,8 +3,40 @@ import { Results } from '@/app/[locale]/search/[term]/_components/results';
 import { ResultsSkeleton } from '@/app/[locale]/search/[term]/_components/results-skeleton';
 import { FilterHandler } from '@/app/[locale]/search/[term]/_utils/filter-handler';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { setRequestLocale } from 'next-intl/server';
+import { Routes } from '@/server/utils/routes';
+import type { Metadata } from 'next';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import React from 'react';
+
+type MetadataProps = Readonly<{
+  params: Promise<{
+    locale: string;
+    term: string;
+  }>;
+}>;
+
+export async function generateMetadata(props: MetadataProps): Promise<Metadata> {
+  const { params } = props;
+
+  const { locale, term } = await params;
+
+  const url = Routes.getSearchUrl({
+    term,
+    locale,
+  });
+  const t = await getTranslations();
+
+  return {
+    title: t('searchPage.metadata.title'),
+    description: t('searchPage.metadata.description'),
+    openGraph: {
+      title: t('searchPage.metadata.title'),
+      description: t('searchPage.metadata.description'),
+      locale,
+      url,
+    },
+  };
+}
 
 type SearchPageProps = Readonly<{
   params: Promise<{

@@ -1,8 +1,36 @@
 import { SearchInput } from '@/app/_components/search-input';
 import { Typography } from '@/components/data-display/typography';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { Routes } from '@/server/utils/routes';
+import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import React from 'react';
+
+type MetadataProps = Readonly<{
+  params: Promise<{
+    locale: string;
+  }>;
+}>;
+
+export async function generateMetadata(props: MetadataProps): Promise<Metadata> {
+  const { params } = props;
+
+  const { locale } = await params;
+
+  const url = Routes.getInitialSearchUrl(locale);
+  const t = await getTranslations();
+
+  return {
+    title: t('initialSearchPage.metadata.title'),
+    description: t('initialSearchPage.metadata.description'),
+    openGraph: {
+      title: t('initialSearchPage.metadata.title'),
+      description: t('initialSearchPage.metadata.description'),
+      locale,
+      url,
+    },
+  };
+}
 
 type InitialSearchPageProps = Readonly<{
   params: Promise<{
