@@ -2,7 +2,7 @@ import { Footer } from '@/app/_components/footer';
 import { Header } from '@/app/_components/header';
 import { YourLibrary } from '@/app/_components/your-library';
 import { routing } from '@/i18n/routing';
-import { hasLocale } from 'next-intl';
+import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import React from 'react';
@@ -26,7 +26,7 @@ export default async function LocaleLayout(props: LocaleLayoutProps) {
   setRequestLocale(locale);
 
   return (
-    <>
+    <NextIntlClientProvider>
       <Header />
       <div className="left-sidebar rounded-lg hidden lg:flex lg:flex-col">
         <YourLibrary />
@@ -34,6 +34,6 @@ export default async function LocaleLayout(props: LocaleLayoutProps) {
       {children}
       <div className="right-sidebar rounded-lg hidden" />
       <Footer />
-    </>
+    </NextIntlClientProvider>
   );
 }
