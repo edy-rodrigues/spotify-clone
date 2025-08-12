@@ -1,6 +1,7 @@
 // The code below imports any other important files to configure the app
 import '@/setup';
 import { locales } from '@/config/i18n';
+import { Analytics } from '@vercel/analytics/next';
 
 import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
@@ -157,6 +158,7 @@ export default async function RootLayout(props: RootLayoutProps) {
         <div className="app-container">
           <NextIntlClientProvider>{children}</NextIntlClientProvider>
         </div>
+        <Analytics />
       </body>
     </html>
   );
