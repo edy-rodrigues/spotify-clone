@@ -14,14 +14,12 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     openGraph: {
       siteName: 'Spotify',
-      images: [
-        {
-          url: 'https://open.spotifycdn.com/cdn/images/favicon32.b64ecc03.png',
-          width: 32,
-          height: 32,
-          alt: 'Spotify Logo',
-        },
-      ],
+      images: {
+        url: 'https://open.spotifycdn.com/cdn/images/favicon32.b64ecc03.png',
+        width: 32,
+        height: 32,
+        alt: 'Spotify Logo',
+      },
       type: 'website',
     },
   };
